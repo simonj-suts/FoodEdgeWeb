@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 03, 2020 at 05:36 PM
+-- Generation Time: Oct 03, 2020 at 05:55 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.33
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `foodedge`
 --
+CREATE DATABASE IF NOT EXISTS `foodedge` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `foodedge`;
 
 -- --------------------------------------------------------
 
