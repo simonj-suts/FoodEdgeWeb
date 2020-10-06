@@ -1,0 +1,49 @@
+*{
+	background: black;
+}
+
+@font-face {
+  font-family: Nominee;
+  src: url(Nominee-Bold.ttf);
+  font-weight: bold;
+}
+
+#statistics_header{
+	color: orange;
+	text-align:center;
+	font-style: bold;
+	font-family: Nominee, Arial, sans-serif;
+	font-size: 60px;
+}
+
+#statistics_table{
+	margin: 0 auto;
+	font-family: Nominee, Arial, sans-serif;
+	font-size: 20px;
+	border-collapse:collapse;
+	
+}
+
+th{
+	background-color: orange;
+	color:black;
+	padding: 8px;
+}
+
+tr{
+	color:black;
+	text-align:center;
+}
+
+td{
+	background-color: white;
+	padding: 15px;
+}
+
+h2{
+	color: orange;
+	text-align:center;
+	font-style: bold;
+	font-family: Nominee, Arial, sans-serif;
+	font-size: 30px;
+}
