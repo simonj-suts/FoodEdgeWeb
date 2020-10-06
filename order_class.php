@@ -180,7 +180,11 @@ class Order{
 	public function read(){
 		$rows = [];
 		
-		$query = " SELECT * FROM ".$this->tableName." ORDER BY order_date";
+		$query = " SELECT * 
+				FROM ".$this->tableName." 
+				NATURAL JOIN userinformation
+				NATURAL JOIN package
+				ORDER BY order_date";
 		$result = @mysqli_query($this->conn,$query);
 		
 		while($row = mysqli_fetch_assoc($result)){
