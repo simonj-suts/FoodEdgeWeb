@@ -125,18 +125,13 @@ function ifInputInfoValid() {  // To validate the form
 	  errMsg = "";
 	  all_valid = false;
    }
-   storeRegistration();
    return all_valid;
 }
 
-function storeRegistration () {
-	sessionStorage.firstname = document.getElementById("firstname").value;
-	sessionStorage.lastname = document.getElementById("lastname").value;
-	sessionStorage.email = document.getElementById("email").value;
-	sessionStorage.password = document.getElementById("password").value;
-	sessionStorage.telephone = document.getElementById("telephone").value;
-	sessionStorage.question = document.getElementById("secQues").value;
-	sessionStorage.answer = document.getElementById("secAns").value;
-}
 
+
+function successRegistration(){
+	alert("Registration is succesful. You data has been entered into the system");
+	
+}
 
