@@ -15,7 +15,7 @@
     <div class="row">
         <div class="col-75">
             <div class="container">
-                <form name="paymentform" onsubmit="return validateForm()" method="POST" >
+                <form name="paymentform" onsubmit="return validateForm()" method="POST" action="http://localhost/Sprint/receiptphp.php">
                     <div class="row">
                         <div class="col-50">
                             <h2 class="total">Your total is $250</h2>
@@ -25,7 +25,7 @@
                             <input type="text" id="fname" name="name" placeholder="Leon Lai">
                             <label for="femail">Email</label>
                             <input type="text" id="femail" name="email" placeholder="leon@example.com">
-                            <label for="fadd">Address</label>
+                            <label for="fadd">Address for delivery</label>
                             <input type="text" id="fadd" name="address"
                                 placeholder="123, Lorong Donut, 11900 Donut City, Pulau Pinang">
                         </div>
