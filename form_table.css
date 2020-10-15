@@ -1,0 +1,35 @@
+#statistics_table{
+	margin: 0 auto;
+	font-family: Nominee, Arial, sans-serif;
+	font-size: 20px;
+	border-collapse:collapse;
+}
+
+#statistics_table th{
+	background-color: #E35F21;
+	color:black;
+	padding: 8px;
+}
+
+#statistics_table tr{
+	color:black;
+	text-align:center;
+}
+
+#statistics_table td{
+	background-color: white;
+	padding: 15px;
+}
+
+#total_table{
+	margin: 20px auto 20px auto;
+	font-family: Nominee, Arial, sans-serif;
+	font-size: 20px;
+	color: white;
+	border-collapse:collapse;
+}
+
+#total_table td {
+	background-color: #E35F21;
+	padding: 20px 30px;
+}
