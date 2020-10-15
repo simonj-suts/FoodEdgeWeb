@@ -104,6 +104,9 @@
 			return $this->s_answer;
 		}
 		
+		public function currentConnection(){
+			return $this->conn;
+		}
 		public function read(){
 			$rows = [];
 			
@@ -144,13 +147,93 @@
 					INSERT INTO ".$this->tableName."(CustomerFName, CustomerLName, Email, Password, PhoneNo, SecQuestion, SecAnswer) 
 					VALUES ('$f_name', '$l_name', '$c_email', '$c_password', '$c_pnumber', '$s_question', '$s_answer')";
 			
-			if (mysqli_query($this->conn, $query)) {
-			  echo "User account created successfully";
-			} 
-			else {
+			if (!mysqli_query($this->conn, $query)) {
+			
 			  echo "Error: " . $query. "<br>" . mysqli_error($this->conn);
 			}
 		}
+		
+		public function ifExist($userEmail,$userPassword){
+			
+			
+			$result = mysqli_query($this->conn, "SELECT * FROM userinformation WHERE Email LIKE '$userEmail'AND Password LIKE '$userPassword'");
+			
+			
+			$row = mysqli_fetch_assoc($result);
+
+			if($row == null)
+			{
+				echo "<p align=center>User account does not exist.</p>";
+				return false;
+			}else{
+				
+				return true;
+			}
+					
+		}
+		
+		public function ifEmailExist($userEmail){
+			
+			
+			$result = mysqli_query($this->conn, "SELECT * FROM userinformation WHERE Email LIKE '$userEmail'");
+			
+			
+			$row = mysqli_fetch_assoc($result);
+
+			if($row == null)
+			{
+				echo "<p align=center>User account does not exist.</p>";
+				return false;
+			}else{
+				
+				return true;
+			}
+					
+		}
+		
+		public function retrieveSecQues($userEmail){
+			$result = mysqli_query($this->conn, "SELECT * FROM userinformation WHERE Email LIKE '$userEmail'");
+			
+			
+			$row = mysqli_fetch_assoc($result);
+
+			if($row == null)
+			{
+				echo '<p align=center>Security Question does not exist.</p>';
+				
+			}else{
+				echo '<p id="showSecQues"><p>Security Question: '.$row['SecQuestion'].'</p>';
+				
+			}
+			
+		}
+		
+		public function matchSecAns($userEmail,$userAns){
+			$result = mysqli_query($this->conn, "SELECT SecAnswer FROM userinformation WHERE Email LIKE '$userEmail'");
+			
+			
+			$row = mysqli_fetch_assoc($result);
+			
+			if($row['SecAnswer']== $userAns)
+			{
+				return true;
+				
+			}
+			return false;
+			
+		}
+		
+		public function changePassword($pass, $userEmail){
+			$query= "UPDATE userinformation SET Password='$pass' WHERE Email LIKE '$userEmail'";
+			
+			if (!mysqli_query($this->conn, $query)) {
+			
+			  echo "Error: " . $query. "<br>" . mysqli_error($this->conn);
+			}
+			else{
+				echo '<h1 class="changePassword">Password Changed Successfully</h1>';
+				echo '<p class="changePassword">Please login with your new password.</p>';
+			}
+		}
 	}
-	
 ?>

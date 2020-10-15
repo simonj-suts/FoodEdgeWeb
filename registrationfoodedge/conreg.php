@@ -13,7 +13,7 @@
 		<meta name="description" content="confirm registration page"/>
 		<meta name="keywords" content="registration,users,success"/>
 		<link rel="stylesheet" type="text/css" href="style.css"/>
-		<script src="validateReg.js"></script>
+		
 		
 		
 		
@@ -26,7 +26,7 @@
 		<nav></nav>
 		
 		
-		<h1 id="registration-heading">Registration Successful</h1>
+		<h1 id="conreg_page_title">Registration Successful</h1>
 		
 		
 		<?php 
@@ -58,24 +58,26 @@
 			?>
 			
 		
-			<p>Information of account created: </p>
-	
-			<table class="center" border="1">
-				<th>Description</th>
-				<th>Value</th>
-				<tr><td>First name: </td><td><?php echo $fname;?></td></tr>
-				<tr><td>Last name: </td><td><?php echo $lname;?></td></tr>
-				<tr><td>Email address: </td><td><?php echo $email;?></td></tr>
-				<tr><td>Password:</td><td><?php echo  str_repeat("*",strlen( $password));?></td></tr>
-				<tr><td>Telephone: </td><td><?php echo $telephone;?></td></tr>
-				<tr><td>Security Question: </td><td><?php echo $secQues?></td></tr>
-				<tr><td>Security Answer: </td><td><?php echo $secAns;?></td></tr>
-			</table>
-	
-			<button type="button"><a href="registration.php">RETURN</button>
 		
+
+		<table id="confirm_reg_table" border="1">
+			<caption class="confirm_reg_desc">Information of account created: </caption>
+			<th>Description</th>
+			<th>Details</th>
+			<tr><td>First name: </td><td><?php echo $fname;?></td></tr>
+			<tr><td>Last name: </td><td><?php echo $lname;?></td></tr>
+			<tr><td>Email address: </td><td><?php echo $email;?></td></tr>
+			<tr><td>Password:</td><td><?php echo  str_repeat("*",strlen( $password));?></td></tr>
+			<tr><td>Telephone: </td><td><?php echo $telephone;?></td></tr>
+			<tr><td>Security Question: </td><td><?php echo $secQues?></td></tr>
+			<tr><td>Security Answer: </td><td><?php echo $secAns;?></td></tr>
+		</table>
+
+		<div id="returnBtn">
+			<button type="button" ><a href="cust_login.php">Return</button>
+		</div>
 		
-		<footer>
+	<footer>
 			
 	</footer>
 	</body>

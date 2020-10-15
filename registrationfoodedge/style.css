@@ -4,35 +4,334 @@
 /*Date: 4 October 2020  */
 /*Validated: */
 
+@font-face {
+	font-family: "Nominee";
+	src: url(Nominee-Bold.ttf);
+
+}
+
 *{
-	font-family:"century gothic",sans-serif;
-}
-
-#registration-heading{
-	margin:0 auto;
+	font-family: Nominee,sans-serif;
+	font-size:18px;
 	
 }
 
-#registration-form{
+body,header,footer{
+	background-image: url("media/reg-background.png");
+}
+.page_title, #conreg_page_title ,.fogpass-page-title, .fogpass3-page-title{
+	text-align:left;
+	font-size:2em;
+	color:#d55013;
+}
+
+#registration-form, #login-form{
+	width:80%;
+	margin: 2% auto 10% auto;
+	background-color:#2E2E2E;
+	border-radius: 15px;
+}
+
+#registration-table, #login-table {
+	width:100%;
+	margin: 2% auto 0 auto;
+	padding:5%;
 	
 }
 
-.registration-table {
-	width:1300px;
-	margin: 0 auto;
+#registration-table th ,#login-table th{
+	padding-bottom: 2%;
 	
 }
 
-textarea{
-	width: 80%;
-	border: 1px solid black;
+#registration-table td ,#login-table td{
+	padding: 2%;
+	color:white;
 }
 
-input[type=submit], input[type=reset]{
+
+#registration-table input{
+	width:100%;
+	border:0;
+	border-bottom: 1px solid #C0C0C0 ;
 	text-align: center;
-	margin: 20px 20px;
+	font-size:15px;
+	background-color:#eef8f7;
+	border-radius: 5px;
+
+}
+
+
+
+
+#registration-table input:focus,#registration-table textarea:focus{
+	border: 2px solid white ;
+	transition-duration: 0.1s;
+}
+
+#registration-table textarea{
+	width: 100%;
+	border:1px solid #C0C0C0;
+	font-size:15px;
+	background-color:#eef8f7;
+	border-radius: 5px;
+
+}
+#registrationBtn {
+	width:100%;
+	text-align:center;
+	margin:0;
+}
+
+input[type=submit]{
+	background-color:#d3d3d3;
+}
+
+input[type=reset], input[type=submit] {
+	width:20%;
+	padding:1% 2%;
+	margin-bottom: 5%;
+	font-size:0.8em;
+	background-color:#d55013;
+	border:0;
+	color:white;
+	font-weight:bold; 
+}
+
+ 
+input[type=submit]:hover, input[type=reset]:hover{
+
+	background-color: #555555;
+	color: white;
+	transition-duration: 0.4s;
+}
+
+
+.login-label {
+	
+	text-align:center;
+}
+
+
+.chgPassword{
+	display:none;
+}
+
+#login-form{
+	width:60%;
+}
+
+
+#login-table td{
+	
+	padding: 1%;
+}
+
+
+#login-table caption{
+	
+	caption-side:bottom;
 	
 }
+
+#login-table input{
+	
+	width: 100%;
+}
+#login-table input[type="submit"]{
+	
+	width: 20%;
+}
+
+#link a {
+	color:white;
+	font-size:0.8em;
+	
+}
+#link-cell{
+	text-align:center;
+}
+
+#link a:hover {
+	color:#d55013;
+}
+	
+#loginBtn, #link{
+	
+	text-align:center;
+}
+
+#link a {
+	
+	font-size:0.7em
+}
+
+#confirm_reg_table{
+	width:80%;
+	margin:2% auto;
+	border: 5px outset orange;
+	border-collapse:collapse;
+	
+	
+}
+
+#conreg_page_title{
+		text-align: center;
+		color:black;
+}
+
+#confirm_reg_table th{
+	background-color:#f97c42;
+	border: 1px solid grey;
+}
+#confirm_reg_table td{
+	text-align:center;
+	background-color: white;
+	border: 1px solid grey;
+	
+}
+#confirm_reg_table caption{
+	margin-bottom:2%;
+	
+}
+
+#confirm_reg_desc{
+	
+	text-align: center;
+}
+
+#returnBtn {
+	margin: 2% auto;
+	text-align:center;
+	width:70%;
+	margin: 5% auto 0 auto;
+    text-decoration: none;
+
+}
+
+
+#returnBtn button, #fogpass-table-button button {
+	padding: 2% 2%;
+	font-size:0.8em;
+	transition-duration: 0.4s;
+	
+}
+
+#returnBtn button:hover, #fogpass-table-button button:hover, #fogpass4-button button:hover{
+	
+	background-color: #555555;
+	color: white;
+	text-decoration:none;
+}
+
+#returnBtn a, #fogpass-table-button button a{
+	text-decoration:none;
+	color:white;
+}
+
+
+#fogpass-form,#fogpass-form2{
+	width:80%;
+	margin: 0 auto;
+	border-radius: 15px;
+}
+
+
+#fogpass-form input{
+	width:40%;
+	padding:2% 15%;
+}
+
+.fogpass-page-title{
+	margin-top:5%;
+	margin-left:10%;
+	margin-bottom:0;
+	color:black;
+}
+
+#fogpass-table input[type="submit"]{
+	margin-top:10%;
+	width:30%;
+	padding:2% 1%;
+	font-size:1.1em;
+	 tabl
+}
+
+#fogpass-table button {
+	padding:2% 5%;
+	background-color:#d55013;
+	border:0;
+	font-weight:bold;
+}
+
+
+#fogpass-form-desc{
+	font-size:1.5em;
+	
+}
+#fogpass-desc-cell{
+	border-bottom:1px solid white;
+}
+
+#showSecQues{
+	margin-bottom: 5%;
+}
+
+
+#fogpass-form3 table{
+	margin:2% auto;
+	background-color: #555555;
+	width:70%;
+	border-radius:5px;
+}
+
+
+#fogpass-form3 table td{
+	text-align:center;
+	padding:3% 1%;
+	color:white;
+}
+
+#fogpass-form3 .submitBtn{
+	margin-top:5%;
+	text-align:center;
+}	
+.fogpass3-page-title{
+	margin-top:5%;
+	color:black;
+	text-align:center;
+}
+
+.changePassword{
+	text-align:center;
+	
+}
+h1.changePassword{
+	margin-top:5%;
+	
+}
+
+#fogpass4-button{
+	text-align:center;
+	
+}
+#fogpass4-button button{
+	
+	width:20%;
+	padding:1% 0;
+	font-size:0.8em;
+	background-color:#d55013;
+	border:0;
+	
+}
+
+#fogpass4-button button a{
+	
+	color:white;
+	font-weight:bold;
+	text-decoration:none;
+}
+
 
 
 

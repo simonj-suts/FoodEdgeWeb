@@ -86,7 +86,7 @@ function validatePhoneNumber() {
 
 function validateQuestion(){
 	var question = document.getElementById("secQues").value;
-	var question_filled = true;
+	
 	
 	if(question==""){
 		errMsg += "Please enter your security question.\n";
