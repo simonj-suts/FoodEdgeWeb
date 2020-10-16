@@ -13,6 +13,7 @@
 		<meta name="description" content="about profile"/>
 		<meta name="keywords" content="about, web, author, jibril, saleem"/>
 		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<link rel="stylesheet" type="text/css" href="form_table.css"/>
 		<?php include "database.php"?>
 		<?php include "order_class.php"?>
 		
