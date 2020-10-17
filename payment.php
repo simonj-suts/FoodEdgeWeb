@@ -13,7 +13,7 @@
     <div class="row">
         <div class="col-75">
             <div class="container">
-                <form name="paymentform" onsubmit="return validateForm()" method="POST" action="http://localhost/dp2/receipt.php">
+                <form name="paymentform" onsubmit="return validateForm()" method="POST" action="receipt.php">
                     <div class="row">
                         <div class="col-50">
                             <h2 class="total">Your total is $250</h2> <!-- Example price, need booking.php to get the price,apply on sprint 2 -->
