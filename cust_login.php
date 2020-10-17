@@ -32,8 +32,7 @@
 			
 		
 		<form id="login-form" method="post" onsubmit="return validateUserAccount()" >
-			
-									
+				
 			<?php 
 				
 				
@@ -49,14 +48,13 @@
 					if($userinformation->ifExist($loginEmail,$loginPass)){
 					
 						echo 'You have successfully logged in';
-						session_start(); 
+						session_start();
 						$_SESSION["login"]=$loginEmail;
-						header("Location: registration.php");
-						
+						$_SESSION["fname"]=$userinformation->getCustomerFirstName();
+						$_SESSION["lname"]=$userinformation->getCustomerLastName();
+						$_SESSION["custid"]=$userinformation->getCustomerID();
+						header("Location: bookingform.php");
 					}
-					
-					
-					
 				}
 				$database->closeConnection();
 				

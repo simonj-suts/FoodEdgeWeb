@@ -48,6 +48,10 @@
 			return $valid;
 		}
 		
+		public function getCustomerID(){
+			return $this->c_id;
+		}
+		
 		public function getCustomerLastName(){
 			return $this->l_name;
 		}
@@ -107,6 +111,7 @@
 		public function currentConnection(){
 			return $this->conn;
 		}
+		
 		public function read(){
 			$rows = [];
 			
@@ -133,6 +138,7 @@
 				
 			//return $rows;
 		}
+		
 		}
 		// add new order
 		public function createOrder(){
@@ -166,14 +172,15 @@
 				echo "<p align=center>User account does not exist.</p>";
 				return false;
 			}else{
-				
+				$this->f_name = $row['CustomerFName'];
+				$this->l_name = $row['CustomerLName'];
+				$this->c_id = $row['CustomerID'];
 				return true;
 			}
-					
 		}
 		
+		
 		public function ifEmailExist($userEmail){
-			
 			
 			$result = mysqli_query($this->conn, "SELECT * FROM userinformation WHERE Email LIKE '$userEmail'");
 			
@@ -185,10 +192,8 @@
 				echo "<p align=center>User account does not exist.</p>";
 				return false;
 			}else{
-				
 				return true;
 			}
-					
 		}
 		
 		public function retrieveSecQues($userEmail){

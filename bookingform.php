@@ -10,11 +10,12 @@
 	<script type="text/javascript" src="validator.js"></script>
 </head>
 <body class="bookingformbody">
+	<?php session_start() ?>
 	<div class="bookingform">
 	<button onclick="window.location='index.php';" class="button2"><span>Back</span></button>
 	<form name="bookingform" action="confirmationpage.php" method="post" onsubmit="return checkForm()">
 		<h1 class="bookingform_header">Booking</h1>
-		<p class = "Names"> Hello <?php echo $namez = "Simon"?>,</p>
+		<p class = "Names"> Hello <?php echo $_SESSION["fname"]; echo " ". $_SESSION["lname"];?>,</p>
 		<select name="occasion" id="occasion">
 			<option value="" selected disabled hidden><option value="" selected disabled hidden>Please select your occasion</option>
 			<option value="Celebration">Celebration</option>

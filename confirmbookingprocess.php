@@ -14,22 +14,24 @@
 </head>
 <body class = "bookingformbody">
 	<?php
-		include 'database.php';
-		include 'order_class.php';
-		$packageid = packageCheck();
-		$database = new Database();
-		$db = $database->getConnection();
-		$order = new Order($db);
-		$order->setCustomerID(3);
-		$order->setOrderDate(date("Y-m-d"));
-		$order->setOrderStatus("Pending");
-		$order->setOccasion($_SESSION['occasion']);
-		$order->setPackageID($packageid);
-		$order->setAddress($_SESSION["address"]);
-		$order->setEventTime($_SESSION["time"]);
-		$order->setEventDate($_SESSION["eventdate"]);
-		$order->createOrder();
-		$database->closeConnection();
+		if(isset($_SESSION["occasion"])){
+			include 'database.php';
+			include 'order_class.php';
+			$packageid = packageCheck();
+			$database = new Database();
+			$db = $database->getConnection();
+			$order = new Order($db);
+			$order->setCustomerID($_SESSION["custid"]);
+			$order->setOrderDate(date("Y-m-d"));
+			$order->setOrderStatus("Pending");
+			$order->setOccasion($_SESSION['occasion']);
+			$order->setPackageID($packageid);
+			$order->setAddress($_SESSION["address"]);
+			$order->setEventTime($_SESSION["time"]);
+			$order->setEventDate($_SESSION["eventdate"]);
+			$order->createOrder();
+			$database->closeConnection();
+		}
 	?>
 	<?php
 		function packageCheck(){
