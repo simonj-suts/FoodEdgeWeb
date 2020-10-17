@@ -15,7 +15,7 @@
 		<meta name="author" content="Joanna Wong"/>
 		<meta name="description" content="forget password page"/>
 		<meta name="keywords" content="forget-password,users,catering"/>
-		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<link rel="stylesheet" type="text/css" href="form_table.css"/>
 		
 		
 	</head>

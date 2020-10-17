@@ -83,11 +83,11 @@ body,header,footer{
 	margin:0;
 }
 
-input[type=submit]{
+#registrationBtn input[type=submit]{
 	background-color:#d3d3d3;
 }
 
-input[type=reset], input[type=submit] {
+#registrationBtn input[type=reset], #registrationBtn input[type=submit], #loginBtn input[type=submit], #recovery-submit-button, #fogpass2-submit, #fogpass3-submit, #fogpass3-reset  {
 	width:20%;
 	padding:1% 2%;
 	margin-bottom: 5%;
@@ -99,7 +99,7 @@ input[type=reset], input[type=submit] {
 }
 
  
-input[type=submit]:hover, input[type=reset]:hover{
+#registrationBtn input[type=submit]:hover, #registrationBtn input[type=reset]:hover, #recovery-submit-button:hover, #loginBtn input[type=submit]:hover, #fogpass2-submit:hover, #fogpass3-submit:hover , #fogpass3-reset:hover{
 
 	background-color: #555555;
 	color: white;
@@ -200,10 +200,15 @@ input[type=submit]:hover, input[type=reset]:hover{
 	text-align: center;
 }
 
-#returnBtn {
-	margin: 2% auto;
+#returnBtn{
+	
 	text-align:center;
-	width:70%;
+}
+
+#returnBtn button {
+	background-color:#d55013;
+	color:blaok;
+	width:20%;
 	margin: 5% auto 0 auto;
     text-decoration: none;
 
@@ -254,7 +259,7 @@ input[type=submit]:hover, input[type=reset]:hover{
 	width:30%;
 	padding:2% 1%;
 	font-size:1.1em;
-	 tabl
+	 
 }
 
 #fogpass-table button {

@@ -12,7 +12,10 @@
 		<meta name="author" content="Joanna Wong"/>
 		<meta name="description" content="forget password page"/>
 		<meta name="keywords" content="forget-password,users,catering"/>
-		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<script src="validateForm.js"></script>
+		<link rel="stylesheet" type="text/css" href="form_table.css"/>
+		
+
 		
 		
 	</head>
@@ -33,7 +36,7 @@
 			
 			
 			
-			<form id="fogpass-form" method="post" action="fogpass2.php">
+			<form id="fogpass-form" method="post" action="fogpass2.php" onsubmit="return validateEmailRecovery()">
 			<table id="fogpass-table" >
 			<tr>
 				<td id="fogpass-desc-cell">
@@ -53,7 +56,7 @@
 			<tr>
 				<td>
 					
-						<input id="submit" type="submit" value="Check My Email"/>
+						<input id="recovery-submit-button" type="submit" value="Check My Email"/>
 						<div id="fogpass-table-button">
 							<button><a href="cust_login.php">Cancel</a></button>
 						</div>

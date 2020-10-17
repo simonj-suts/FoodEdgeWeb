@@ -15,7 +15,7 @@
 		<meta name="author" content="Joanna Wong"/>
 		<meta name="description" content="forget password page"/>
 		<meta name="keywords" content="forget-password,users,catering"/>
-		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<link rel="stylesheet" type="text/css" href="form_table.css"/>
 		<script src="validateForm.js"></script>
 		
 		
@@ -88,8 +88,8 @@
 				</td>
 		</table>
 		<div class="submitBtn">
-					<input id="submit" type="submit" value="Confirm"/>
-					<input id="reset" type="reset" value="Reset"/>
+					<input id="fogpass3-submit" type="submit" value="Confirm"/>
+					<input id="fogpass3-reset" type="reset" value="Reset"/>
 				</div>
 		</form>
 		

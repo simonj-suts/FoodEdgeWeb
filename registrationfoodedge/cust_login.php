@@ -10,10 +10,10 @@
 		<title>Customer Login</title>
 		<meta charset="utf-8"/>
 		<meta name="author" content="Joanna Wong"/>
-		<meta name="description" content="registration page"/>
+		<meta name="description" content="login page"/>
 		<meta name="keywords" content="login,users,catering"/>
-		<link rel="stylesheet" type="text/css" href="style.css"/>
-		
+		<link rel="stylesheet" type="text/css" href="form_table.css"/>
+		<script src="validateForm.js"></script>
 		
 	</head>
 	
@@ -31,7 +31,7 @@
 	
 			
 		
-		<form id="login-form" method="post" >
+		<form id="login-form" method="post" onsubmit="return validateUserAccount()" >
 			
 									
 			<?php 

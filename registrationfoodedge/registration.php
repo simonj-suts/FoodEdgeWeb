@@ -12,7 +12,7 @@
 		<meta name="author" content="Joanna Wong"/>
 		<meta name="description" content="registration page"/>
 		<meta name="keywords" content="registration,users,catering"/>
-		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<link rel="stylesheet" type="text/css" href="form_table.css"/>
 		<script src="validateForm.js"></script>
 		
 	</head>
@@ -26,12 +26,14 @@
 		<nav>
 			
 		</nav>
-	
+		
+
+		
 		<form id="registration-form" method="post" action="conreg.php"  onsubmit="return ifInputInfoValid()" >
 		
 			
 			
-			<table id="registration-table"   >
+			<table id="registration-table" >
 				<tr>
 					<th class="page_title" colspan="2">Registration</th>
 				</tr>

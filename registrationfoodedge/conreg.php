@@ -12,7 +12,7 @@
 		<meta name="author" content="Joanna Wong"/>
 		<meta name="description" content="confirm registration page"/>
 		<meta name="keywords" content="registration,users,success"/>
-		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<link rel="stylesheet" type="text/css" href="form_table.css"/>
 		
 		
 		
@@ -74,7 +74,7 @@
 		</table>
 
 		<div id="returnBtn">
-			<button type="button" ><a href="cust_login.php">Return</button>
+			<button type="button"><a href="cust_login.php">Return</a></button>
 		</div>
 		
 	<footer>
