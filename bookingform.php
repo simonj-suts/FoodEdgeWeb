@@ -12,7 +12,7 @@
 <body class="bookingformbody">
 	<?php session_start() ?>
 	<div class="bookingform">
-	<button onclick="window.location='index.php';" class="button2"><span>Back</span></button>
+	<button onclick="window.location='cust_login.php';" class="button2"><span>Back</span></button>
 	<form name="bookingform" action="confirmationpage.php" method="post" onsubmit="return checkForm()">
 		<h1 class="bookingform_header">Booking</h1>
 		<p class = "Names"> Hello <?php echo $_SESSION["fname"]; echo " ". $_SESSION["lname"];?>,</p>
