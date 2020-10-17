@@ -48,3 +48,165 @@
 	font-family: Nominee, Arial, sans-serif;
 	font-size: 30px;
 }
+
+
+/* ORDER LIST PAGE (Author: Simon Jingga) */
+@font-face {
+    font-family: Nominee-Thin;
+    src: url(Nominee-Thin.ttf);
+}
+
+@font-face {
+    font-family: Nominee-Medium;
+    src: url(Nominee-Medium.ttf);
+}
+
+/* FOR LIST OF RECORDS */
+#orderlist{
+    background-color: #2E2E2E;
+    font-family: Nominee-Medium, sans-serif;
+    scroll-behavior: smooth;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+#orderlist div:first-child{
+    margin-top: 5vh;
+    color: white;
+}
+
+#orderlist div:first-child h1{
+    font-family: Nominee-Thin, sans-serif;
+    display: inline-block;
+    margin: 0px;
+    vertical-align: middle;
+}
+
+#orderlist a{
+    float: right;
+    font-family: Nominee-Thin;
+    padding: 15px 30px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#orderlist a:hover{
+    background-color: black;
+    transition: 0.3s;
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
+}
+
+#orderlist div:first-child a{
+    background-color:  #27ae60;
+}
+
+#orderlist div:first-child a:hover{
+    color:  #27ae60;
+    background-color: black;
+}
+
+#orderlist form+a{
+    background-color:  #E35F21;
+}
+
+#orderlist form+a:hover{
+    color: #E35F21;
+}
+
+#orderlist table .fkoff{
+    text-align: center;
+}
+
+#orderlist table{
+    min-width: 100%;
+    margin: 0 auto;
+    margin-top: 25px;
+    padding: 40px;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-size: 12px;
+}
+
+#orderlist table caption{
+    padding-bottom: 10px;
+    font-size: larger;
+}
+
+#orderlist table th, #orderlist table caption,#orderlist h1{
+    color: white;
+}
+
+#orderlist table th, #orderlist table td{
+    padding: 7px 5px;
+}
+#orderlist table td{
+    border-left: 1.5px solid  #e6e6e6;
+    border-right: 1.5px solid #e6e6e6;
+}
+
+#orderlist table tr{
+    background-color: #ffffff;
+    padding-bottom: 10px;
+}
+
+#orderlist table tr .noborder{
+    border: none;
+}
+
+#orderlist table tbody tr:nth-child(4n+0), #orderlist table td[rowspan]{
+    border-bottom: 1.5px solid  #e6e6e6;
+}
+
+#pending_form, #orderlisttable_deliv::after{
+    height: 85vh;
+}
+
+#orderlisttable_pend th{
+    background-color: #E35F21;
+    border-right:1px solid #ffffff;
+    border-left: 1px solid #E35F21;
+    border-top: 1px solid #E35F21;
+    border-bottom: 1px solid #E35F21;
+}
+
+#orderlisttable_deliv th{
+    background-color: #27ae60;
+    border-right:1px solid #ffffff;
+}
+
+#orderlisttable_pend td.event{
+    width: 46%;
+}
+
+#ol_buttonHolder{
+    margin-top: 10px;
+    text-align: right;
+}
+
+#ol_buttonHolder input{
+    padding: 15px;
+    cursor: pointer;
+    border: 0;
+    background-color: #E35F21;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+#ol_buttonHolder input:hover{
+    background-color: black;
+    color:#E35F21;
+    transition: 0.3s;
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
+}
+
+
+.ol_customSelect select{
+    padding: 10px 5px;
+    border: 0.5px solid black;
+    cursor: pointer;
+    font-size: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
