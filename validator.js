@@ -35,7 +35,13 @@ function checkForm(){
 	if (eventdate == "") {
 		error += "Please include the date of the event\n";
 	}else{
-		eventdatecheck = true;
+		var ToDate = new Date();
+		if(new Date(eventdate).getTime() <= ToDate.getTime()){
+			error += "The date must be bigger or equal to today's date\n";
+		}
+		else{
+			eventdatecheck = true;
+		}
 	}
 	
 	if (occasion == "") {
