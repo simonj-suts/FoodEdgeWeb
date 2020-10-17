@@ -1,389 +1,50 @@
-.bookingformbody{
-	font-family: Nominee, Arial, sans-serif;
-	background-image: url("cateringbackground.png");
-	background-position: center; /* Center the image */
- 	background-repeat: no-repeat; /* Do not repeat the image */
-  	background-size: cover; /* Resize the background image to cover the entire container */
-	margin: 15px;
+/* General CSS for the statistics page */
+#statistics_body{
+	background-color: #2E2E2E;
 }
 
-.confirmtable{
-	color: white;
-	margin: 0 auto;
+@font-face {
+  font-family: Nominee;
+  src: url(Nominee-Bold.ttf);
 }
 
-.bookingform {
-	display: block;
-	background-color:#2E2E2E;
-	padding: 50px;
-	font-size: 22px;
-	border-radius: 25px;
-}
-
-.confirmation{
-	background-color:#2E2E2E;
-	padding: 15px;
-	padding-bottom: 50px;
-	font-size: 22px;
-	border-radius: 25px;
-	margin: 250px;
-}
-
-
-#radiobuttondiv{
-	padding-top: 30px;
-	padding-bottom: 30px;
-}
-
-#radiogroup{
-	padding-top: 15px;
-}
-
-
-#time{
-	width: 50%;
-	padding: 12px 20px;
-	font-size: 20px;
-	color: #e35f21;
-	margin: 8px 0;
-	display: inline-block;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	box-sizing: border-box;
-}
-
-
-#eventdate{
-	width: 49%;
-	font-size: 20px;
-	color: #e35f21;
-	padding: 12px 20px;
-	display: inline-block;
-	margin-left: 12px;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	box-sizing: border-box;
-}
-
-#address, #occasion {
-	width: 100%;
-	font-family: Nominee, Arial, sans-serif;
-  	padding: 12px 20px;
-	margin: 8px 0;
-	font-size: 20px;
-	display: inline-block;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	box-sizing: border-box;
-}
-
-#time:focus, #eventdate:focus {
-	outline: none !important;
-	border: 3px solid #e35f21;
-}
-
-#occasion:focus { 
-	outline: none !important;
-	border: 3px solid #e35f21;
-}
-
-#address:focus { 
-	outline: none !important;
-	border: 3px solid #e35f21;
-}
-
-/* The container */
-.package {
- 	position: relative;
- 	padding-left: 35px;
-	padding-right: 35px;
- 	font-size: 22px;
-	color: white;
- 	-webkit-user-select: none;
- 	-moz-user-select: none;
- 	-ms-user-select: none;
- 	user-select: none;
-}
-
-/* Hide the browser's default radio button */
-.package input {
-	position: absolute;
-	opacity: 0;
-}
-
-/* Create a custom radio button */
-.checkmark {
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 25px;
-	width: 25px;
-	background-color: #eee;
-	border-radius: 50%;
-}
-
-/* On mouse-over, add a grey background color */
-.package:hover input ~ .checkmark {
-	background-color: #ccc;
-}
-
-/* When the radio button is checked, add a  background */
-.package input:checked ~ .checkmark {
-	background-color: #e35f21;
-}
-
-/* Create the indicator (the dot/circle - hidden when not checked) */
-.checkmark:after {
-	content: "";
-	position: absolute;
-	display: none;
-}
-
-/* Show the indicator (dot/circle) when checked */
-.package input:checked ~ .checkmark:after {
-	display: block;
-}
-
-/* Style the indicator (dot/circle) */
-.package .checkmark:after {
- 	top: 9px;
-	left: 9px;
-	width: 7px;
-	height: 7px;
-	border-radius: 50%;
-	background: white;
-}
-
-::placeholder {
-	font-family: Nominee, Arial, sans-serif;
-	font-size: 20px;
-}
-
-#occasion{
-	font-family: Nominee, Arial, sans-serif;
-	font-size: 20px;
-	text-align: center;
-	padding-bottom: 30px;
-	color: #e35f21;
-}
-
-#time{
-	margin-top: 15px;
-	padding-bottom: 30px;
-	border-radius: 8px;
-}
-
-#eventdate{
-	margin-top: 15px;
-	padding-bottom: 28px;
-	border-radius: 8px;
-}
-
-#description{
-	margin-top: 15px;
-	border-radius: 8px;
-}
-
-
-h1, .title{
-	color: #e35f21;
-}
-
-.confirmationheader{
-	color: #e35f21;
+/* Button CSS design for the statistics page */
+.statistics_button {
 	text-align: center;
 }
 
-.Names{
+.button_nav {
+	border: none;
+	color: black;
+	font-family: Nominee, Arial, sans-serif;
+	background-color: #E35F21;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	transition-duration: 0.4s;
+	font-size: 16px;
+}
+
+.button_nav:hover{
+	background-color: black;
 	color: white;
 }
 
-.title{
-	padding-right: 10px;
-}
+/* Header CSS design for the statistics page */
 
-@font-face{
-	font-family: Nominee;
-	src: url(Nominee-Bold.ttf);
-	font-weight: bold;
-}
-
-.package{
-	padding-right: 35px;
-}
-
-.button2:focus{
-	outline: none;
-	box-shadow: none;
-}
-
-.buttonsubmit{
-	border-radius: 4px;
-	background-color: #e35f21;
-	border: none;
-	color: #FFFFFF;
-	text-align: center;
+#statistics_header{
+	color: #E35F21;
+	text-align:center;
+	font-style: bold;
 	font-family: Nominee, Arial, sans-serif;
-	font-size: 22px;
-	padding: 15px;
-	width: 150px;
-	cursor: pointer;
-	margin: 5px;
-}
-
-.buttonconfirm{
-	border-radius: 4px;
-	background-color: #e35f21;
-	border: none;
-	color: #FFFFFF;
-	text-align: center;
-	font-family: Nominee, Arial, sans-serif;
-	font-size: 22px;
-	padding: 15px;
-	width: 150px;
-	cursor: pointer;
-	margin: 5px;
-}
-
-.button2 {
-	border-radius: 4px;
-	background-color: #e35f21;
-	border: none;
-	color: #FFFFFF;
-	text-align: center;
-	font-family: Nominee, Arial, sans-serif;
-	font-size: 22px;
-	padding: 15px;
-	width: 150px;
-	cursor: pointer;
-	margin: 5px;
-}
-
-.buttoncancel {
-	border-radius: 4px;
-	background-color: #e35f21;
-	border: none;
-	color: #FFFFFF;
-	text-align: center;
-	font-family: Nominee, Arial, sans-serif;
-	font-size: 22px;
-	padding: 15px;
-	width: 150px;
-	cursor: pointer;
-	margin: 5px;
-}
-
-.buttonsubmit:hover, .button2:hover, .buttoncancel:hover, .buttonconfirm:hover {
-	background-color:black;
-	color: #e35f21;
-}
-
-.buttonsubmit span, .button2 span, .buttoncancel span, .buttonconfirm span{
-	cursor: pointer;
-	display: inline-block;
-	position: relative;
-	transition: 0.5s;
-}
-
-.buttonsubmit span:after {
-	content: '\00bb';
-	position: absolute;
-	opacity: 0;
 	font-size: 40px;
-	bottom: -9px;
-	right: -10px;
-	transition: 0.5s;
 }
 
-.buttonconfirm span:after {
-	content: '\2714';
-	position: absolute;
-	opacity: 0;
-	font-size: 25px;
-	bottom: -4px;
-	right: -20px;
-	transition: 0.5s;
-}
-
-.buttoncancel span:after {
-	content: '\2716';
-	position: absolute;
-	opacity: 0;
-	font-size: 25px;
-	bottom: -4px;
-	right: -20px;
-	transition: 0.5s;
-}
-
-.buttongroup{
-	padding-top: 25px;
-	text-align: center;
-}
-
-.button2 span:after {
-	content: '\00AB';
-	font-size: 40px;
-	position: absolute;
-	opacity: 0;
-	bottom: -9px;
-	left: -80px;
-}
-
-.button2:hover span{
-	padding-left: 20px;
-}
-
-.buttonsubmit:hover span, .buttoncancel:hover span, .buttonconfirm:hover span{
-	padding-right: 30px;
-}
-
-.buttonsubmit:hover span:after, .button2:hover span:after, .buttoncancel:hover span:after, .buttonconfirm:hover span:after{
-	opacity: 1;
-	right: 0;
-}
-
-@media only screen and (max-width: 1000px){
-	#time{
-	width: 100%;
-	padding: 12px 20px;
-	margin: 8px 0;
-	display: inline-block;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	box-sizing: border-box;
-	}
-
-	#eventdate{
-	width: 100%;
-	padding: 12px 20px;
-	margin: 8px 0;	
-	display: inline-block;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	box-sizing: border-box;
-	}
-
-	#address, #occasion {
-	width: 100%;
-  	padding: 12px 20px;
-	margin: 8px 0;
-	display: inline-block;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	box-sizing: border-box;
-	}
-	
-	.package {
-	display: block;
- 	position: relative;
- 	padding-left: 35px;
-	padding-right: 35px;
- 	font-size: 22px;
-	color: white;
- 	-webkit-user-select: none;
- 	-moz-user-select: none;
- 	-ms-user-select: none;
- 	user-select: none;
-	}
-
+.statistics_subheader{
+	color: #EEF8F7;
+	text-align:center;
+	font-style: bold;
+	font-family: Nominee, Arial, sans-serif;
+	font-size: 30px;
 }

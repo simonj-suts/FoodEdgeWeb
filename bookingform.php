@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<title>Booking Form</title>
-	<link rel="stylesheet" type="text/css" href="form_style.css"/>
+	<link rel="stylesheet" type="text/css" href="form_table.css"/>
 	<meta charset="utf-8">
 	<meta name="description" content="FoodEdge Booking Form">
 	<meta name="keywords" content="Web, programming">
@@ -13,7 +13,7 @@
 	<div class="bookingform">
 	<button onclick="window.location='index.php';" class="button2"><span>Back</span></button>
 	<form name="bookingform" action="confirmationpage.php" method="post" onsubmit="return checkForm()">
-		<h1>Booking</h1>
+		<h1 class="bookingform_header">Booking</h1>
 		<p class = "Names"> Hello <?php echo $namez = "Simon"?>,</p>
 		<select name="occasion" id="occasion">
 			<option value="" selected disabled hidden><option value="" selected disabled hidden>Please select your occasion</option>

@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
 	<title>Booking Successful</title>
-	<link rel="stylesheet" type="text/css" href="form_style.css"/>
+	<link rel="stylesheet" type="text/css" href="form_table.css"/>
 	<meta charset="utf-8">
 	<meta name="description" content="Confirmation Process">
 	<meta name="keywords" content="Web, programming">
