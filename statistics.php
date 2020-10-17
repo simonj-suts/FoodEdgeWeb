@@ -81,7 +81,7 @@
 				fontSize: 21,
 				titleTextStyle: { color: '#FFFFFF' },
 				legendTextStyle: { color: '#FFFFFF' },
-				backgroundColor :{fill : 'black' },
+				backgroundColor :{fill : '#2E2E2E' },
 				is3D: true,
 			};
 
@@ -91,14 +91,21 @@
 		</script>
 	</head>
 	
-	<body>
+	<body id="statistics_body">
 		<article>
 			<h1 id="statistics_header">Statistics for Business Operation</h1>
+			
+				<div class="statistics_button">
+					<a class="button_nav" href="statistics.php#statistics_subheader">Record Table</a>
+					<a class="button_nav" href="statistics.php#total_table">Total Revenue</a>
+					<a class="button_nav" href="statistics.php#piechart_3d">Graph Statistics</a>
+				</div>
+				
 				<h2 class="statistics_subheader">Record Table</h2>
 					<?php
 						$sum = 0;
 							
-						echo "<div id=\"view_table_div\"><table id=\"statistics_table\">";
+						echo "<table id=\"statistics_table\">";
 						echo "<tr><th>Order Date</th><th>Package ID</th><th>Package Price</th></tr>";
 						
 						for($x=0;$x<count($row);$x++) {
@@ -107,12 +114,11 @@
 							echo "<td>".$row[$x]['price_per_pax']."</td>";
 							$sum += $row[$x]['price_per_pax'];
 						}
+						echo "</table>";
 						
-						echo "</table></div>";
+						echo "<table id=\"total_table\">";
 						
-						echo "<div id=\"view_table_div\"><table id=\"statistics_table\">";
-						
-						echo "<tr><th>Total Estimated Revenue :</th><th>RM{$sum}</th></tr>";
+						echo "<tr><td>Total Estimated Revenue :</td><td>RM{$sum}</td></tr>";
 						
 						echo "</table></div>";
 							
@@ -120,6 +126,10 @@
 					?>
 				<h2 class="statistics_subheader">Graph Statistics</h2>	
 				<div id="piechart_3d" style="width: 900px; height: 500px; display: block; margin: 0 auto;"></div>
+				
+				<div class="statistics_button">
+					<a class="button_nav" href="statistics.php#statistics_header">Back to the Top</a>
+				</div>
 		</article>
 	</body>
 </html>
