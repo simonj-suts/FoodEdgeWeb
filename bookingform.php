@@ -10,6 +10,7 @@
 	<script type="text/javascript" src="validator.js"></script>
 </head>
 <body class="bookingformbody">
+	<?php session_start() ?>
 	<div class="bookingform">
 	<button onclick="window.location='index.php';" class="button2"><span>Back</span></button>
 	<form name="bookingform" action="confirmationpage.php" method="post" onsubmit="return checkForm()">
