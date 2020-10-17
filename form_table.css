@@ -751,7 +751,7 @@ h1.changePassword{
 }
 
 /* CSS design for the payment page*/
-.row {
+[class="paymentpage"] .row {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
@@ -759,26 +759,26 @@ h1.changePassword{
     margin: 0 20px;
 }
 
-.col-25 {
+[class="paymentpage"] .col-25 {
     -ms-flex: 25%;
     flex: 25%;
 }
 
-.col-50 {
+[class="paymentpage"] .col-50 {
     -ms-flex: 50%;
     flex: 50%;
 }
 
-.col-75 {
+[class="paymentpage"] .col-75 {
     -ms-flex: 75%;
     flex: 75%;
 }
 
-.col-25, .col-50, .col-75 {
+[class="paymentpage"] .col-25, .col-50, .col-75 {
     padding: 0 16px;
 }
 
-.container {
+[class="paymentpage"] .container {
     padding: 5px 20px 15px 20px;
     margin-right:auto;
     margin-left: auto;
@@ -787,7 +787,7 @@ h1.changePassword{
     height: 900px;
 }
 
-input[id=fname],input[id=femail],input[id=fadd],input[id=cardname],input[id=cardnum] {
+[class="paymentpage"] input[id=fname],[class="paymentpage"] input[id=femail],[class="paymentpage"] input[id=fadd],[class="paymentpage"] input[id=cardname],[class="paymentpage"] input[id=cardnum] {
     width: 100%;
     height: 30px;
     margin-bottom: 20px;
@@ -801,13 +801,13 @@ input[id=fname],input[id=femail],input[id=fadd],input[id=cardname],input[id=card
     
 }
 
-label {
+[class="paymentpage"] label {
     margin-bottom: 10px;
     display: block;
     color: #eef8f7;
 }
 
-.button {
+[class="paymentpage"] .button {
     background-color: #e35f21;
     color: white;
     padding: 12px;
@@ -819,33 +819,33 @@ label {
     font-size: 17px;
 }
 
-.button:active,.button:focus{
+[class="paymentpage"] .button:active,[class="paymentpage"] .button:focus{
     outline: none;
     border: 4px solid #555;
 }
 
-form{
+[class="paymentpage"] form{
     width: 500px;
     height: 700px;
     margin-left: auto;
     margin-right: auto;
 }
 
-.total,.totaldes{
+[class="paymentpage"] .total,[class="paymentpage"] .totaldes{
     text-align: center;
     color: #eef8f7;
 }
 
-.exp{
+[class="paymentpage"] .exp{
     display: table;
 }
 
-.expcell{
+[class="paymentpage"] .expcell{
     display: table-cell;
     padding-left: 35px;
 }
 
-input[id=cardmonth],input[id=cardyear],input[id=cvv]{
+[class="paymentpage"] input[id=cardmonth],[class="paymentpage"] input[id=cardyear],[class="paymentpage"] input[id=cvv]{
     width: 55%;
     height: 27px;
     margin-bottom: 20px;
@@ -861,38 +861,38 @@ input[id=cardmonth],input[id=cardyear],input[id=cvv]{
     outline: none;
 }
 
-body[class="paymentpage"]{
+[class="paymentpage"]{
     background-color: #353535;    
 }
 
-h3{
+[class="paymentpage"] h3{
     color: #eef8f7;
 }
 
-body[class="paymentpage"] ::placeholder{
+[class="paymentpage"] ::placeholder{
 	color: #dedede91;
 	font-size: 15px;
 }
 
-textarea:focus, input:focus {
+[class="paymentpage"] textarea:focus, [class="paymentpage"] input:focus {
     color: #eef8f7;
 }
 
-input, select, textarea{
+[class="paymentpage"] input, [class="paymentpage"] select, [class="paymentpage"] textarea{
     color: #eef8f7;
 }
 
-input[type=text]:focus {
+[class="paymentpage"] input[type=text]:focus {
     border: 3px solid #555;
 }
 
-input:focus::-webkit-input-placeholder {
+[class="paymentpage"] input:focus::-webkit-input-placeholder {
     font-size: .90em;
     position: relative;
     top: -15px; 
     transition: 0.5s ease-out;
 }
 
-input::-webkit-input-placeholder {
+[class="paymentpage"] input::-webkit-input-placeholder {
     transition: 0.5s ease-in;
 }
