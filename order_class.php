@@ -180,10 +180,10 @@ class Order{
 		$rows = [];
 		
 		$query = " SELECT * 
-				FROM ".$this->tableName." 
-				NATURAL JOIN userinformation
-				NATURAL JOIN package
-				ORDER BY order_date";
+                 FROM userinformation
+                 NATURAL RIGHT JOIN ".$this->tableName."
+                NATURAL LEFT JOIN package
+                ORDER BY order_date";
 		$result = @mysqli_query($this->conn,$query);
 		
 		while($row = mysqli_fetch_assoc($result)){
@@ -191,6 +191,12 @@ class Order{
 		}
 		
 		return $rows;
+
+		if ($result){
+
+		} else{
+			
+		}
 	}
 	
 	// add new order
@@ -230,18 +236,18 @@ class Order{
 	}
 
 	// only update an existing order's status
-	public function updateOrderStatus(){
-		$query = "UPDATE
-					".$this->tableName."
-				SET
-					order_status='$this->o_status'
-				WHERE
-					order_id='$this->o_id'";
+	public function updateOrderStatus($id){
+		
+		if (!$this->setOrderID($id)){
+			return "OrderID: ".$id." does not exist";
+		}
+		
+		$query = "UPDATE ".$this->tableName." SET order_status='$this->o_status' WHERE order_id='$this->o_id'";
 
-		if (mysqli_query($this->conn, $query)) {
-			echo "Successfully update status with OrderID: ".$this->o_id;
+		if (@mysqli_query($this->conn, $query)) {
+			return "Successfully update status with OrderID: ".$this->o_id;
 		} else {
-			echo "Error: " . $query. "<br>" . mysqli_error($this->conn);
+			return "Error: " . $query. "<br>" . mysqli_error($this->conn);
 		}
 	}
 }
