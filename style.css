@@ -70,7 +70,7 @@
     margin: 0 auto;
 }
 
-#orderlist div:first-child{
+#orderlist > div:first-child{
     margin-top: 5vh;
     color: white;
 }
@@ -106,11 +106,11 @@
     background-color: black;
 }
 
-#orderlist form+a{
+hr+a{
     background-color:  #E35F21;
 }
 
-#orderlist form+a:hover{
+hr+a:hover{
     color: #E35F21;
 }
 
@@ -159,8 +159,8 @@
     border-bottom: 1.5px solid  #e6e6e6;
 }
 
-#pending_form, #orderlisttable_deliv::after{
-    height: 85vh;
+#pending_form, #orderlist hr{
+    margin-bottom: 10%;
 }
 
 #orderlisttable_pend th{
@@ -178,6 +178,10 @@
 
 #orderlisttable_pend td.event{
     width: 46%;
+}
+
+#orderlisttable_pend>tr:first-child td:last-child{
+    text-align:  center;
 }
 
 #ol_buttonHolder{
@@ -201,7 +205,6 @@
     transition: 0.3s;
     box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
 }
-
 
 .ol_customSelect select{
     padding: 10px 5px;

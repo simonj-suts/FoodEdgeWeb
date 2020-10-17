@@ -111,12 +111,13 @@
                 <input type="reset" value="Cancel">
             </div>
         </form>
+        <hr/>
         <?php
             if ((count($delivered_rec) && count($pending_rec) != 0)){
                 echo "<a href=\"orderlist.php#orderlist\" id=\"topending\">See pending orders &#129121;</a>";
             }
         ?>
-
+        
         <table id="orderlisttable_deliv" <?php echo $delTable_vis ?>>
             <caption>Delivered</caption>
             <tr>
@@ -143,7 +144,7 @@
                 }
             ?>
         </table>
-        <p></p>
+        <br/>
     </body>
 </html>
 
