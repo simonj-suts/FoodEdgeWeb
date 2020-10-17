@@ -28,7 +28,7 @@
 		
 		public function setCustomerFirstName($f_name){
 			$valid = false;
-			if (preg_match("/^[a-zA-Z]+$/",$f_name)){
+			if (preg_match("/^[a-zA-Z ]+$/",$f_name)){
 				$this->f_name = $f_name;
 				$valid = true;
 			}
@@ -41,7 +41,7 @@
 		
 		public function setCustomerLastName($l_name){
 			$valid = false;
-			if (preg_match("/^[a-zA-Z]+$/",$l_name)){
+			if (preg_match("/^[a-zA-Z ]+$/",$l_name)){
 				$this->l_name = $l_name;
 				$valid = true;
 			}
@@ -76,7 +76,7 @@
 		
 		public function setPhoneNo($c_pnumber){
 			$valid = false;
-			if (preg_match("/^[0-9]+$/",$c_pnumber)) {
+			if (preg_match("/^(01)[0-9]{7}$/",$c_pnumber)) {
 				$this->c_pnumber = $c_pnumber;
 				$valid = true;
 			}
@@ -89,6 +89,7 @@
 		
 		public function setSecQuestion($s_question){
 			$this->s_question = $s_question;
+
 		}
 		
 		public function getSecQuestion(){
@@ -96,30 +97,43 @@
 		}
 
 		public function setSecAnswer($s_answer){
-			$valid = false;
-			if (preg_match("/^[a-zA-Z]+$/",$s_answer)){
-				$this->s_answer = $s_answer;
-				$valid = true;
-			}
-			return $valid;
+			$this->s_answer = $s_answer;
 		}
 		
 		public function getSecAnswer(){
 			return $this->s_answer;
 		}
 		
+		public function currentConnection(){
+			return $this->conn;
+		}
 		public function read(){
 			$rows = [];
 			
 			$query = "SELECT * FROM ".$this->tableName." ORDER BY CustomerID";
 			$result = @mysqli_query($this->conn, $query);
 			
-			while($row = mysqli_fetch_assoc($result)){
+			/*while($row = mysqli_fetch_assoc($result)){
 				$rows[] = $row;
-			}
-			return $rows;
+			}*/
+			
+			
+			if(mysqli_num_rows($result) > 0){
+					echo "<table>";
+					echo "<tr>";
+						echo "<th>first_name</th>";
+						echo "<th>last_name</th>";
+					echo "</tr>";
+				while($row = mysqli_fetch_array($result)){
+					echo "<tr>";
+						echo "<td>" . $row['CustomerFName'] . "</td>";
+						echo "<td>" . $row['CustomerLName'] . "</td>";
+					echo "</tr>";
+				}
+				
+			//return $rows;
 		}
-		
+		}
 		// add new order
 		public function createOrder(){
 			$f_name = $this->f_name;
@@ -133,13 +147,93 @@
 					INSERT INTO ".$this->tableName."(CustomerFName, CustomerLName, Email, Password, PhoneNo, SecQuestion, SecAnswer) 
 					VALUES ('$f_name', '$l_name', '$c_email', '$c_password', '$c_pnumber', '$s_question', '$s_answer')";
 			
-			if (mysqli_query($this->conn, $query)){
-			  echo "New record created successfully";
-			}
-			else{
+			if (!mysqli_query($this->conn, $query)) {
+			
 			  echo "Error: " . $query. "<br>" . mysqli_error($this->conn);
 			}
 		}
+		
+		public function ifExist($userEmail,$userPassword){
+			
+			
+			$result = mysqli_query($this->conn, "SELECT * FROM userinformation WHERE Email LIKE '$userEmail'AND Password LIKE '$userPassword'");
+			
+			
+			$row = mysqli_fetch_assoc($result);
+
+			if($row == null)
+			{
+				echo "<p align=center>User account does not exist.</p>";
+				return false;
+			}else{
+				
+				return true;
+			}
+					
+		}
+		
+		public function ifEmailExist($userEmail){
+			
+			
+			$result = mysqli_query($this->conn, "SELECT * FROM userinformation WHERE Email LIKE '$userEmail'");
+			
+			
+			$row = mysqli_fetch_assoc($result);
+
+			if($row == null)
+			{
+				echo "<p align=center>User account does not exist.</p>";
+				return false;
+			}else{
+				
+				return true;
+			}
+					
+		}
+		
+		public function retrieveSecQues($userEmail){
+			$result = mysqli_query($this->conn, "SELECT * FROM userinformation WHERE Email LIKE '$userEmail'");
+			
+			
+			$row = mysqli_fetch_assoc($result);
+
+			if($row == null)
+			{
+				echo '<p align=center>Security Question does not exist.</p>';
+				
+			}else{
+				echo '<p id="showSecQues"><p>Security Question: '.$row['SecQuestion'].'</p>';
+				
+			}
+			
+		}
+		
+		public function matchSecAns($userEmail,$userAns){
+			$result = mysqli_query($this->conn, "SELECT SecAnswer FROM userinformation WHERE Email = '$userEmail'");
+			
+			
+			$row = mysqli_fetch_assoc($result);
+			
+			if($row['SecAnswer']== $userAns)
+			{
+				return true;
+				
+			}
+			return false;
+			
+		}
+		
+		public function changePassword($pass, $userEmail){
+			$query= "UPDATE userinformation SET Password='$pass' WHERE Email LIKE '$userEmail'";
+			
+			if (!mysqli_query($this->conn, $query)) {
+			
+			  echo "Error: " . $query. "<br>" . mysqli_error($this->conn);
+			}
+			else{
+				echo '<h1 class="changePassword">Password Changed Successfully</h1>';
+				echo '<p class="changePassword">Please login with your new password.</p>';
+			}
+		}
 	}
-	
 ?>
