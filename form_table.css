@@ -1,13 +1,12 @@
 
-/**{
+*{
 	font-family: Nominee,sans-serif;
-	font-size:18px;
-	
+	/*font-size:18px;*/
 }
 
-body,header,footer{
+.registration-body, .login-body{
 	background-image: url("media/reg-background.png");
-}*/
+}
 
 #statistics_table{
 	margin: 0 auto;

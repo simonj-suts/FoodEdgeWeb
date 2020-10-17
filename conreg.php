@@ -19,7 +19,7 @@
 		
 	</head>
 	
-	<body onload="successRegistration()">
+	<body class="registration-body" onload="successRegistration()">
 	
 		<header></header>
 		

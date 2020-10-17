@@ -20,7 +20,7 @@
 		
 	</head>
 	
-	<body onload="document.registration-form.first.focus()">
+	<body class="login-body" onload="document.registration-form.first.focus()">
 	
 		<header>
 			

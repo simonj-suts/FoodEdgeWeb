@@ -17,7 +17,7 @@
 		
 	</head>
 	
-	<body onload="document.registration-form.first.focus()">
+	<body class="registration-body" onload="document.registration-form.first.focus()">
 	
 		<header>
 			
