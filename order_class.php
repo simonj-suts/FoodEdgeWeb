@@ -53,7 +53,6 @@ class Order{
 				}
 			}
 		}
-		
 		return $valid;
 	}
 	
@@ -202,7 +201,6 @@ class Order{
 					('$this->c_id','$this->o_date','$this->o_status','$this->occasion','$this->p_id','$this->address','$this->o_eventTime','$this->o_eventDate')";
 					
 		if (mysqli_query($this->conn, $query)) {
-			echo "New order created successfully";
 		} else {
 			echo "Error: " . $query. "<br>" . mysqli_error($this->conn);
 		}

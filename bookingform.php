@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<title>Booking Form</title>
-	<link rel="stylesheet" type="text/css" href="style.css"/>
+	<link rel="stylesheet" type="text/css" href="form_style.css"/>
 	<meta charset="utf-8">
 	<meta name="description" content="FoodEdge Booking Form">
 	<meta name="keywords" content="Web, programming">
