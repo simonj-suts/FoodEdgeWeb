@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="Payment page" content="Customer Payment Page" />
     <link rel="stylesheet" type="text/css" href="form_table.css" />
-    <script src="paymentjs.js"></script>
+    <script src="paymentvalidate.js"></script>
     <title>Payment page</title>
 </head>
 
@@ -33,7 +33,7 @@
                             <label for="cname">Name on Card</label>
                             <input type="text" id="cardname" name="cardname" placeholder="Leon">
                             <label for="cnum">Card number</label>
-                            <input type="text" id="cardnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+                            <input type="text" id="cardnum" name="cardnumber" placeholder="1111 2222 3333 4444">
                             </div>
                         </div>
                         <div class="exp">
