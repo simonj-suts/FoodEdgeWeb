@@ -59,18 +59,14 @@ function checkcname() {
 
 function checkcnum() {
     var cnum = document.getElementById("cardnum").value;
-    var cnumvisaregex = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;
-    var cnumamexregex = /^(?:3[47][0-9]{13})$/;
-    var cnummasterregex = /^(?:5[1-5][0-9]{14})$/;
-    var cnumvisaregexresult = cnumvisaregex.test(cnum);
-    var cnumamexregexresult = cnumamexregex.test(cnum);
-    var cnummasterregexresult = cnummasterregex.test(cnum);
+    var cnumregex = /^(?:4[0-9]{12}(?:[0-9]{3})?|[25][1-7][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$/;
+    var cnumregexresult = cnumregex.test(cnum);
     var cnumvalid = true;
 
     if (cnum == "") {
         errorMessage = errorMessage + "Card number must be filled out.\n";
         cnumvalid = false;
-    } else if (cnumamexregexresult == false || cnummasterregexresult == false || cnumvisaregexresult == false) {
+    } else if (cnumregexresult == false){
         errorMessage = errorMessage + "Please enter a valid Card number.\n";
         cnumvalid = false;
     }
