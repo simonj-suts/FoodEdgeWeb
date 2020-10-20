@@ -1,42 +1,41 @@
 <?php
 include "database.php";
+include "order_class.php";
 
 $formname = $_POST['name'];
 $formemail = $_POST['email'];
 $formadd = $_POST['address'];
 
-$package_name;
-$package_cuisine;
-$pax;
-$price_per_pax;
-$phone;
-$userid;
-$packageid;
-$totalprice;
-$orderdate;
-
 $database = new Database();
 $db = $database->getConnection();
+
+$order = new Order($db);
+$resultorder = $order->read();
 
 $resultuser = mysqli_query($db, "SELECT * FROM userinformation WHERE Email LIKE '$formemail'");
 $rowuser = mysqli_fetch_assoc($resultuser);
 $userid = $rowuser["CustomerID"];
 $phone = $rowuser["PhoneNo"];
 
-$resultorder = mysqli_query($db, "SELECT * FROM orders WHERE order_id LIKE 1"); //1 just for demo, need booking.php to get the order_id using session
-$roworder = mysqli_fetch_assoc($resultorder);
-$packageid = $roworder['package_id'];
-$orderdate = $roworder['order_date'];
 
-$resultpackage = mysqli_query($db, "SELECT * FROM package WHERE package_id LIKE '$packageid'");
-$rowpackage = mysqli_fetch_assoc($resultpackage);
-$package_name = $rowpackage["package_name"];
-$package_cuisine = $rowpackage["package_cuisine"];
-$pax = $rowpackage["pax"];
-$price_per_pax = $rowpackage["price_per_pax"];
+for ($i = 0; $i < count($resultorder); $i++) {
+    if (($resultorder[$i]['CustomerID'] == $userid)&& ($resultorder[$i]['order_status'] == "pending")) {
+        $id = $resultorder[$i]['order_id'];
+        $r = mysqli_query($db, "SELECT * FROM orders WHERE order_id LIKE $id");
+        $roworder = mysqli_fetch_assoc($r);
+        $packageid = $roworder['package_id'];
+        $orderdate = $roworder['order_date'];
 
-$totalprice = $price_per_pax;
+        $resultpackage = mysqli_query($db, "SELECT * FROM package WHERE package_id LIKE '$packageid'");
+        $rowpackage = mysqli_fetch_assoc($resultpackage);
+        $package_name = $rowpackage["package_name"];
+        $package_cuisine = $rowpackage["package_cuisine"];
+        $pax = $rowpackage["pax"];
+        $price_per_pax = $rowpackage["price_per_pax"];
 
+        $totalprice = $price_per_pax;
+    }
+}
 ?>
 
 <!DOCTYPE html>
