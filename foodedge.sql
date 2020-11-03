@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Oct 17, 2020 at 05:23 AM
+-- Host: localhost
+-- Generation Time: Nov 03, 2020 at 12:38 PM
 -- Server version: 10.4.14-MariaDB
--- PHP Version: 7.2.33
+-- PHP Version: 7.2.34
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -26,6 +26,19 @@ USE `foodedge`;
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `feedback`
+--
+
+CREATE TABLE `feedback` (
+  `FeedbackID` int(11) NOT NULL,
+  `CustomerID` int(11) NOT NULL,
+  `FeedbackCategory` varchar(255) DEFAULT NULL,
+  `Suggestion` varchar(500) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `orders`
 --
 
@@ -40,6 +53,13 @@ CREATE TABLE `orders` (
   `event_time` time NOT NULL,
   `event_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`order_id`, `CustomerID`, `order_date`, `order_status`, `occasion`, `package_id`, `address`, `event_time`, `event_date`) VALUES
+(1, 1, '2020-11-02', 'pending', 'celebration', 5, 'Jalan Cuisin, Lot 2, 93350, Kuching, Sarawak', '14:00:00', '2020-11-18');
 
 -- --------------------------------------------------------
 
@@ -70,11 +90,32 @@ INSERT INTO `package` (`package_id`, `package_name`, `package_cuisine`, `pax`, `
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `roles`
+--
+
+CREATE TABLE `roles` (
+  `RolesID` int(11) NOT NULL,
+  `RolesName` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `roles`
+--
+
+INSERT INTO `roles` (`RolesID`, `RolesName`) VALUES
+(1, 'Customer'),
+(2, 'Operation'),
+(3, 'Management');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `userinformation`
 --
 
 CREATE TABLE `userinformation` (
   `CustomerID` int(11) NOT NULL,
+  `RolesID` int(11) DEFAULT NULL,
   `CustomerFName` varchar(255) NOT NULL,
   `CustomerLName` varchar(255) NOT NULL,
   `Email` varchar(255) NOT NULL,
@@ -89,6 +130,12 @@ CREATE TABLE `userinformation` (
 --
 
 --
+-- Indexes for table `feedback`
+--
+ALTER TABLE `feedback`
+  ADD PRIMARY KEY (`FeedbackID`);
+
+--
 -- Indexes for table `orders`
 --
 ALTER TABLE `orders`
@@ -101,6 +148,12 @@ ALTER TABLE `package`
   ADD PRIMARY KEY (`package_id`);
 
 --
+-- Indexes for table `roles`
+--
+ALTER TABLE `roles`
+  ADD PRIMARY KEY (`RolesID`);
+
+--
 -- Indexes for table `userinformation`
 --
 ALTER TABLE `userinformation`
@@ -111,16 +164,28 @@ ALTER TABLE `userinformation`
 --
 
 --
+-- AUTO_INCREMENT for table `feedback`
+--
+ALTER TABLE `feedback`
+  MODIFY `FeedbackID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `package`
 --
 ALTER TABLE `package`
   MODIFY `package_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `roles`
+--
+ALTER TABLE `roles`
+  MODIFY `RolesID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `userinformation`
