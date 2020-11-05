@@ -7,9 +7,25 @@
 		<meta name="keywords" content="feedback, food, catering, services">
 		<meta name="author" content="Jibril Saleem">
 		<link rel="stylesheet" type="text/css" href="form_table.css"/>
+		<link rel="stylesheet" type="text/css" href="styles/nav_style.css"/>
+   		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
 	</head>
 	<body class="feedbackformbody">
 		<?php session_start() ?>
+		<?php
+		     /* arrays of authorised user */
+		     define("AUTHORISED_ROLES",["2"]);
+
+		     /* Connect to FoodEdge database */ 
+		     $database = new Database();
+		     $db = $database->getConnection();
+
+		     /* Get current user's information */
+		     $user = new userInformation($db);
+		     $user->getCurrentUser($_SESSION['custid']);
+		     $user->checkAuthority(AUTHORISED_ROLES);
+		?>
+		<?php include_once "navigation.php"?>
 		<div class="feedbackform">
 			<form name="feedbackform" action="feedbackconfirmation.php" method="post" onsubmit="return myFunction()">
 				<h1 class="feedbackform_header">Feedback Session</h1>
@@ -36,5 +52,6 @@
 				</div>	
 			</form>
 		</div>
+	    <?php include_once "footer.php" ?>
 	</body>
 </html>
