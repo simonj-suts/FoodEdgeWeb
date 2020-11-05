@@ -14,6 +14,7 @@
 		private $c_pnumber;
 		private $s_question;
 		private $s_answer;
+		private $user_role = null;
 		
 		public function __construct($db){
 			$this->conn = $db;
@@ -111,6 +112,10 @@
 		public function currentConnection(){
 			return $this->conn;
 		}
+
+		public function getUserRole(){
+			return $this->user_role;
+		}
 		
 		public function read(){
 			$rows = [];
@@ -118,9 +123,6 @@
 			$query = "SELECT * FROM ".$this->tableName." ORDER BY CustomerID";
 			$result = @mysqli_query($this->conn, $query);
 			
-			/*while($row = mysqli_fetch_assoc($result)){
-				$rows[] = $row;
-			}*/
 			
 			
 			if(mysqli_num_rows($result) > 0){
@@ -137,10 +139,31 @@
 				}
 				
 			//return $rows;
-		}
+			}
 		
 		}
-		// add new order
+		
+		public function getCurrentUser($userID){
+			$query = "SELECT * FROM userinformation WHERE CustomerID=".$userID;
+			
+			try{
+				$result = @mysqli_query($this->conn,$query);
+				if (@mysqli_num_rows($result)==1){
+					$userData = mysqli_fetch_array($result);
+					$this->f_name = $userData['CustomerFName'];
+					$this->l_name = $userData['CustomerLName'];
+					$this->c_email = $userData['Email'];
+					$this->c_password = $userData['Password'];
+					$this->c_pnumber = $userData['PhoneNo'];
+					$this->s_question = $userData['SecQuestion'];
+					$this->s_answer = $userData['SecAnswer'];
+					$this->user_role = $userData['RolesID'];
+				}
+			} catch (Exception $e){
+				echo "Error: ".$e.getMessage();
+			}
+		}
+		
 		public function createOrder(){
 			$f_name = $this->f_name;
 			$l_name = $this->l_name;
@@ -149,9 +172,13 @@
 			$c_pnumber = $this->c_pnumber;
 			$s_question = $this->s_question;
 			$s_answer = $this->s_answer;
+			// set customer's role by default
+			$this->user_role = 1;
+			$user_role = $this->user_role;
+
 			$query = "
-					INSERT INTO ".$this->tableName."(CustomerFName, CustomerLName, Email, Password, PhoneNo, SecQuestion, SecAnswer) 
-					VALUES ('$f_name', '$l_name', '$c_email', '$c_password', '$c_pnumber', '$s_question', '$s_answer')";
+					INSERT INTO ".$this->tableName."(RolesID,CustomerFName, CustomerLName, Email, Password, PhoneNo, SecQuestion, SecAnswer) 
+					VALUES ('$user_role','$f_name', '$l_name', '$c_email', '$c_password', '$c_pnumber', '$s_question', '$s_answer')";
 			
 			if (!mysqli_query($this->conn, $query)) {
 			
@@ -240,5 +267,20 @@
 				echo '<p class="changePassword">Please login with your new password.</p>';
 			}
 		}
+
+		public function checkAuthority($authorised_roles){
+			$result = false;
+			foreach ($authorised_roles as $role){
+				if ($this->user_role==$role){
+					$result = true;
+				}
+			}
+
+			if (!$result){
+				header('Location: cust_login.php');
+			}
+		}
 	}
+	
+
 ?>
