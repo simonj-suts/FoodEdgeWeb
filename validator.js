@@ -1,43 +1,39 @@
-
 function checkForm(){
-	var error = "";
-	//var namecheck = false;
 	var timecheck = false;
 	var eventdatecheck = false;
 	var addresscheck = false;
 	var occasioncheck = false;
 	var packagecheck = false;
-	//var name = document.forms["bookingform"]["name"].value;
 	var time = document.forms["bookingform"]["time"].value;
 	var address = document.forms["bookingform"]["address"].value;
 	var eventdate = document.forms["bookingform"]["eventdate"].value;
 	var occasion = document.forms["bookingform"]["occasion"].value;
 	var package_ = document.forms["bookingform"]["package"].value;
-	
-	//if (name == "") {
-	//	error += "Name must be filled out\n";
-	//}else{
-	//	namecheck = true;
-	//}
-	
+
+	displayError("timeappear", "");
+	displayError("addressappear", "");
+	displayError("occasionappear", "");
+	displayError("dateappear", "");
+	displayError("packageappear", "");
+
 	if (time == "") {
-		error += "Please select the time\n";
+		displayError("timeappear", "<i class='fas fa-exclamation-circle'></i>" + " Please select your time");
 	}else{
 		timecheck = true;
 	}
 	
 	if (address == "") {
-		error += "Address must be filled out\n";
+		displayError("addressappear", "<i class='fas fa-exclamation-circle'></i>" + " Address must be filled out");
 	}else{
 		addresscheck = true;
 	}
 	
 	if (eventdate == "") {
-		error += "Please include the date of the event\n";
+		displayError("dateappear", "<i class='fas fa-exclamation-circle'></i>" + " Please include the date of the event");
 	}else{
 		var ToDate = new Date();
 		if(new Date(eventdate).getTime() <= ToDate.getTime()){
-			error += "The date must be bigger or equal to today's date\n";
+			displayError(dateerror, dateiconerror, "The date must be bigger or equal to today's date");
 		}
 		else{
 			eventdatecheck = true;
@@ -45,13 +41,13 @@ function checkForm(){
 	}
 	
 	if (occasion == "") {
-		error += "Please select the occasion of the event\n";
+		displayError("occasionappear", "<i class='fas fa-exclamation-circle'></i>" + " Please select the occasion of the event");
 	}else{
 		occasioncheck = true;
 	}
 	
 	if(package_ == ""){
-		error += "Please select one of the packages\n";
+		displayError("packageappear", "<i class='fas fa-exclamation-circle'></i>" + " Please select one of the packages");
 	}else{
 		packagecheck = true;
 	}
@@ -61,12 +57,11 @@ function checkForm(){
 		return true;
 	}
 	else{
-		alert(error);
 		return false;
 	}
 }
 
-function resetForm(){
-	
+function displayError(small, output){
+	var test = document.getElementById(small);
+	test.innerHTML = output;
 }
-

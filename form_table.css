@@ -237,7 +237,6 @@
 
 }
 
-
 #returnBtn button, #fogpass-table-button button {
 	padding: 2% 2%;
 	font-size:0.8em;
@@ -399,6 +398,7 @@ h1.changePassword{
 
 #radiogroup{
 	padding-top: 15px;
+	margin-bottom: 15px;
 }
 
 
@@ -430,6 +430,7 @@ h1.changePassword{
 #address, #occasion {
 	width: 100%;
 	font-family: Nominee, Arial, sans-serif;
+	color: #e35f21;
   	padding: 12px 20px;
 	margin: 8px 0;
 	font-size: 20px;
@@ -438,6 +439,7 @@ h1.changePassword{
 	border-radius: 4px;
 	box-sizing: border-box;
 }
+
 
 #time:focus, #eventdate:focus {
 	outline: none !important;
@@ -452,6 +454,11 @@ h1.changePassword{
 #address:focus { 
 	outline: none !important;
 	border: 3px solid #e35f21;
+}
+
+#address::placeholder{
+	color: #e35f21;
+	opacity: 100%;
 }
 
 /* The container */
@@ -747,7 +754,37 @@ h1.changePassword{
  	-ms-user-select: none;
  	user-select: none;
 	}
+}
 
+#occasionappear{
+	color:red;
+}
+
+#timeappear{
+	color:red;
+	visibility: visible;
+}
+
+#dateappear{
+	color:red;
+	visibility: visible;
+}
+
+#packageappear{
+	color:red;
+	visibility: visible;
+}
+
+
+#addressappear{
+	color:red;
+	visibility: visible;
+}
+
+
+.error{
+	display: inline;
+	margin-left: 36%;
 }
 
 /* CSS design for the payment page*/
