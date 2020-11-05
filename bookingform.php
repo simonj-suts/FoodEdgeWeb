@@ -7,13 +7,35 @@
 	<meta name="keywords" content="Web, programming"/>
 	<meta name="author" content="AWG MUHAMMAD IZZAT BIN AWANG SAFRI"/>
 	<link rel="stylesheet" type="text/css" href="form_table.css"/>
+	<link rel="stylesheet" type="text/css" href="styles/nav_style.css"/>
+	<link rel="stylesheet" type="text/css" href="style.css"/>
 	<script type="text/javascript" src="validator.js"></script>
 	<script src="https://kit.fontawesome.com/cebce8210e.js" crossorigin="anonymous"></script>
 </head>
 <body class="bookingformbody">
-	<?php session_start() ?>
+<article>
+		<?php session_start() ?>
+		<?php
+			
+			 /* arrays of authorised user */
+			 define("AUTHORISED_ROLES",["1","2","3"]);
+
+			 /* Connect to FoodEdge database */ 
+			 include 'database.php';
+			 include 'userinformation_class.php';
+			 $database = new Database();
+			 $db = $database->getConnection();
+
+			 /* Get current user's information */
+			 $user = new userInformation($db);
+			 $user->getCurrentUser($_SESSION['custid']);
+			$user->checkAuthority(AUTHORISED_ROLES);
+		?>
+		<?php include_once "navigation.php"?>
+	</article>
+	
 	<div class="bookingform">
-	<button onclick="window.location='cust_login.php';" class="button2"><span>Back</span></button>
+	<button onclick="window.location='cust_login.php';" class="buttonback"><span>Back</span></button>
 	<form name = "bookingform" action="confirmationpage.php" method="post" onsubmit="return checkForm()">
 		<h1 class="bookingform_header">Booking</h1>
 		<p class = "Names"> Hello <?php echo $_SESSION["fname"]; echo " ". $_SESSION["lname"];?>,</p>
@@ -67,10 +89,11 @@
 		<textarea name="address" id="address" maxlength="250" rows="6" placeholder="Address"></textarea>
 		<small id="addressappear"></small>
 		<div class ="buttongroup">
-			<input type="reset" class="button2"></button>
+			<input type="reset" class="button2"/>
 			<button type='submit' class="buttonsubmit"><span>Submit</span></button>
 		</div>	
 	</form>
 	</div>
+	<?php include_once "footer.php" ?>  
 </body>
 </html>

@@ -52,8 +52,8 @@
 					<textarea name="suggestion" id="suggestion" maxlength="250" rows="6" placeholder="Suggestion/Feedback" required="required"></textarea>
 				</div>
 				<div class ="feedbackbuttongroup">
+					<input type="reset" class="feedbackresetbutton"/>
 					<button class="feedbacksubmitbutton"><span>Submit</span></button>
-					<input type="reset" class="feedbackresetbutton"></button>
 				</div>	
 			</form>
 		</div>
