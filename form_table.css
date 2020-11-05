@@ -933,3 +933,227 @@ h1.changePassword{
 [class="paymentpage"] input::-webkit-input-placeholder {
     transition: 0.5s ease-in;
 }
+
+/* Feedback pages CSS*/
+
+.feedbackformbody{
+	font-family: Nominee, Arial, sans-serif;
+	background-image: url("cateringbackground.png");
+	background-position: center; /* Center the image */
+ 	background-repeat: repeat; /* Do not repeat the image */
+  	background-size: cover; /* Resize the background image to cover the entire container */
+	margin: 15px;
+}
+
+.feedbackform_header {
+	text-align:center;
+	color: #e35f21;
+}
+
+.feedbackform {
+	display: block;
+	background-color:#2E2E2E;
+	padding: 50px;
+	font-size: 22px;
+	border-radius: 25px;
+}
+
+.feedbacknames {
+	text-align: center;
+	color: white;
+}
+
+.feedbackdesc{
+	text-align: center;
+	color: white;
+	margin-bottom: 40px;
+}
+
+.feedbacklabel{
+	color: #e35f21;
+}
+
+#feedbackcatinput{
+	width: 100%;
+    padding: 20px 20px;
+    margin: 8px 0 30px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#suggestion{
+	width: 100%;
+    padding: 30px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+	font-size: 20px;
+	color: #e35f21;
+}
+
+#suggestion:focus{
+	outline: none !important;
+	border: 3px solid #e35f21;
+}
+
+#suggestion::placeholder {
+  color: #e35f21;
+  opacity: 1;
+}
+
+.feedbackbuttongroup{
+	padding-top: 25px;
+	text-align: center;
+}
+
+.confirmfeedbackbutton{
+	margin-top: 50px;
+	text-align: center;
+}
+
+.feedbacksubmitbutton, .feedbackresetbutton{
+	border-radius: 4px;
+	background-color: #e35f21;
+	border: none;
+	color: #FFFFFF;
+	text-align: center;
+	font-family: Nominee, Arial, sans-serif;
+	font-size: 22px;
+	padding: 15px;
+	width: 150px;
+	cursor: pointer;
+	margin: 5px;
+}
+
+.buttontohome{
+	border-radius: 4px;
+	background-color: #e35f21;
+	border: none;
+	color: #FFFFFF;
+	text-align: center;
+	font-family: Nominee, Arial, sans-serif;
+	font-size: 22px;
+	padding: 15px;
+	width: 250px;
+	cursor: pointer;
+	margin: 5px;
+}
+
+
+.feedbacksubmitbutton:hover, .feedbackresetbutton:hover, .buttontohome:hover{
+	background-color:black;
+	color: #e35f21;
+}
+
+.feedbacksubmitbutton span, .feedbackresetbutton span, .buttontohome span{
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+}
+
+.feedbacksubmitbutton span:after, .buttontohome span:after {
+	content: '\00bb';
+	position: absolute;
+	opacity: 0;
+	font-size: 40px;
+	bottom: -9px;
+	right: -10px;
+	transition: 0.5s;
+}
+
+.feedbackresetbutton span:after {
+	content: '\00AB';
+	font-size: 40px;
+	position: absolute;
+	opacity: 0;
+	bottom: -9px;
+	left: -80px;
+}
+
+.feedbackresetbutton:hover span{
+	padding-left: 20px;
+}
+
+.feedbacksubmitbutton:hover span, .buttontohome:hover span{
+	padding-right: 30px;
+}
+
+.feedbacksubmitbutton:hover span:after, .feedbackresetbutton:hover span:after, .buttontohome:hover span:after{
+	opacity: 1;
+	right: 0;
+}
+
+.confirmationfeedbackbody{
+	background-image: url("cateringbackground.png");
+	background-position: center; /* Center the image */
+ 	background-repeat: repeat; /* Do not repeat the image */
+	margin: 15px;
+}
+
+.feedbackmessage{
+	display: block;
+	background-color:#2E2E2E;
+	padding: 50px;
+	font-size: 22px;
+	border-radius: 25px;
+	margin-top: 30px;
+}
+
+.confirmheader{
+	color: #e35f21;
+	text-align: center;
+	font-size: 30px;
+}
+
+.confirmmessage{
+	color:white;
+	text-align: center;
+	font-size: 20px;
+	margin-top: 30px;
+	padding: 0 50px;
+}
+
+#feedbacklogo{
+	display: block;
+	margin: 0 auto;
+	max-width: 350px;
+}
+
+#feedbackcat {
+	width: 100%;
+  	padding: 12px 20px;
+	margin: 8px 0;
+	font-size: 20px;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+#feedbackcat:focus { 
+	outline: none !important;
+	border: 3px solid #e35f21;
+}
+
+#feedbackcat{
+	font-family: Nominee, Arial, sans-serif;
+	font-size: 20px;
+	text-align: center;
+	padding-bottom: 30px;
+	color: #e35f21;
+}
+
+#feedbackcat{
+	width: 100%;
+  	padding: 12px 20px;
+	margin: 8px 0 25px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
