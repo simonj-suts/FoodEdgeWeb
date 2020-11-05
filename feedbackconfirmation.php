@@ -12,6 +12,7 @@
 		<meta name="author" content="Jibril Saleem">
 		<link rel="stylesheet" type="text/css" href="form_table.css"/>
 		<link rel="stylesheet" type="text/css" href="styles/nav_style.css"/>
+		<link rel="stylesheet" type="text/css" href="style.css"/>
    		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
 	</head>
 	<body class="confirmationfeedbackbody">
@@ -20,6 +21,8 @@
 	     define("AUTHORISED_ROLES",["1","2","3"]);
 
 	     /* Connect to FoodEdge database */ 
+		 include 'database.php';
+		 include 'userinformation_class.php';
 	     $database = new Database();
 	     $db = $database->getConnection();
 
@@ -35,7 +38,7 @@
 			$feedbackCat = $_POST["feedbackcat"];
 			$suggestion = $_POST["suggestion"];
 
-			include 'database.php';
+
 			$database = new Database();
 			$db = $database->getConnection();
 			$stmt = $db->prepare("INSERT INTO feedback(customerID, FeedbackCategory, Suggestion) values(?,?,?)");
@@ -55,7 +58,7 @@
 			
 			<div class="confirmfeedbackbutton">
 				<button onclick="window.location='cust_login.php';" class="buttontohome"><span>Back to Home</span></button>
-			<div>
+			</div>
 		</div>
 	<?php include_once "footer.php" ?>
 	</body>

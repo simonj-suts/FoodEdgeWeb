@@ -942,7 +942,7 @@ h1.changePassword{
 	background-position: center; /* Center the image */
  	background-repeat: repeat; /* Do not repeat the image */
   	background-size: cover; /* Resize the background image to cover the entire container */
-	margin: 15px;
+	margin: 0;
 }
 
 .feedbackform_header {
@@ -956,6 +956,7 @@ h1.changePassword{
 	padding: 50px;
 	font-size: 22px;
 	border-radius: 25px;
+	margin: 30px 15px;
 }
 
 .feedbacknames {
@@ -1092,7 +1093,7 @@ h1.changePassword{
 	background-image: url("cateringbackground.png");
 	background-position: center; /* Center the image */
  	background-repeat: repeat; /* Do not repeat the image */
-	margin: 15px;
+	margin: 0;
 }
 
 .feedbackmessage{
@@ -1101,7 +1102,7 @@ h1.changePassword{
 	padding: 50px;
 	font-size: 22px;
 	border-radius: 25px;
-	margin-top: 30px;
+	margin: 30px 10px;
 }
 
 .confirmheader{
