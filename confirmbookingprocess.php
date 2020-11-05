@@ -30,6 +30,7 @@
 			$order->setEventTime($_SESSION["time"]);
 			$order->setEventDate($_SESSION["eventdate"]);
 			$order->createOrder();
+			$_SESSION['packageid'] = $packageid;
 			$database->closeConnection();
 		}
 	?>
@@ -77,12 +78,9 @@
 			</tr>
 		</table>
 		<div class="buttongroup">
-			<button onclick="window.location='bookingform.php';" class="button2"><span>Back</span></button>
+			<button onclick="window.location='payment.php';" class="button2"><span>Proceed to payment</span></button>
 		</div>
 	</div>
-	<?php
-		unset($_SESSION["time"], $_SESSION["eventdate"], $_SESSION["package"], $_SESSION["occasion"], $_SESSION["address"]);
-	?>
 </body>
 </html>
 	
