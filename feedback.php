@@ -14,7 +14,7 @@
 		<?php session_start() ?>
 		<?php
 		     /* arrays of authorised user */
-		     define("AUTHORISED_ROLES",["2"]);
+		     define("AUTHORISED_ROLES",["1","2","3"]);
 
 		     /* Connect to FoodEdge database */ 
 		     $database = new Database();
