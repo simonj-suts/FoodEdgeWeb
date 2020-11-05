@@ -1,0 +1,131 @@
+.dropbtn_nav {
+    background-color: #E35F21;
+    color: white;
+    padding: 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn_nav:hover, .dropbtn_nav:focus {
+    background-color: #C7531C;
+}
+
+.dropDown_nav {
+    float: right;
+    position: relative;
+}
+
+.dropbtn_nav_contents {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    right: 0;
+    margin-right: 11px;
+    z-index: 1;
+}
+
+.dropbtn_nav_contents a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropbtn_nav_contents a:hover {background-color: #ddd;}
+
+.showButtonContent {
+    display: block;
+}
+
+#logo-navbar-placeholder{
+    background-color: black;
+    float: left;
+}
+
+#logo-navbar-placeholder a{
+    padding: 0;
+}
+
+nav{
+    background-color: black;
+    padding: 10px;
+}
+
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav li{
+    float: right;
+}
+
+nav li>a{
+    display: block;
+    color: #E35F21;
+    text-align: center;
+    padding: 20px 16px;
+    text-decoration: none;
+}
+
+nav li>a:hover{
+    text-decoration: underline;
+}
+
+
+/*FOOTER RELATED*/
+footer{
+    padding: 15px;
+}
+
+footer div{
+    width: 24%;
+    float: left;
+}
+
+footer div:first-child{
+    padding: 25px 0 0 10px;
+}
+
+footer div:last-child{
+    float: none;
+    clear: left;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+footer div:last-child>p{
+    text-align: center;
+    margin: 40px 0 0 0;
+}
+
+footer ul{
+    padding: 0;
+}
+
+footer li{
+    list-style-type: none;
+    margin: 0 0 15px 0;
+}
+
+footer li>a{
+    color: #E35F21;
+}
+
+footer li>a:hover{
+    color: #C7531C;
+}
+
+.footer-section-header{
+    color: rgb(201, 201, 201);
+    font-size: 15px;
+    margin: 40px 0 30px 0;
+    font-style: italic;
+}
+

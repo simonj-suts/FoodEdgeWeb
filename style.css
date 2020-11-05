@@ -62,10 +62,15 @@
 }
 
 /* FOR LIST OF RECORDS */
-#orderlist{
+#orderpage_body{
     background-color: #2E2E2E;
     font-family: Nominee-Medium, sans-serif;
     scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+}
+
+#orderlist{
     max-width: 90%;
     margin: 0 auto;
 }
@@ -309,4 +314,16 @@ hr+a:hover{
 
 body[class ="receiptpage"]{
     background-color: #353535;
+}
+
+
+.logo-icon{
+	display: block;
+	width: 220px;
+	height: auto;
+}
+
+nav, footer{
+    background-color: black;
+    overflow: auto;
 }
