@@ -77,7 +77,7 @@
 						</td>
 					</tr>
 					
-					<tr><td id="loginBtn" colspan="2"><input id="submit" type="submit" value="Log In"/>
+					<tr><td id="loginBtn" colspan="2"><button type='submit' class="loginbuttonsubmit"><span>Log In</span></button>
 					
 					</td></tr>
 					

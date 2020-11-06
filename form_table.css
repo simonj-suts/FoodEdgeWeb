@@ -74,43 +74,56 @@
 	padding: 2%;
 	color:white;
 }
-
-
-#registration-table input{
+.registration-unit input, select#secQues{
 	width:100%;
-	border:0;
-	border-bottom: 1px solid #C0C0C0 ;
-	text-align: center;
+	border: 1px solid #C0C0C0 ;
+	text-align: left;
 	font-size:15px;
+	font-family:inherit;
 	background-color:#eef8f7;
 	border-radius: 5px;
+	padding:0.5%;
+	margin-bottom:0.5%;
+	display:block;
+	
 
 }
 
-#registration-table input:focus,#registration-table textarea:focus{
-	border: 2px solid white ;
+.registration-unit input:focus,.registration-unit textarea:focus {
+	border: 3px solid blue ;
 	transition-duration: 0.1s;
 }
 
-#registration-table textarea{
+.registration-unit{
+	position:relative;
+}
+
+
+.registration-unit small{
+	color:#DC143C;
+	position:absolute;
+	left:30px;
+	visibility:visible;
+	font-size:0.8em;
+	margin-bottom:2%;
+}
+
+
+
+.reg-label{
+	display:inline-block;
+	color:#d55013;
+}
+
+.registration-unit textarea{
 	width: 100%;
-	border:1px solid #C0C0C0;
 	font-size:15px;
 	background-color:#eef8f7;
 	border-radius: 5px;
-
-}
-#registrationBtn {
-	width:100%;
-	text-align:center;
-	margin:0;
+	color:black;
 }
 
-#registrationBtn input[type=submit]{
-	background-color:#d3d3d3;
-}
-
-#registrationBtn input[type=reset], #registrationBtn input[type=submit], #loginBtn input[type=submit], #recovery-submit-button, #fogpass2-submit, #fogpass3-submit, #fogpass3-reset  {
+#loginBtn input[type=submit], #recovery-submit-button, #fogpass2-submit, #fogpass3-submit, #fogpass3-reset  {
 	width:20%;
 	padding:1% 2%;
 	margin-bottom: 5%;
@@ -122,7 +135,7 @@
 }
 
  
-#registrationBtn input[type=submit]:hover, #registrationBtn input[type=reset]:hover, #recovery-submit-button:hover, #loginBtn input[type=submit]:hover, #fogpass2-submit:hover, #fogpass3-submit:hover , #fogpass3-reset:hover{
+#recovery-submit-button:hover, #loginBtn input[type=submit]:hover, #fogpass2-submit:hover, #fogpass3-submit:hover , #fogpass3-reset:hover{
 
 	background-color: #555555;
 	color: white;
@@ -132,7 +145,7 @@
 
 .login-label {
 	
-	text-align:center;
+	text-align:left;
 }
 
 
@@ -142,6 +155,7 @@
 
 #login-form{
 	width:60%;
+	padding:0;
 }
 
 
@@ -158,12 +172,47 @@
 }
 
 #login-table input{
-	
+	height:2%;
 	width: 100%;
 }
 #login-table input[type="submit"]{
 	
 	width: 20%;
+}
+.loginbuttonsubmit{
+	border-radius: 4px;
+	background-color: #e35f21;
+	border: none;
+	color: #FFFFFF;
+	text-align: center;
+	font-family: Nominee, Arial, sans-serif;
+	font-size: 18px;
+	padding: 13px;
+	width: 150px;
+	cursor: pointer;
+	margin: 5px;
+}
+
+.loginbuttonsubmit:hover {
+	background-color:black;
+	color: #e35f21;
+}
+
+.loginbuttonsubmit span{
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+}
+
+.loginbuttonsubmit span:after {
+	content: '\00bb';
+	position: absolute;
+	opacity: 0;
+	font-size: 40px;
+	bottom: -9px;
+	right: -10px;
+	transition: 0.5s;
 }
 
 #link a {
