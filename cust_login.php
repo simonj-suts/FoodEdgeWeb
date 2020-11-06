@@ -26,7 +26,12 @@
 		<nav>
 			
 		</nav>
-		
+		<?php 
+		session_start();
+		if(isset($_SESSION['custid'])){
+			header('Location: bookingform.php');
+		}
+		?>
 
 	
 			

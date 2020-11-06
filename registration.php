@@ -21,7 +21,12 @@
 	</head>
 	
 	<body class="registration-body" >
-	
+	<?php 
+		session_start();
+		if(isset($_SESSION['custid'])){
+			header('Location: bookingform.php');
+		}
+		?>
 		<form id="registration-form" method="post" action="conreg.php"  onsubmit="return ifInputInfoValid()">
 		
 			
