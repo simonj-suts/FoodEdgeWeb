@@ -21,6 +21,11 @@
     }
 
     function getUserRoleName($userrole){
+
+        if (empty($userrole)){
+            return "Guest";
+        }
+
         switch ($userrole){
             case 1:
                 return "Customer";

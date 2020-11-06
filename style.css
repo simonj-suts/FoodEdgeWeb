@@ -317,13 +317,4 @@ body[class ="receiptpage"]{
 }
 
 
-.logo-icon{
-	display: block;
-	width: 220px;
-	height: auto;
-}
 
-nav, footer{
-    background-color: black;
-    overflow: auto;
-}
