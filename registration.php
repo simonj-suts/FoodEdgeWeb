@@ -22,10 +22,6 @@
 	
 	<body class="registration-body" >
 	
-		<?php include_once "navigation.php"?>
-		
-
-		
 		<form id="registration-form" method="post" action="conreg.php"  onsubmit="return ifInputInfoValid()">
 		
 			
@@ -122,6 +118,5 @@
 								
 		</form>
 		
-		<?php include_once "footer.php" ?>
 	</body>
 </html>
