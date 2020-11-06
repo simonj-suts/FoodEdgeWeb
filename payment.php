@@ -41,7 +41,7 @@ $lname = $rowuser['CustomerLName'];
                         <div class="col-50">
                             <h2 class="total">Your total is $<?php echo $totalprice?></h2> <!-- Example price, need booking.php to get the price,apply on sprint 2 -->
                             <h3 class="totaldes">Pay securely with a credit card or debit card.</h3>
-                            <h2>Personal Information</h2>
+                            <h2 id="formtitle">Personal Information</h2>
                             <label for="fname">Name</label>
                             <input type="text" id="fname" name="name" placeholder="Leon Lai" value="<?php echo $fname?>">
                             <label for="femail">Email</label>
@@ -51,7 +51,7 @@ $lname = $rowuser['CustomerLName'];
                         </div>
 
                         <div class="col-50">
-                            <h2>Credit Card Information</h2>
+                            <h2 id="formtitle">Credit Card Information</h2>
                             <label for="cname">Name on Card</label>
                             <input type="text" id="cardname" name="cardname" placeholder="Leon">
                             <label for="cnum">Card number</label>

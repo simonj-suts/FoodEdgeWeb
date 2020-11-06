@@ -986,6 +986,11 @@ h1.changePassword{
     padding-left: 35px;
 }
 
+[class="paymentpage"] #formtitle
+{
+	color: #e35f21;
+}
+
 [class="paymentpage"] input[id=cardmonth],[class="paymentpage"] input[id=cardyear],[class="paymentpage"] input[id=cvv]{
     width: 55%;
     height: 27px;
