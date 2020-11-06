@@ -13,23 +13,20 @@
 		<meta name="description" content="registration page"/>
 		<meta name="keywords" content="registration,users,catering"/>
 		<link rel="stylesheet" type="text/css" href="form_table.css"/>
+		<link rel="stylesheet" type="text/css" href="styles/nav_style.css"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+		<script src="https://kit.fontawesome.com/cebce8210e.js" crossorigin="anonymous"></script>
 		<script src="validateForm.js"></script>
 		
 	</head>
 	
-	<body onload="document.registration-form.first.focus()">
+	<body class="registration-body" >
 	
-		<header>
-			
-		</header>
-		
-		<nav>
-			
-		</nav>
+		<?php include_once "navigation.php"?>
 		
 
 		
-		<form id="registration-form" method="post" action="conreg.php"  onsubmit="return ifInputInfoValid()" >
+		<form id="registration-form" method="post" action="conreg.php"  onsubmit="return ifInputInfoValid()">
 		
 			
 			
@@ -38,57 +35,93 @@
 					<th class="page_title" colspan="2">Registration</th>
 				</tr>
 				<tr>
-					<td class="registration-label"><label for="firstname">First name: </label></td>
-					<td><input type="text" name="first" id="firstname" maxlength="25" pattern="^[a-zA-Z ]+$"/></td>
+					<td class="registration-unit">
+						<label for="firstname" class="reg-label">First name</label>
+						<input type="text" name="first" id="firstname" maxlength="25" pattern="^[a-zA-Z ]+$"/>
+						
+						<small id="fnamemessage"></small>
+					</td>
 				</tr>
 				
 				<tr>
-					<td class="registration-label"><label for="lastname">Last name: </label></td>
-					<td><input type="text" name="last" id="lastname" maxlength="25"pattern="^[a-zA-Z ]+$"/></td>
+					<td class="registration-unit">
+						<label for="lastname" class="reg-label">Last name </label>
+						<input type="text" name="last" id="lastname" maxlength="25"pattern="^[a-zA-Z ]+$"/>
+					
+						<small id="lnamemessage"></small>
+					</td>
 				</tr>
 				
 				<tr>
 				
-					<td class="registration-label"><label for="email">Email address: </label></td>
-					<td><input type="text" name="email" id="email" placeholder="nobody@example.com" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$"/></td>
+					<td class="registration-unit">
+						<label for="email" class="reg-label">Email address </label>
+						<input type="text" name="email" id="email" placeholder="nobody@example.com" /><!--pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$"
+						<i class="fa fa-check-circle"></i>
+						<i class="fa fa-exclamation circle"></i>-->
+						<small id="email-message"></small>
+					</td>
+				</tr>
+				
+				<tr>
+					
+					<td class="registration-unit">
+						<label for="password" class="reg-label">Password </label>
+						<input type="password" name="password" id="password" placeholder="upper/lowercase/digits/characters more than 9 letters" /> 
+						<small id="pword-message"></small>	
+					</td>
+				
 				</tr>
 				
 				<tr>
 				
-					<td class="registration-label"><label for="password">Password </label></td>
-					<td><input type="password" name="password" id="password"  pattern="[a-zA-Z0-9!@#\$%\^\&*+=\._-]{8,}"/> </td>
+					<td class="registration-unit">
+						<label for="conpassword" class="reg-label">Confirm Password </label>
+						<input type="password" name="conpassword" id="conpassword"  />
+						<small id="cpword-message"></small>
+					</td>
 				
 				</tr>
 					
 				<tr>
-						<td class="registration-label"><label for="tel">Phone number: </label></td>
-						<td><input type="tel" name="telephone" id="telephone" placeholder="012345678" pattern="^(01)[0-9]{7}$" /></td>
+						<td class="registration-unit">
+							<label for="tel" class="reg-label">Phone number </label>
+							<input type="tel" name="telephone" id="telephone" placeholder="012345678"/> 
+							<small id="phone-message"></small>
+						</td>
 				</tr>
 				
 				<tr>
-						<td class="registration-label">Security Question: </td>
-						<td><textarea name="secQues" id="secQues" rows="5" cols="50" placeholder="Enter one question only. This will help in verifying your account when you forget your password." ></textarea></td>
+						<td class="registration-unit">
+							<label for="secQues" class="reg-label">Security Question</label> 
+							<select name="secQues" id="secQues">
+								  <option value="Favourite number?" selected>What is your favourite number?</option>
+								  <option value="What primary school?">What primary school did you attend?</option>
+								  <option value="What day of the week were you born on?">Which day of the week were you exactly born on (Monday/Tuesday e.g)?</option>
+							</select>
+						</td>
 					
 				</tr>
 				
 				<tr>
-						<td class="registration-label">Security Answer: </td>
-						<td><textarea name="secAns" id="secAns" rows="5" cols="50" placeholder="Enter one answer to the question" ></textarea></td>
+						<td class="registration-unit"><label for="secAns" class="reg-label">Security Answer:</label>
+							<textarea name="secAns" id="secAns" rows="5" cols="50" placeholder="Enter one answer to the question" ></textarea>
+						
+							<small id="secAns-message"></small>
+						</td>
 				</tr>
-					
+				<tr id="reg-btn-div" colspan="2">
+					<td id="registrationBtn" >
+					<button type="reset" class="button2">Reset</button><button type='submit' id="submit" class="buttonsubmit"><span>Submit</span></button>
+					</td>
+				</td>
+			</tr>	
 			</table>
 			
 		
-			<div >
-				<p id="registrationBtn">
-					<input id="submit" type="submit" value="Submit"/>
-					<input type="reset" value="Reset"/>
-				</p>
-			</div>					
+								
 		</form>
 		
-	<footer>
-			
-	</footer>
+		<?php include_once "footer.php" ?>
 	</body>
 </html>

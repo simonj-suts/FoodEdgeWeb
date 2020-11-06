@@ -20,16 +20,9 @@
 		
 	</head>
 	
-	<body onload="document.registration-form.first.focus()">
+	<body class="login-body" onload="document.registration-form.first.focus()">
 	
-		<header>
-			
-		</header>
-		
-		<nav>
-			
-		</nav>
-		
+		  <?php include_once "navigation.php"?>
 
 		
 		<h1 class="fogpass-page-title">Account Recovery</h1>
@@ -70,8 +63,6 @@
 		</form>
 		
 		
-		<footer>
-			
-	</footer>
+		<?php include_once "footer.php" ?>
 	</body>
 </html>

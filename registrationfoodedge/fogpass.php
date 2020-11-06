@@ -14,21 +14,17 @@
 		<meta name="keywords" content="forget-password,users,catering"/>
 		<script src="validateForm.js"></script>
 		<link rel="stylesheet" type="text/css" href="form_table.css"/>
+		<link rel="stylesheet" type="text/css" href="styles/nav_style.css"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		
 
 		
 		
 	</head>
 	
-	<body onload="document.registration-form.first.focus()">
+	<body class="login-body" onload="document.registration-form.first.focus()">
 	
-		<header>
-			
-		</header>
-		
-		<nav>
-			
-		</nav>
+		<?php include_once "navigation.php"?>
 		
 		
 		
@@ -66,8 +62,6 @@
 		</form>
 		
 		
-		<footer>
-			
-	</footer>
+		 <?php include_once "footer.php" ?>
 	</body>
 </html>

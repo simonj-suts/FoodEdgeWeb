@@ -13,18 +13,16 @@
 		<meta name="description" content="confirm registration page"/>
 		<meta name="keywords" content="registration,users,success"/>
 		<link rel="stylesheet" type="text/css" href="form_table.css"/>
-		
+		<link rel="stylesheet" type="text/css" href="styles/nav_style.css"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
 		
 		
 		
 	</head>
 	
-	<body onload="successRegistration()">
+	<body class="registration-body" >
 	
-		<header></header>
-		
-		<nav></nav>
-		
+		<?php include_once "navigation.php"?>
 		
 		<h1 id="conreg_page_title">Registration Successful</h1>
 		
@@ -53,7 +51,8 @@
 			$userinformation->setSecQuestion($secQues);
 			$userinformation->setSecAnswer($secAns);
 			$userinformation->createOrder();
-			$database->closeConnection();
+			$user->getCurrentUser($_SESSION['custid']);
+			$user->checkAuthority(AUTHORISED_ROLES);
 		
 			?>
 			
@@ -76,7 +75,7 @@
 		<div id="returnBtn">
 			<button type="button"><a href="cust_login.php">Return</a></button>
 		</div>
-		
+		<?php include_once "footer.php" ?>
 	<footer>
 			
 	</footer>

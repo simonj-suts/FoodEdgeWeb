@@ -1,24 +1,50 @@
 
-/*Description: Style for registration*/
-/*Author: Joanna Wong*/
-/*Date: 4 October 2020  */
-/*Validated: */
-
-@font-face {
-	font-family: "Nominee";
-	src: url(Nominee-Bold.ttf);
-
-}
-
 *{
 	font-family: Nominee,sans-serif;
-	font-size:18px;
-	
+	/*font-size:18px;*/
 }
 
-body,header,footer{
+.registration-body, .login-body{
 	background-image: url("media/reg-background.png");
 }
+
+#statistics_table{
+	margin: 0 auto;
+	font-family: Nominee, Arial, sans-serif;
+	font-size: 20px;
+	border-collapse:collapse;
+}
+
+#statistics_table th{
+	background-color: #E35F21;
+	color:black;
+	padding: 8px;
+}
+
+#statistics_table tr{
+	color:black;
+	text-align:center;
+}
+
+#statistics_table td{
+	background-color: white;
+	padding: 15px;
+}
+
+#total_table{
+	margin: 20px auto 20px auto;
+	font-family: Nominee, Arial, sans-serif;
+	font-size: 20px;
+	color: white;
+	border-collapse:collapse;
+}
+
+#total_table td {
+	background-color: #E35F21;
+	padding: 20px 30px;
+}
+
+
 .page_title, #conreg_page_title ,.fogpass-page-title, .fogpass3-page-title{
 	text-align:left;
 	font-size:2em;
@@ -30,6 +56,7 @@ body,header,footer{
 	margin: 2% auto 10% auto;
 	background-color:#2E2E2E;
 	border-radius: 15px;
+	
 }
 
 #registration-table, #login-table {
@@ -46,51 +73,66 @@ body,header,footer{
 
 #registration-table td ,#login-table td{
 	padding: 2%;
-	color:white;
+	color:#d55013;
 }
 
 
-#registration-table input{
+.registration-unit input, select#secQues{
 	width:100%;
-	border:0;
-	border-bottom: 1px solid #C0C0C0 ;
-	text-align: center;
+	border: 1px solid #C0C0C0 ;
+	text-align: left;
 	font-size:15px;
+	font-family:inherit;
 	background-color:#eef8f7;
 	border-radius: 5px;
+	padding:0.5%;
+	margin-bottom:0.5%;
+	display:block;
+	
 
 }
 
-
-
-
-#registration-table input:focus,#registration-table textarea:focus{
-	border: 2px solid white ;
+.registration-unit input:focus,.registration-unit textarea:focus {
+	border: 3px solid blue ;
 	transition-duration: 0.1s;
 }
 
-#registration-table textarea{
+.registration-unit{
+	position:relative;
+}
+
+
+.registration-unit small{
+	color:#DC143C;
+	position:absolute;
+	left:30px;
+	visibility:visible;
+	font-size:0.8em;
+	margin-bottom:2%;
+}
+
+
+
+.reg-label{
+	display:inline-block;
+	color:#d55013;
+}
+
+.registration-unit textarea{
 	width: 100%;
-	border:1px solid #C0C0C0;
 	font-size:15px;
 	background-color:#eef8f7;
 	border-radius: 5px;
-
-}
-#registrationBtn {
-	width:100%;
-	text-align:center;
-	margin:0;
+	color:black;
 }
 
-#registrationBtn input[type=submit]{
-	background-color:#d3d3d3;
-}
 
-#registrationBtn input[type=reset], #registrationBtn input[type=submit], #loginBtn input[type=submit], #recovery-submit-button, #fogpass2-submit, #fogpass3-submit, #fogpass3-reset  {
+
+ #loginBtn input[type=submit], #recovery-submit-button, #fogpass2-submit, #fogpass3-submit, #fogpass3-reset  {
 	width:20%;
 	padding:1% 2%;
 	margin-bottom: 5%;
+	margin-left:
 	font-size:0.8em;
 	background-color:#d55013;
 	border:0;
@@ -99,7 +141,7 @@ body,header,footer{
 }
 
  
-#registrationBtn input[type=submit]:hover, #registrationBtn input[type=reset]:hover, #recovery-submit-button:hover, #loginBtn input[type=submit]:hover, #fogpass2-submit:hover, #fogpass3-submit:hover , #fogpass3-reset:hover{
+ #recovery-submit-button:hover, #loginBtn input[type=submit]:hover, #fogpass2-submit:hover, #fogpass3-submit:hover , #fogpass3-reset:hover{
 
 	background-color: #555555;
 	color: white;
@@ -109,7 +151,7 @@ body,header,footer{
 
 .login-label {
 	
-	text-align:center;
+	text-align:left;
 }
 
 
@@ -119,6 +161,7 @@ body,header,footer{
 
 #login-form{
 	width:60%;
+	padding:0;
 }
 
 
@@ -135,13 +178,52 @@ body,header,footer{
 }
 
 #login-table input{
-	
+	height:2%;
 	width: 100%;
 }
 #login-table input[type="submit"]{
 	
 	width: 20%;
 }
+
+
+.loginbuttonsubmit{
+	border-radius: 4px;
+	background-color: #e35f21;
+	border: none;
+	color: #FFFFFF;
+	text-align: center;
+	font-family: Nominee, Arial, sans-serif;
+	font-size: 18px;
+	padding: 13px;
+	width: 150px;
+	cursor: pointer;
+	margin: 5px;
+}
+
+.loginbuttonsubmit:hover {
+	background-color:black;
+	color: #e35f21;
+}
+
+.loginbuttonsubmit span{
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+}
+
+.loginbuttonsubmit span:after {
+	content: '\00bb';
+	position: absolute;
+	opacity: 0;
+	font-size: 40px;
+	bottom: -9px;
+	right: -10px;
+	transition: 0.5s;
+}
+
+
 
 #link a {
 	color:white;
@@ -207,8 +289,7 @@ body,header,footer{
 
 #returnBtn button {
 	background-color:#d55013;
-	color:blaok;
-	width:20%;
+	width:80px;
 	margin: 5% auto 0 auto;
     text-decoration: none;
 
@@ -216,7 +297,7 @@ body,header,footer{
 
 
 #returnBtn button, #fogpass-table-button button {
-	padding: 2% 2%;
+	padding: 1% 0;
 	font-size:0.8em;
 	transition-duration: 0.4s;
 	
@@ -230,6 +311,7 @@ body,header,footer{
 }
 
 #returnBtn a, #fogpass-table-button button a{
+	font-size:15px;
 	text-decoration:none;
 	color:white;
 }
@@ -278,9 +360,6 @@ body,header,footer{
 	border-bottom:1px solid white;
 }
 
-#showSecQues{
-	margin-bottom: 5%;
-}
 
 
 #fogpass-form3 table{
@@ -337,6 +416,539 @@ h1.changePassword{
 	text-decoration:none;
 }
 
+.bookingformbody{
+	font-family: Nominee, Arial, sans-serif;
+	background-image: url("cateringbackground.png");
+	background-position: center; /* Center the image */
+ 	background-repeat: no-repeat; /* Do not repeat the image */
+  	background-size: cover; /* Resize the background image to cover the entire container */
+	margin: 15px;
+}
+
+.confirmtable{
+	color: white;
+	margin: 0 auto;
+}
+
+.bookingform {
+	display: block;
+	background-color:#2E2E2E;
+	padding: 50px;
+	font-size: 22px;
+	border-radius: 25px;
+}
+
+.confirmation{
+	background-color:#2E2E2E;
+	padding: 15px;
+	padding-bottom: 50px;
+	font-size: 22px;
+	border-radius: 25px;
+	margin: 250px;
+}
 
 
+#radiobuttondiv{
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
 
+#radiogroup{
+	padding-top: 15px;
+}
+
+
+#time{
+	width: 50%;
+	padding: 12px 20px;
+	font-size: 20px;
+	color: #e35f21;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+
+#eventdate{
+	width: 49%;
+	font-size: 20px;
+	color: #e35f21;
+	padding: 12px 20px;
+	display: inline-block;
+	margin-left: 8px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+#address, #occasion {
+	width: 100%;
+	font-family: Nominee, Arial, sans-serif;
+  	padding: 12px 20px;
+	margin: 8px 0;
+	font-size: 20px;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+#time:focus, #eventdate:focus {
+	outline: none !important;
+	border: 3px solid #e35f21;
+}
+
+#occasion:focus { 
+	outline: none !important;
+	border: 3px solid #e35f21;
+}
+
+#address:focus { 
+	outline: none !important;
+	border: 3px solid #e35f21;
+}
+
+/* The container */
+.package {
+ 	position: relative;
+ 	padding-left: 35px;
+	padding-right: 35px;
+ 	font-size: 22px;
+	color: white;
+ 	-webkit-user-select: none;
+ 	-moz-user-select: none;
+ 	-ms-user-select: none;
+ 	user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.package input {
+	position: absolute;
+	opacity: 0;
+}
+
+/* Create a custom radio button */
+.checkmark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 25px;
+	width: 25px;
+	background-color: #eee;
+	border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.package:hover input ~ .checkmark {
+	background-color: #ccc;
+}
+
+/* When the radio button is checked, add a  background */
+.package input:checked ~ .checkmark {
+	background-color: #e35f21;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+	content: "";
+	position: absolute;
+	display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.package input:checked ~ .checkmark:after {
+	display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.package .checkmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+	background: white;
+}
+
+::placeholder {
+	font-family: Nominee, Arial, sans-serif;
+	font-size: 20px;
+}
+
+#occasion{
+	font-family: Nominee, Arial, sans-serif;
+	font-size: 20px;
+	text-align: center;
+	padding-bottom: 30px;
+	color: #e35f21;
+}
+
+#time{
+	margin-top: 15px;
+	padding-bottom: 30px;
+	border-radius: 8px;
+}
+
+#eventdate{
+	margin-top: 15px;
+	padding-bottom: 28px;
+	border-radius: 8px;
+}
+
+#description{
+	margin-top: 15px;
+	border-radius: 8px;
+}
+
+
+.bookingform_header, .title{
+	color: #e35f21;
+}
+
+.confirmationheader{
+	color: #e35f21;
+	text-align: center;
+}
+
+.Names{
+	color: white;
+}
+
+.title{
+	padding-right: 10px;
+}
+
+@font-face{
+	font-family: Nominee;
+	src: url(Nominee-Bold.ttf);
+	font-weight: bold;
+}
+
+.package{
+	padding-right: 35px;
+}
+
+.button2:focus{
+	outline: none;
+	box-shadow: none;
+}
+
+.buttonsubmit{
+	border-radius: 4px;
+	background-color: #e35f21;
+	border: none;
+	color: #FFFFFF;
+	text-align: center;
+	font-family: Nominee, Arial, sans-serif;
+	font-size: 22px;
+	padding: 15px;
+	width: 150px;
+	cursor: pointer;
+	margin: 5px;
+}
+
+.buttonconfirm{
+	border-radius: 4px;
+	background-color: #e35f21;
+	border: none;
+	color: #FFFFFF;
+	text-align: center;
+	font-family: Nominee, Arial, sans-serif;
+	font-size: 22px;
+	padding: 15px;
+	width: 150px;
+	cursor: pointer;
+	margin: 5px;
+}
+
+.button2 {
+	border-radius: 4px;
+	background-color: #e35f21;
+	border: none;
+	color: #FFFFFF;
+	text-align: center;
+	font-family: Nominee, Arial, sans-serif;
+	font-size: 22px;
+	padding: 15px;
+	width: 150px;
+	cursor: pointer;
+	margin: 5px;
+}
+
+.buttoncancel {
+	border-radius: 4px;
+	background-color: #e35f21;
+	border: none;
+	color: #FFFFFF;
+	text-align: center;
+	font-family: Nominee, Arial, sans-serif;
+	font-size: 22px;
+	padding: 15px;
+	width: 150px;
+	cursor: pointer;
+	margin: 5px;
+}
+
+.buttonsubmit:hover, .button2:hover, .buttoncancel:hover, .buttonconfirm:hover {
+	background-color:black;
+	color: #e35f21;
+}
+
+.buttonsubmit span, .button2 span, .buttoncancel span, .buttonconfirm span{
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+}
+
+.buttonsubmit span:after {
+	content: '\00bb';
+	position: absolute;
+	opacity: 0;
+	font-size: 40px;
+	bottom: -9px;
+	right: -10px;
+	transition: 0.5s;
+}
+
+.buttonconfirm span:after {
+	content: '\2714';
+	position: absolute;
+	opacity: 0;
+	font-size: 25px;
+	bottom: -4px;
+	right: -20px;
+	transition: 0.5s;
+}
+
+.buttoncancel span:after {
+	content: '\2716';
+	position: absolute;
+	opacity: 0;
+	font-size: 25px;
+	bottom: -4px;
+	right: -20px;
+	transition: 0.5s;
+}
+
+.buttongroup{
+	padding-top: 25px;
+	text-align: center;
+}
+
+.button2 span:after {
+	content: '\00AB';
+	font-size: 40px;
+	position: absolute;
+	opacity: 0;
+	bottom: -9px;
+	left: -80px;
+}
+
+.button2:hover span{
+	padding-left: 20px;
+}
+
+.buttonsubmit:hover span, .buttoncancel:hover span, .buttonconfirm:hover span{
+	padding-right: 30px;
+}
+
+.buttonsubmit:hover span:after, .button2:hover span:after, .buttoncancel:hover span:after, .buttonconfirm:hover span:after{
+	opacity: 1;
+	right: 0;
+}
+
+@media only screen and (max-width: 1000px){
+	#time{
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	}
+
+	#eventdate{
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;	
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	}
+
+	#address, #occasion {
+	width: 100%;
+  	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	}
+	
+	.package {
+	display: block;
+ 	position: relative;
+ 	padding-left: 35px;
+	padding-right: 35px;
+ 	font-size: 22px;
+	color: white;
+ 	-webkit-user-select: none;
+ 	-moz-user-select: none;
+ 	-ms-user-select: none;
+ 	user-select: none;
+	}
+
+}
+
+/* CSS design for the payment page*/
+[class="paymentpage"] .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 0 20px;
+}
+
+[class="paymentpage"] .col-25 {
+    -ms-flex: 25%;
+    flex: 25%;
+}
+
+[class="paymentpage"] .col-50 {
+    -ms-flex: 50%;
+    flex: 50%;
+}
+
+[class="paymentpage"] .col-75 {
+    -ms-flex: 75%;
+    flex: 75%;
+}
+
+[class="paymentpage"] .col-25, .col-50, .col-75 {
+    padding: 0 16px;
+}
+
+[class="paymentpage"] .container {
+    padding: 5px 20px 15px 20px;
+    margin-right:auto;
+    margin-left: auto;
+    margin-top: 3%;
+    width: 580px;
+    height: 900px;
+}
+
+[class="paymentpage"] input[id=fname],[class="paymentpage"] input[id=femail],[class="paymentpage"] input[id=fadd],[class="paymentpage"] input[id=cardname],[class="paymentpage"] input[id=cardnum] {
+    width: 100%;
+    height: 30px;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #2a2a2a;
+    border-radius: 3px;
+    background-color: #2a2a2a;
+    -webkit-transition: 0.5s;
+    transition: 0.4s;
+    outline: none;
+    
+}
+
+[class="paymentpage"] label {
+    margin-bottom: 10px;
+    display: block;
+    color: #eef8f7;
+}
+
+[class="paymentpage"] .button {
+    background-color: #e35f21;
+    color: white;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    width: 100%;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+[class="paymentpage"] .button:active,[class="paymentpage"] .button:focus{
+    outline: none;
+    border: 4px solid #555;
+}
+
+[class="paymentpage"] form{
+    width: 500px;
+    height: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+[class="paymentpage"] .total,[class="paymentpage"] .totaldes{
+    text-align: center;
+    color: #eef8f7;
+}
+
+[class="paymentpage"] .exp{
+    display: table;
+}
+
+[class="paymentpage"] .expcell{
+    display: table-cell;
+    padding-left: 35px;
+}
+
+[class="paymentpage"] input[id=cardmonth],[class="paymentpage"] input[id=cardyear],[class="paymentpage"] input[id=cvv]{
+    width: 55%;
+    height: 27px;
+    margin-bottom: 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 12px;
+    padding-right: 35px;
+    background-color: #2a2a2a;
+    border: 1px solid #2a2a2a;
+    border-radius: 3px; 
+    -webkit-transition: 0.5s;
+    transition: 0.4s;
+    outline: none;
+}
+
+[class="paymentpage"]{
+    background-color: #353535;    
+}
+
+[class="paymentpage"] h3{
+    color: #eef8f7;
+}
+
+[class="paymentpage"] ::placeholder{
+	color: #dedede91;
+	font-size: 15px;
+}
+
+[class="paymentpage"] textarea:focus, [class="paymentpage"] input:focus {
+    color: #eef8f7;
+}
+
+[class="paymentpage"] input, [class="paymentpage"] select, [class="paymentpage"] textarea{
+    color: #eef8f7;
+}
+
+[class="paymentpage"] input[type=text]:focus {
+    border: 3px solid #555;
+}
+
+[class="paymentpage"] input:focus::-webkit-input-placeholder {
+    font-size: .90em;
+    position: relative;
+    top: -15px; 
+    transition: 0.5s ease-out;
+}
+
+[class="paymentpage"] input::-webkit-input-placeholder {
+    transition: 0.5s ease-in;
+}
