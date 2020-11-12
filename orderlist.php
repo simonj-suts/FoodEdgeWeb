@@ -11,15 +11,17 @@
     <!-- Validated: Ok 17/10/2020 -->
 
     <head>
-		<title>Order List</title>
-		<meta charset="utf-8"/>
-		<meta name="author" content="Simon Jingga"/>
-		<meta name="description" content="Order list page"/>
-		<meta name="keywords" content="Order, List, Customer,status,edit"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <link rel="stylesheet" type="text/css" href="styles/nav_style.css"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	</head>
+	<title>Order List</title>
+	<meta charset="utf-8"/>
+	<meta name="author" content="Simon Jingga"/>
+	<meta name="description" content="Order list page"/>
+	<meta name="keywords" content="Order, List, Customer,status,edit"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="stylesheet" type="text/css" href="form_table.css"/>
+	<link rel="stylesheet" type="text/css" href="style.css"/>
+	<link rel="stylesheet" type="text/css" href="styles/nav_style.css"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   </head>
 
     <body id="orderpage_body">
         <?php
