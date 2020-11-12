@@ -57,7 +57,7 @@
 			<p class="confirmmessage">We at FoodEdge would like to thank you for your feedback as it is highly appreciated. We hope to improve and provide the best catering service for everyone.</p>
 			
 			<div class="confirmfeedbackbutton">
-				<button onclick="window.location='cust_login.php';" class="buttontohome"><span>Back to Home</span></button>
+				<button onclick="window.location='index.php';" class="buttontohome"><span>Back to Home</span></button>
 			</div>
 		</div>
 	<?php include_once "footer.php" ?>

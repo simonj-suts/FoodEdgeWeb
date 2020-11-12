@@ -1,11 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-	<!-- Description: Statistics for management team -->
-	<!-- Author: Jibril Saleem-->
-	<!-- Date:3 October 2020-->
-	<!-- Validated: -->
-
 	<head>
 		<title>Statistics</title>
 		<meta charset="utf-8"/>
@@ -14,8 +8,11 @@
 		<meta name="keywords" content="about, web, author, jibril, saleem"/>
 		<link rel="stylesheet" type="text/css" href="style.css"/>
 		<link rel="stylesheet" type="text/css" href="form_table.css"/>
+		<link rel="stylesheet" type="text/css" href="styles/nav_style.css"/>
+   		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
 		<?php include "database.php"?>
 		<?php include "order_class.php"?>
+		<?php include "userinformation_class.php"?>
 		
 		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 		<script type="text/javascript">
@@ -92,6 +89,23 @@
 	</head>
 	
 	<body id="statistics_body">
+	
+		<?php session_start() ?>
+		<?php
+			 /* arrays of authorised user */
+			 define("AUTHORISED_ROLES",["2"]);
+
+			 /* Connect to FoodEdge database */ 
+			 $database = new Database();
+			 $db = $database->getConnection();
+
+			 /* Get current user's information */
+			 $user = new userInformation($db);
+			 $user->getCurrentUser($_SESSION['custid']);
+			 $user->checkAuthority(AUTHORISED_ROLES);
+		?>
+		<?php include_once "navigation.php"?>
+		
 		<article>
 			<h1 id="statistics_header">Statistics for Business Operation</h1>
 			
@@ -131,5 +145,7 @@
 					<a class="button_nav" href="statistics.php#statistics_header">Back to the Top</a>
 				</div>
 		</article>
+		
+		<?php include_once "footer.php" ?>  
 	</body>
 </html>

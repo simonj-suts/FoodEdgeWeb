@@ -1,6 +1,7 @@
 /* General CSS for the statistics page */
 #statistics_body{
 	background-color: #2E2E2E;
+	margin:0;
 }
 
 @font-face {
@@ -24,6 +25,7 @@
 	display: inline-block;
 	transition-duration: 0.4s;
 	font-size: 16px;
+	margin-bottom: 30px;
 }
 
 .button_nav:hover{
@@ -31,9 +33,9 @@
 	color: white;
 }
 
-/* Header CSS design for the statistics page */
+/* Header CSS design for the statistics page and feedback list page */
 
-#statistics_header{
+#statistics_header, #feedbacklist_header{
 	color: #E35F21;
 	text-align:center;
 	font-style: bold;

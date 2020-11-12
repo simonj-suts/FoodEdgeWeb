@@ -1279,6 +1279,7 @@ h1.changePassword{
 	box-sizing: border-box;
 }
 
+
 /* Edit menu process css*/
 .editmenuprocess{
 	font-family: Nominee, Arial, sans-serif;
@@ -1431,4 +1432,4 @@ h1.changePassword{
 
 .feedbacklist_tablediv{
 	padding:20px;
-}
+
