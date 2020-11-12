@@ -7,14 +7,14 @@ function GetButtonContents($user_role,$username){
     echo "<li id=\"dropDown_nav\">";
     echo "<button onclick=\"showButtonContentNav(this)\" class=\"dropbtn_nav\">".$username." <i id=\"button_icon\"class=\"fa fa-caret-down\"></i></button>";
     echo "<div id=\"dropbtn_nav_div\" class=\"dropbtn_nav_contents\">";
-    echo "<a href=\"#profile\"><i class=\"fa fa-user\"></i> My Profile</a>";
+    echo "<a href=\"profile.php\"><i class=\"fa fa-user\"></i> My Profile</a>";
 
     if ($user_role==2){
-        echo "<a href=\"#feedback\"><i class=\"fa fa-comments-o\"></i> View Feedback</a>";
+        echo "<a href=\"feedbacklist.php\"><i class=\"fa fa-comments-o\"></i> View Feedback</a>";
         echo "<a href=\"orderlist.php\"><i class=\"fa fa-cutlery\"></i> View Orders</a>";
     }
     elseif ($user_role==3){
-        echo "<a href=\"#feedback\"><i class=\"fa fa-comments-o\"></i> View Feedback</a>";
+        echo "<a href=\"feedbacklist.php\"><i class=\"fa fa-comments-o\"></i> View Feedback</a>";
         echo "<a href=\"statistics.php\"><i class=\"fa fa-bar-chart\"></i> View Statistics</a>";
         
     }
