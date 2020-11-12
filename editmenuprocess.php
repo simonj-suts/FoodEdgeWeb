@@ -41,23 +41,23 @@ if($package->updatePackage($_SESSION["packageid"]) == true){
 		<table class="confirmtable">
 		<tr>
 			<td class="title">Package Name: </td>
-			<td><?php echo $_POST['packagename'] ?></td>
+			<td class="details"><?php echo $_POST['packagename'] ?></td>
 		</tr>
 		<tr>
 			<td class="title">Cuisine: </td> 
-			<td><?php echo $_POST['packagecuisine']?></td>
+			<td class="details"><?php echo $_POST['packagecuisine']?></td>
 		</tr>
 		<tr>
 			<td class="title">Pax: </td>
-			<td><?php echo $_POST['packagepax'] ?></td>
+			<td class="details"><?php echo $_POST['packagepax'] ?></td>
 		</tr>
 		<tr>
 			<td class="title">Price: </td>
-			<td><?php echo $_POST['packageprice'] ?></td>
+			<td class="details"><?php echo $_POST['packageprice'] ?></td>
 		</tr>
 		<tr>
 			<td class="title">Description: </td>
-			<td><?php echo $_POST['packagedesc'] ?></td>
+			<td class="details"><?php echo $_POST['packagedesc'] ?></td>
 		</tr>
 		</table>
 		<div class="buttongroup">

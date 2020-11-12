@@ -1290,7 +1290,7 @@ h1.changePassword{
 	background-color:#2a2a2a;
 	padding: 15px;
 	padding-bottom: 50px;
-	font-size: 22px;
+	font-size: 30px;
 	border-radius: 25px;
 	margin: 250px;
 }
@@ -1311,6 +1311,12 @@ h1.changePassword{
 
 [class="editmenuprocess"] .title{
 	padding-right: 10px;
+	font-size: 22px;
+}
+
+[class="editmenuprocess"] .details{
+	padding-right: 10px;
+	font-size: 21px;
 }
 
 [class="editmenuprocess"] .buttongroup{
