@@ -6,7 +6,7 @@ include 'userinformation_class.php';
 
 $database = new Database();
 $db = $database->getConnection();
-define("AUTHORISED_ROLES", ["1", "2", "3"]);
+define("AUTHORISED_ROLES",  ["2"]);
 
 $user = new userInformation($db);
 $user->getCurrentUser($_SESSION['custid']);
