@@ -18,7 +18,6 @@ $rowuser = mysqli_fetch_assoc($r);
 $email = $rowuser['Email'];
 $fname = $rowuser['CustomerFName'];
 $lname = $rowuser['CustomerLName'];
-
 ?>
 
 <!DOCTYPE html>
@@ -30,24 +29,42 @@ $lname = $rowuser['CustomerLName'];
     <link rel="stylesheet" type="text/css" href="form_table.css" />
     <script src="paymentvalidate.js"></script>
     <title>Payment page</title>
+    <link rel="stylesheet" type="text/css" href="styles/nav_style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body class="paymentpage">
+    <?php
+    /* arrays of authorised user */
+    define("AUTHORISED_ROLES", ["1", "2", "3"]);
+
+    /* Connect to FoodEdge database */
+    include 'userinformation_class.php';
+    $database = new Database();
+    $db = $database->getConnection();
+
+    /* Get current user's information */
+    $user = new userInformation($db);
+    $user->getCurrentUser($_SESSION['custid']);
+    $user->checkAuthority(AUTHORISED_ROLES);
+    ?>
+    <?php include_once "navigation.php" ?>
+
     <div class="row">
         <div class="col-75">
             <div class="container">
                 <form name="paymentform" onsubmit="return validateForm()" method="POST" action="receipt.php">
                     <div class="row">
                         <div class="col-50">
-                            <h2 class="total">Your total is $<?php echo $totalprice?></h2> <!-- Example price, need booking.php to get the price,apply on sprint 2 -->
+                            <h2 class="total">Your total is $<?php echo $totalprice ?></h2>
                             <h3 class="totaldes">Pay securely with a credit card or debit card.</h3>
                             <h2 id="formtitle">Personal Information</h2>
                             <label for="fname">Name</label>
-                            <input type="text" id="fname" name="name" placeholder="Leon Lai" value="<?php echo $fname?>">
+                            <input type="text" id="fname" name="name" placeholder="Leon Lai" value="<?php echo $fname ?>">
                             <label for="femail">Email</label>
-                            <input type="text" id="femail" name="email" placeholder="leon@example.com" value="<?php echo $email?>">
+                            <input type="text" id="femail" name="email" placeholder="leon@example.com" value="<?php echo $email ?>">
                             <label for="fadd">Address for delivery</label>
-                            <input type="text" id="fadd" name="address" placeholder="123, Lorong Donut, 11900 Donut City, Pulau Pinang" value="<?php echo $address?>">
+                            <input type="text" id="fadd" name="address" placeholder="123, Lorong Donut, 11900 Donut City, Pulau Pinang" value="<?php echo $address ?>">
                         </div>
 
                         <div class="col-50">
@@ -84,11 +101,7 @@ $lname = $rowuser['CustomerLName'];
     </div>
 
 
+    <?php include_once "footer.php" ?>
 </body>
 
 </html>
-
-<?php
-session_unset();
-session_destroy();
-?>

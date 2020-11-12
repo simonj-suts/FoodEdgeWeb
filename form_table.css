@@ -897,7 +897,7 @@ h1.changePassword{
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    margin: 0 20px;
+	margin: 0 20px;
 }
 
 [class="paymentpage"] .col-25 {
@@ -921,11 +921,12 @@ h1.changePassword{
 
 [class="paymentpage"] .container {
     padding: 5px 20px 15px 20px;
-    margin-right:auto;
+    margin-right: auto;
     margin-left: auto;
     margin-top: 3%;
     width: 580px;
-    height: 900px;
+	height: 900px;
+	margin-bottom: 8%;
 }
 
 [class="paymentpage"] input[id=fname],[class="paymentpage"] input[id=femail],[class="paymentpage"] input[id=fadd],[class="paymentpage"] input[id=cardname],[class="paymentpage"] input[id=cardnum] {
@@ -936,10 +937,9 @@ h1.changePassword{
     border: 1px solid #2a2a2a;
     border-radius: 3px;
     background-color: #2a2a2a;
-    -webkit-transition: 0.5s;
     transition: 0.4s;
-    outline: none;
-    
+	outline: none;
+	-webkit-transition: 0.5s;
 }
 
 [class="paymentpage"] label {
@@ -957,7 +957,8 @@ h1.changePassword{
     width: 100%;
     border-radius: 3px;
     cursor: pointer;
-    font-size: 17px;
+	font-size: 17px;
+	margin-bottom: 200px;
 }
 
 [class="paymentpage"] .button:active,[class="paymentpage"] .button:focus{
@@ -1008,7 +1009,7 @@ h1.changePassword{
 }
 
 [class="paymentpage"]{
-    background-color: #353535;    
+	background-color: #353535; 
 }
 
 [class="paymentpage"] h3{
@@ -1278,6 +1279,97 @@ h1.changePassword{
 	box-sizing: border-box;
 }
 
+
+/* Edit menu process css*/
+.editmenuprocess{
+	font-family: Nominee, Arial, sans-serif;
+	background-color: #353535;
+	margin: 0;
+}
+
+[class="editmenuprocess"] .confirmation{
+	background-color:#2a2a2a;
+	padding: 15px;
+	padding-bottom: 50px;
+	font-size: 30px;
+	border-radius: 25px;
+	margin: 250px;
+}
+
+[class="editmenuprocess"] .confirmationheader{
+	color: #e35f21;
+	text-align: center;
+}
+
+[class="editmenuprocess"] .confirmtable{
+	color: white;
+	margin: 0 auto;
+}
+
+[class="editmenuprocess"] .bookingform_header, .title{
+	color: #e35f21;
+}
+
+[class="editmenuprocess"] .title{
+	padding-right: 10px;
+	font-size: 22px;
+}
+
+[class="editmenuprocess"] .details{
+	padding-right: 10px;
+	font-size: 21px;
+}
+
+[class="editmenuprocess"] .buttongroup{
+	padding-top: 25px;
+	text-align: right;
+}
+
+[class="editmenuprocess"] .buttonconfirm{
+	border-radius: 4px;
+	background-color: #e35f21;
+	border: none;
+	color: #FFFFFF;
+	text-align: center;
+	font-family: Nominee, Arial, sans-serif;
+	font-size: 22px;
+	padding: 15px;
+	width: 200px;
+	cursor: pointer;
+	margin: 5px;
+}
+
+[class="editmenuprocess"] .buttonconfirm:hover {
+	background-color:black;
+	color: #e35f21;
+}
+
+[class="editmenuprocess"] .buttonconfirm span{
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+}
+
+[class="editmenuprocess"] .buttonconfirm span:after {
+	content: '\00bb';
+	position: absolute;
+	opacity: 0;
+	font-size: 22px;
+	bottom: -4px;
+	right: -20px;
+	transition: 0.5s;
+}
+
+[class="editmenuprocess"] .buttonconfirm:hover span{
+	padding-right: 30px;
+}
+
+[class="editmenuprocess"] .buttonconfirm:hover span:after{
+	opacity: 1;
+	right: 0;
+}
+
 /* Feedback List page CSS */
 
 #feedbacklistbody{
@@ -1340,4 +1432,4 @@ h1.changePassword{
 
 .feedbacklist_tablediv{
 	padding:20px;
-}
+
