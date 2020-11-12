@@ -194,10 +194,9 @@ $package = new package($db);
             <div>
                 <input type="submit" value="Submit" class="button">
             </div>
+        </form>
+        <?php include_once "footer.php" ?>  
     </div>
-    </form>
-
-    <?php include_once "footer.php" ?>
+    
 </body>
-
 </html>
