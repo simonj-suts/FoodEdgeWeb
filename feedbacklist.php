@@ -39,10 +39,11 @@
 				$result = @mysqli_query($db,$query);
 					
 				echo "<table class=\"feedbacklist_table\">";
-				echo "<tr><th>Feedback Category</th><th>Suggestion</th></tr>";
+				echo "<tr><th>CustomerID</th><th>Feedback Category</th><th>Suggestion</th></tr>";
 				
 				while($row = mysqli_fetch_assoc($result)) {
-					echo "<tr><td>".$row['FeedbackCategory']."</td>";
+					echo "<tr><td>".$row['CustomerID']."</td>";
+					echo "<td>".$row['FeedbackCategory']."</td>";
 					echo "<td>".$row['Suggestion']."</td></tr>";
 				}
 				echo "</table>";
