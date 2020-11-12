@@ -1,24 +1,24 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap");
-[class="editmenupage"]{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
 }
 
-[class="editmenupage"]body {
+body {
     background: #353535;
     transition: 0.5s;
 }
 
-[class="editmenupage"] .checkbox_container {
+.checkbox_container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
 
-[class="editmenupage"] .checkbox_container .option_item {
+.checkbox_container .option_item {
     display: block;
     position: relative;
     width: 175px;
@@ -26,7 +26,7 @@
     margin: 10px;
 }
 
-[class="editmenupage"] .checkbox_container .option_item .checkbox {
+.checkbox_container .option_item .checkbox {
     position: absolute;
     top: 0;
     left: 0;
@@ -34,7 +34,7 @@
     opacity: 0;
 }
 
-[class="editmenupage"] .option_item .option_inner {
+.option_item .option_inner {
     width: 100%;
     height: 100%;
     background: #fff;
@@ -47,18 +47,18 @@
     position: relative;
 }
 
-[class="editmenupage"] .option_item .option_inner:hover {
+.option_item .option_inner:hover {
     border-color: #555;
     transition: 0.3s ease-in;
     transition: 0.4s ease-out;
 }
 
-[class="editmenupage"] .option_item .checkbox:checked~.option_inner {
+.option_item .checkbox:checked~.option_inner {
     border-color: #e35f21;
     color: #e35f21;
 }
 
-[class="editmenupage"] .option_item .option_inner .tickmark {
+.option_item .option_inner .tickmark {
     position: absolute;
     top: -1px;
     left: -1px;
@@ -67,7 +67,7 @@
     display: none;
 }
 
-[class="editmenupage"] .option_item .option_inner .tickmark:before {
+.option_item .option_inner .tickmark:before {
     content: "";
     position: absolute;
     top: -18px;
@@ -79,57 +79,57 @@
     transform: rotate(-45deg);
 }
 
-[class="editmenupage"].option_item .checkbox:checked~.option_inner .tickmark {
+.option_item .checkbox:checked~.option_inner .tickmark {
     display: block;
 }
 
-[class="editmenupage"] .option_item .option_inner .tickmark {
+.option_item .option_inner .tickmark {
     border-color: #e35f21 transparent transparent #e35f21;
 }
 
-[class="editmenupage"] h2.title {
+h2.title {
     text-align: center;
     margin: 20px;
 }
 
-[class="editmenupage"] .hidden {
+.hidden {
     display: none;
 }
 
-[class="editmenupage"] input:focus::-webkit-input-placeholder{
+input:focus::-webkit-input-placeholder {
     font-size: .90em;
     position: relative;
     top: -15px;
     transition: 0.5s ease-out;
 }
 
-[class="editmenupage"] input::-webkit-input-placeholder, [class="editmenupage"] textarea::-webkit-input-placeholder{
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
     transition: 0.5s ease-in;
 }
 
-[class="editmenupage"] ::placeholder, [class="editmenupage"] textarea::placeholder{
+::placeholder, textarea::placeholder {
     color: #dedede91;
     font-size: 15px;
 }
 
-[class="editmenupage"] textarea:focus, [class="editmenupage"] input:focus {
+textarea:focus, input:focus {
     color: #eef8f7;
 }
 
-[class="editmenupage"] input, [class="editmenupage"] select, [class="editmenupage"] textarea {
+input, select, textarea {
     color: #eef8f7;
 }
 
-[class="editmenupage"] input[type=text]:focus, [class="editmenupage"] textarea:focus{
+input[type=text]:focus, textarea:focus {
     border: 3px solid #555;
 }
 
-[class="editmenupage"] .hidden .title .container {
+.hidden .title .container {
     -ms-flex: 75%;
     flex: 75%;
 }
 
-[class="editmenupage"] input[id=packagename],[class="editmenupage"] input[id=packagecuisine],[class="editmenupage"] input[id=packagepax],[class="editmenupage"] input[id=packageprice]{
+input[id=packagename], input[id=packagecuisine], input[id=packagepax], input[id=packageprice] {
     width: 100%;
     height: 60px;
     margin-bottom: 20px;
@@ -138,30 +138,30 @@
     border-radius: 3px;
     background-color: #2a2a2a;
     transition: 0.4s;
-	outline: none;
-	-webkit-transition: 0.5s;
+    outline: none;
+    -webkit-transition: 0.5s;
 }
 
-[class="editmenupage"] label {
+label {
     margin-bottom: 10px;
     display: block;
     color: #eef8f7;
 }
 
-[class="editmenupage"] form{
+form {
     width: 500px;
     height: 800px;
     margin-left: auto;
     margin-right: auto;
 }
 
-[class="editmenupage"] input[type=text]:hover,[class="editmenupage"] textarea[id=packagedesc]:hover{
+input[type=text]:hover, textarea[id=packagedesc]:hover {
     border-color: #555;
     transition: 0.3s ease-in;
     transition: 0.4s ease-out;
 }
 
-[class="editmenupage"] textarea[id=packagedesc] {
+textarea[id=packagedesc] {
     width: 100%;
     height: 120px;
     background-color: #2a2a2a;
@@ -171,14 +171,14 @@
     outline: none;
 }
 
-[class="editmenupage"] textarea:focus::-webkit-input-placeholder{
+textarea:focus::-webkit-input-placeholder {
     font-size: .90em;
     position: relative;
     top: -11px;
     transition: 0.5s ease-out;
 }
 
-[class="editmenupage"] .button {
+.button {
     background-color: #e35f21;
     color: white;
     padding: 12px;
@@ -188,15 +188,15 @@
     width: 100%;
     border-radius: 3px;
     cursor: pointer;
-	font-size: 17px;
+    font-size: 17px;
 }
 
-[class="editmenupage"] .button:active,[class="editmenupage"] .button:focus{
+.button:active, .button:focus {
     outline: none;
     border: 4px solid #555;
 }
 
-[class="editmenupage"] .button:hover{
+.button:hover {
     border-radius: 3px;
     border: 3px solid #2a2a2a;
     outline: none;
