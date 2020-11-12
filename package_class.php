@@ -55,7 +55,7 @@ class package{
 		$valid = false;
 		
 		// YYYY/MM/DD format
-		if (preg_match("/^[a-zA-Z]+$/",$cuisine)){
+		if (preg_match("/^[a-zA-Z ]+$/",$cuisine)){
 			$this->package_cuisine = $cuisine;
 			$valid = true;
 		}
@@ -185,12 +185,10 @@ class package{
 					package_id='$pkg_id'";
 
 		if (mysqli_query($this->conn, $query)) {
-			echo "Successfully update record with PackageID: ".$this->package_id;
+			return true;
 		} else {
-			echo "Error: " . $query. "<br>" . mysqli_error($this->conn);
+			return false;
 		}
 	}
-	
-	
 }
 ?>

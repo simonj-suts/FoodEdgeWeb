@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "database.php";
 include "order_class.php";
 
@@ -19,7 +20,7 @@ $phone = $rowuser["PhoneNo"];
 
 
 for ($i = 0; $i < count($resultorder); $i++) {
-    if (($resultorder[$i]['CustomerID'] == $userid)&& ($resultorder[$i]['order_status'] == "pending")) {
+    if (($resultorder[$i]['CustomerID'] == $userid) && ($resultorder[$i]['order_status'] == "pending")) {
         $id = $resultorder[$i]['order_id'];
         $r = mysqli_query($db, "SELECT * FROM orders WHERE order_id LIKE $id");
         $roworder = mysqli_fetch_assoc($r);
@@ -45,10 +46,29 @@ for ($i = 0; $i < count($resultorder); $i++) {
     <meta charset="utf-8" />
     <meta name="Receipt page" content="Customer Receipt Page" />
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="form_table.css" />
+    <link rel="stylesheet" type="text/css" href="styles/nav_style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Receipt page</title>
 </head>
 
 <body class="receiptpage">
+    <?php
+    /* arrays of authorised user */
+    define("AUTHORISED_ROLES", ["1", "2", "3"]);
+
+    /* Connect to FoodEdge database */
+    include 'userinformation_class.php';
+    $database = new Database();
+    $db = $database->getConnection();
+
+    /* Get current user's information */
+    $user = new userInformation($db);
+    $user->getCurrentUser($_SESSION['custid']);
+    $user->checkAuthority(AUTHORISED_ROLES);
+    ?>
+    <?php include_once "navigation.php" ?>
+
     <div class="container">
         <div class="receipt-main">
             <div class="rowheader">
@@ -119,7 +139,7 @@ for ($i = 0; $i < count($resultorder); $i++) {
             <div class="row-footer">
                 <div class="receipt-header receipt-header-mid receipt-footer">
                     <div class="receipt-text">
-                        <p><b>Date :</b> <?php echo $orderdate?></p>
+                        <p><b>Date :</b> <?php echo $orderdate ?></p>
                         <h5 style="color: rgb(140, 140, 140);">Thank you for your order!</h5>
                     </div>
                     <div class="receipt-right">
@@ -129,6 +149,7 @@ for ($i = 0; $i < count($resultorder); $i++) {
             </div>
         </div>
     </div>
+    <?php include_once "footer.php" ?>
 </body>
 
 
