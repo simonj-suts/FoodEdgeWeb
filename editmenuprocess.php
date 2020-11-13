@@ -18,7 +18,7 @@ $package->setPackageCuisine($_POST['packagecuisine']);
 $package->setPax($_POST['packagepax']);
 $package->setPricePerPax($_POST['packageprice']);
 $package->setPackageDesc($_POST['packagedesc']);
-if($package->updatePackage($_SESSION["packageid"]) == true){
+if($package->updatePackage($_POST["packageid"]) == true){
     $success = "Edit Success";
 }else{
     $success = "Edit Failed, Please Try Again.";
