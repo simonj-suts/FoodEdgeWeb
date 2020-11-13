@@ -52,9 +52,6 @@
 	color:#d55013;
 }
 
-
-
-
 #registration-form, #login-form{
 	width:80%;
 	margin: 2% auto 10% auto;
@@ -89,8 +86,6 @@
 	padding:0.5%;
 	margin-bottom:0.5%;
 	display:block;
-	
-
 }
 
 .registration-unit input:focus,.registration-unit textarea:focus {
@@ -418,7 +413,7 @@ h1.changePassword{
 
 .feedbackformbody{
 	font-family: Nominee, Arial, sans-serif;
-	background-image: url("cateringbackground.png");
+	background-image: url("media/reg-background.png");
 	background-position: center; /* Center the image */
  	background-repeat: repeat; /* Do not repeat the image */
   	background-size: cover; /* Resize the background image to cover the entire container */
@@ -443,7 +438,7 @@ h1.changePassword{
 
 .bookingformbody{
 	font-family: Nominee, Arial, sans-serif;
-	background-image: url("cateringbackground.png");
+	background-image: url("media/reg-background.png");
 	background-position: center; /* Center the image */
  	background-repeat: no-repeat; /* Do not repeat the image */
   	background-size: cover; /* Resize the background image to cover the entire container */
@@ -801,6 +796,11 @@ h1.changePassword{
 	text-align: right;
 }
 
+.buttongroup1{
+	padding-top: 25px;
+	text-align: center;
+}
+
 .buttonback span:after {
 	content: '\00AB';
 	font-size: 40px;
@@ -1056,7 +1056,7 @@ h1.changePassword{
 
 .feedbackformbody{
 	font-family: Nominee, Arial, sans-serif;
-	background-image: url("cateringbackground.png");
+	background-image: url("media/reg-background.png");
 	background-position: center; /* Center the image */
  	background-repeat: repeat; /* Do not repeat the image */
   	background-size: cover; /* Resize the background image to cover the entire container */
@@ -1218,7 +1218,7 @@ h1.changePassword{
 }
 
 .confirmationfeedbackbody{
-	background-image: url("cateringbackground.png");
+	background-image: url("media/reg-background.png");
 	background-position: center; /* Center the image */
  	background-repeat: repeat; /* Do not repeat the image */
 	margin: 0;

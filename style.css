@@ -421,5 +421,162 @@ body[class ="receiptpage"]{
 	margin-left:30%;
 }
 
+/*Homepage CSS*/
+#homepagebody{
+	font-family: Nominee, Arial, sans-serif;
+	margin: 0;
+}
+
+.home{
+	height: 100vh;
+	overflow:hidden;
+	position: relative;
+}
+
+.home .slide{
+	position: absolute;
+	left:0;
+	top:0;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	display:none;
+	padding:0 15px;
+	animation: slide 2s ease;
+}
+
+@keyframes slide{
+	0%{
+		transform: scale(1.1);
+	}
+	100%{
+		transform: scale(1);
+	}
+}
+
+.home .slide.active{
+	display: flex;
+}
 
 
+.container{
+	max-width: 1200px;
+	margin:auto;
+	
+}
+
+.home .container{
+	flex-grow: 1;
+}
+
+.caption{
+	padding: 15px;
+	border-radius: 20px;
+}
+
+.home .caption{
+	width:50%;
+}
+
+.home .caption h1{
+	font-size:82px;
+	color: #ffffff;
+	text-shadow: 5px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+	margin:0;
+	opacity: 0;
+	animation: captionText .5s ease forwards;
+	animation-delay: 1s;
+}
+
+
+.home .caption p {
+	background-color: #e35f21;
+	border: 4px solid black;
+	padding: 15px;
+	border-radius: 25px;
+	font-size: 35px;
+	color: black;
+	opacity:0;
+	animation: captionText .5s ease forwards;
+	animation-delay: 1.2s;
+}
+
+.home .caption .buttonsubmit{
+	opacity:0;
+	animation: captionText .5s ease forwards;
+	animation-delay:1.4s;
+}
+
+@keyframes captionText{
+	0%{
+		opacity:0; transform: translateX(-100px);
+	}
+	100%{
+		opacity:1; transform: translateX(0px);	
+	}
+}
+
+.indicator{
+	position: absolute;
+	left:47%;
+	bottom: 30px;
+	z-index: 2;
+	cursor: pointer;
+}
+
+.indicator div{
+	display: inline-block;
+	width:20px;
+	height: 20px;
+	color:#ffffff;
+	background-color: #e35f21;
+	border-radius:50%;
+	text-align: center;
+	line-height: 25px;
+	margin:0 3px;
+}
+
+.indicator div.active{
+	background-color: #000;
+}
+
+.about{
+	height: 100vh;
+	overflow:hidden;
+	position: relative;
+	background-color: black;
+	border-top: 1px solid #e35f21;
+	border-bottom: 1px solid #e35f21
+}
+
+.about div{
+	padding: 50px;
+	font-size: 22px;
+	border-radius: 25px;
+	margin: 30px 15px;
+}
+
+.aboutusp{
+	text-align: right;
+}
+
+.logo-about{
+	width: 220px;
+}
+
+.about div h1{
+	padding-top: 30px;
+	font-size: 42px;
+	text-align:center;
+	color: #e35f21;	
+}
+
+.spanstyle{
+	color: #e35f21;	
+}
+
+.about div p{
+	color: #ffffff;
+	margin: 0 auto;
+}

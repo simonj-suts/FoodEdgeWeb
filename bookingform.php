@@ -36,7 +36,7 @@
 	</article>
 	
 	<div class="bookingform">
-	<button onclick="window.location='cust_login.php';" class="buttonback"><span>Back</span></button>
+	<button onclick="window.location='menu.php';" class="buttonback"><span>Back</span></button>
 	<form name = "bookingform" action="confirmationpage.php" method="post" onsubmit="return checkForm()" onload="">
 		<h1 class="bookingform_header">Booking</h1>
 		<p class = "Names"> Hello <?php echo $_SESSION["fname"]; echo " ". $_SESSION["lname"];?>,</p>
