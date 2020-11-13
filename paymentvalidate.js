@@ -1,4 +1,11 @@
-var errorMessage = "";
+var nameerrorMessage = "";
+var emailerrorMessage = "";
+var addresserrorMessage = "";
+var cnameerrorMessage = "";
+var cnumerrorMessage = "";
+var cmontherrorMessage = "";
+var cyearerrorMessage = "";
+var cvverrorMessage = "";
 
 function checkname() {
     var name = document.getElementById("fname").value;
@@ -6,10 +13,10 @@ function checkname() {
     var nameregexresult = nameregex.test(name);
     var namevalid = true;
     if (name == "") {
-        errorMessage = errorMessage + "Name must be filled out.\n";
+        nameerrorMessage = "<i class='fa fa-exclamation-circle'></i>" + "Name must be filled out.\n";
         namevalid = false;
     } else if (nameregexresult == false) {
-        errorMessage = errorMessage + "Please enter a valid name.\n";
+        nameerrorMessage = "<i class='fa fa-exclamation-circle'></i>" + "Please enter a valid name.\n";
         namevalid = false;
     }
     return namevalid;
@@ -22,10 +29,10 @@ function checkemail() {
     var emailvalid = true;
 
     if (email == "") {
-        errorMessage = errorMessage + "Email must be filled out.\n";
+        emailerrorMessage = "<i class='fa fa-exclamation-circle'></i>" + "Email must be filled out.\n";
         emailvalid = false;
     } else if (emailregexresult == false) {
-        errorMessage = errorMessage + "Please enter a valid email.\n";
+        emailerrorMessage = "<i class='fa fa-exclamation-circle'></i>" + "Please enter a valid email.\n";
         emailvalid = false;
     }
 
@@ -36,7 +43,7 @@ function checkaddress() {
     var add = document.getElementById("fadd").value;
     var addvalid = true;
     if (add == "") {
-        errorMessage = errorMessage + "Address must be filled out.\n";
+        addresserrorMessage = "<i class='fa fa-exclamation-circle'></i>" + "Address must be filled out.\n";
         addvalid = false;
     }
     return addvalid;
@@ -48,10 +55,10 @@ function checkcname() {
     var cnameregexresult = cnameregex.test(cname);
     var cnamevalid = true;
     if (cname == "") {
-        errorMessage = errorMessage + "Name on Card must be filled out.\n";
+        cnameerrorMessage = "<i class='fa fa-exclamation-circle'></i>" + "Name on Card must be filled out.\n";
         cnamevalid = false;
     } else if (cnameregexresult == false) {
-        errorMessage = errorMessage + "Please enter a valid Name on Card.\n";
+        cnameerrorMessage = "<i class='fa fa-exclamation-circle'></i>" + "Please enter a valid Name on Card.\n";
         cnamevalid = false;
     }
     return cnamevalid;
@@ -64,10 +71,10 @@ function checkcnum() {
     var cnumvalid = true;
 
     if (cnum == "") {
-        errorMessage = errorMessage + "Card number must be filled out.\n";
+        cnumerrorMessage = "<i class='fa fa-exclamation-circle'></i>" + "Card number must be filled out.\n";
         cnumvalid = false;
-    } else if (cnumregexresult == false){
-        errorMessage = errorMessage + "Please enter a valid Card number.\n";
+    } else if (cnumregexresult == false) {
+        cnumerrorMessage = "<i class='fa fa-exclamation-circle'></i>" + "Please enter a valid Card number.\n";
         cnumvalid = false;
     }
     return cnumvalid;
@@ -80,10 +87,10 @@ function checkmonth() {
     var cmonthvalid = true;
 
     if (cmonth == "") {
-        errorMessage = errorMessage + "Card expire month must be filled out.\n";
+        cmontherrorMessage = "<i class='fa fa-exclamation-circle'></i>" + "Card expire month must be filled out.\n";
         cmonthvalid = false;
     } else if (cmonthregexresult == false) {
-        errorMessage = errorMessage + "Please enter a valid Card expire month.\n";
+        cmontherrorMessage = "<i class='fa fa-exclamation-circle'></i>" + "Please enter a valid Card expire month.\n";
         cmonthvalid = false;
     }
     return cmonthvalid;
@@ -96,10 +103,10 @@ function checkyear() {
     var cyearvalid = true;
 
     if (cyear == "") {
-        errorMessage = errorMessage + "Card expire year must be filled out.\n";
+        cyearerrorMessage = "<i class='fa fa-exclamation-circle'></i>" + "Card expire year must be filled out.\n";
         cyearvalid = false;
     } else if (cyearregexresult == false) {
-        errorMessage = errorMessage + "Please enter a valid Card expire year.\n";
+        cyearerrorMessage = "<i class='fa fa-exclamation-circle'></i>" + "Please enter a valid Card expire year.\n";
         cyearvalid = false;
     }
     return cyearvalid;
@@ -112,16 +119,24 @@ function checkcvv() {
     var cvvvalid = true;
 
     if (cvv == "") {
-        errorMessage = errorMessage + "CVV must be filled out.\n";
+        cvverrorMessage = "<i class='fa fa-exclamation-circle'></i>" + "CVV must be filled out.\n";
         cvvvalid = false;
     } else if (cvvregexresult == false) {
-        errorMessage = errorMessage + "Please enter a valid CVV.\n";
+        cvverrorMessage = "<i class='fa fa-exclamation-circle'></i>" + "Please enter a valid CVV.\n";
         cvvvalid = false;
     }
     return cvvvalid;
 }
 
 function validateForm() {
+    displayError("nameerror", "")
+    displayError("emailerror", "")
+    displayError("adderror", "")
+    displayError("cnameerror", "")
+    displayError("cnumerror", "")
+    displayError("cmontherror", "")
+    displayError("cyearerror", "")
+    displayError("cvverror", "")
     var formvalid = false;
     var nameOk = checkname();
     var emailOk = checkemail();
@@ -132,15 +147,41 @@ function validateForm() {
     var cyearOk = checkyear();
     var cvvOk = checkcvv();
 
+    if(nameOk == false){
+        displayError("nameerror", nameerrorMessage);
+    }
+    if(emailOk == false){
+        displayError("emailerror", emailerrorMessage);
+    }
+    if(addoOk == false){
+        displayError("adderror", addresserrorMessage);
+    }
+    if(cnameOk == false){
+        displayError("cnameerror", cnameerrorMessage);
+    }
+    if(cnumOk == false){
+        displayError("cnumerror", cnumerrorMessage);
+    }
+    if(cmonthOk == false){
+        displayError("cmontherror", cmontherrorMessage);
+    }
+    if(cyearOk == false){
+        displayError("cyearerror", cyearerrorMessage);
+    }
+    if(cvvOk == false){
+        displayError("cvverror", cvverrorMessage);
+    }
 
     if (nameOk && emailOk && addoOk && cnameOk && cnumOk && cmonthOk && cyearOk && cvvOk) {
         formvalid = true;
     } else {
-        alert(errorMessage);
-        errorMessage = "";
         formvalid = false;
     }
     return formvalid;
 }
 
+function displayError(id, output) {
+    var test = document.getElementById(id);
+    test.innerHTML = output;
+}
 
