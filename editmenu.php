@@ -129,74 +129,79 @@ $package = new package($db);
 
 
 <body class="editmenupage">
-    <h2 class="title">Select package to edit:</h2>
+    <div class="content">
+        <h2 class="title">Select package to edit:</h2>
 
-    <div class="checkbox_container">
-        <label class="option_item">
-            <input type="checkbox" class="checkbox" name="checkbox" id="checkbox1">
-            <div class="option_inner">
-                <div class="tickmark"></div>
-                <div class="packagename1">Package 1</div>
-            </div>
-        </label>
-        <label class="option_item">
-            <input type="checkbox" class="checkbox" name="checkbox" id="checkbox2">
-            <div class="option_inner">
-                <div class="tickmark"></div>
-                <div class="packagename2">Package 2</div>
-            </div>
-        </label>
-        <label class="option_item">
-            <input type="checkbox" class="checkbox" name="checkbox" id="checkbox3">
-            <div class="option_inner">
-                <div class="tickmark"></div>
-                <div class="packagename3">Package 3</div>
-            </div>
-        </label>
-        <label class="option_item">
-            <input type="checkbox" class="checkbox" name="checkbox" id="checkbox4">
-            <div class="option_inner">
-                <div class="tickmark"></div>
-                <div class="packagename4">Package 4</div>
-            </div>
-        </label>
-        <label class="option_item">
-            <input type="checkbox" class="checkbox" name="checkbox" id="checkbox5">
-            <div class="option_inner">
-                <div class="tickmark"></div>
-                <div class="packagename5">Package 5</div>
-            </div>
-        </label>
-    </div>
-
-    <div class="hidden">
-        <form name="editmenuform" onsubmit="return validateForm()" method="POST" action="editmenuprocess.php">
-            <h2 class="title">Package Information</h2>
-            <div class="container">
-                <div class="row">
-                    <label for="packagename">Package Name</label>
-                    <input type="text" id="packagename" name="packagename" placeholder="Name" value="">
-
-                    <label for="packagecuisine">Package cuisine</label>
-                    <input type="text" id="packagecuisine" name="packagecuisine" placeholder="Cuisine" value="">
-
-                    <label for="packagepax">Pax</label>
-                    <input type="text" id="packagepax" name="packagepax" placeholder="50" value="">
-
-                    <label for="packageprice">Price</label>
-                    <input type="text" id="packageprice" name="packageprice" placeholder="600.00" value="">
-
-                    <label for="packagedesc">Package Description</label>
-                    <textarea rows="5" cols="60" name="packagedesc" id="packagedesc" placeholder="Description" value=""></textarea>
+        <div class="checkbox_container">
+            <label class="option_item">
+                <input type="checkbox" class="checkbox" name="checkbox" id="checkbox1">
+                <div class="option_inner">
+                    <div class="tickmark"></div>
+                    <div class="packagename1">Package 1</div>
                 </div>
-            </div>
+            </label>
+            <label class="option_item">
+                <input type="checkbox" class="checkbox" name="checkbox" id="checkbox2">
+                <div class="option_inner">
+                    <div class="tickmark"></div>
+                    <div class="packagename2">Package 2</div>
+                </div>
+            </label>
+            <label class="option_item">
+                <input type="checkbox" class="checkbox" name="checkbox" id="checkbox3">
+                <div class="option_inner">
+                    <div class="tickmark"></div>
+                    <div class="packagename3">Package 3</div>
+                </div>
+            </label>
+            <label class="option_item">
+                <input type="checkbox" class="checkbox" name="checkbox" id="checkbox4">
+                <div class="option_inner">
+                    <div class="tickmark"></div>
+                    <div class="packagename4">Package 4</div>
+                </div>
+            </label>
+            <label class="option_item">
+                <input type="checkbox" class="checkbox" name="checkbox" id="checkbox5">
+                <div class="option_inner">
+                    <div class="tickmark"></div>
+                    <div class="packagename5">Package 5</div>
+                </div>
+            </label>
+        </div>
 
-            <div>
-                <input type="submit" value="Submit" class="button">
-            </div>
-        </form>
-        <?php include_once "footer.php" ?>  
+        <div class="hidden">
+            <form name="editmenuform" onsubmit="return validateForm()" method="POST" action="editmenuprocess.php">
+                <h2 class="title">Package Information</h2>
+                <div class="container">
+                    <div class="row">
+                        <label for="packagename">Package Name</label>
+                        <input type="text" id="packagename" name="packagename" placeholder="Name" value="">
+
+                        <label for="packagecuisine">Package cuisine</label>
+                        <input type="text" id="packagecuisine" name="packagecuisine" placeholder="Cuisine" value="">
+
+                        <label for="packagepax">Pax</label>
+                        <input type="text" id="packagepax" name="packagepax" placeholder="50" value="">
+
+                        <label for="packageprice">Price</label>
+                        <input type="text" id="packageprice" name="packageprice" placeholder="600.00" value="">
+
+                        <label for="packagedesc">Package Description</label>
+                        <textarea rows="5" cols="60" name="packagedesc" id="packagedesc" placeholder="Description" value=""></textarea>
+                    </div>
+                </div>
+
+                <div>
+                    <input type="submit" value="Submit" class="button">
+                </div>
+            </form>
+
+        </div>
     </div>
-    
+    <div class="footer">
+        <?php include_once "footer.php" ?>
+    </div>
 </body>
+
 </html>
