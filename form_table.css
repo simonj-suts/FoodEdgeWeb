@@ -6,6 +6,7 @@
 
 .registration-body, .login-body{
 	background-image: url("media/reg-background.png");
+	margin:0;
 }
 
 #statistics_table{
@@ -50,6 +51,9 @@
 	font-size:2em;
 	color:#d55013;
 }
+
+
+
 
 #registration-form, #login-form{
 	width:80%;
@@ -137,7 +141,7 @@
  
 #recovery-submit-button:hover, #loginBtn input[type=submit]:hover, #fogpass2-submit:hover, #fogpass3-submit:hover , #fogpass3-reset:hover{
 
-	background-color: #555555;
+	background-color: black;
 	color: white;
 	transition-duration: 0.4s;
 }
@@ -152,6 +156,8 @@
 .chgPassword{
 	display:none;
 }
+
+
 
 #login-form{
 	width:60%;
@@ -275,32 +281,34 @@
 #returnBtn{
 	
 	text-align:center;
+	margin-bottom:2%;
 }
 
 #returnBtn button {
 	background-color:#d55013;
 	color:blaok;
-	width:20%;
-	margin: 5% auto 0 auto;
+	width:7%;
+	margin: 2% auto 0 auto;
     text-decoration: none;
 
 }
 
 #returnBtn button, #fogpass-table-button button {
-	padding: 2% 2%;
-	font-size:0.8em;
-	transition-duration: 0.4s;
-	
+	padding: 0.5% 0;
+	font-size:20px;
+	transition-duration: 0.5s;
+	border-radius:4px;
 }
 
 #returnBtn button:hover, #fogpass-table-button button:hover, #fogpass4-button button:hover{
 	
-	background-color: #555555;
+	background-color: black;
 	color: white;
 	text-decoration:none;
 }
 
 #returnBtn a, #fogpass-table-button button a{
+	
 	text-decoration:none;
 	color:white;
 }
@@ -389,7 +397,7 @@ h1.changePassword{
 
 #fogpass4-button{
 	text-align:center;
-	
+	margin-bottom:10%;
 }
 #fogpass4-button button{
 	
@@ -1433,3 +1441,4 @@ h1.changePassword{
 .feedbacklist_tablediv{
 	padding:20px;
 }
+

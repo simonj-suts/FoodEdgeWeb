@@ -41,6 +41,6 @@ function changeNavContentByRole($user_role,$username){
     <ul>
         <li id="logo-navbar-placeholder"><a href="index.php" ><img src="media/foodedgelogo.png" alt="company logo" class="logo-icon"></a></li>
         <?php changeNavContentByRole($user->getUserRole(),$user->getCustomerLastName()); ?>
-        <li><a href="undercon">Our Menus</a></li>
+        <li><a href="menu.php">Our Menus</a></li>
     </ul>
 </nav>

@@ -16,6 +16,7 @@
 		<meta name="description" content="forget password page"/>
 		<meta name="keywords" content="forget-password,users,catering"/>
 		<link rel="stylesheet" type="text/css" href="form_table.css"/>
+		<link rel="stylesheet" type="text/css" href="styles/nav_style.css"/>
 		<script src="validateForm.js"></script>
 		
 		
@@ -23,13 +24,25 @@
 	
 	<body class="login-body" onload="document.registration-form.first.focus()">
 	
-		<header>
+		<?php		
+			 /* arrays of authorised user */
 			
-		</header>
-		
-		<nav>
+
+			 /* Connect to FoodEdge database */ 
+			 include 'database.php';
+			 include 'userinformation_class.php';
+			 $database = new Database();
+			 $db = $database->getConnection();
+
+			 /* Get current user's information */
+			 $user = new userInformation($db);
+			 if(isset($_SESSION['custid'])){
+				 $user->getCurrentUser($_SESSION['custid']);
+				 
+			 }
 			
-		</nav>
+			?>
+	<?php include_once "navigation.php"?>
 		
 
 		
@@ -40,14 +53,14 @@
 		
 		<?php 
 		
-		include 'database.php';
-		include 'userinformation_class.php';
+		/*include 'database.php';
+		include 'userinformation_class.php';*/
 		
 		$email=$_SESSION['email'];
 		
 		
-		$database = new Database();
-		$db= $database->getConnection();
+		/*$database = new Database();
+		$db= $database->getConnection();*/
 		$userinformation= new userInformation($db);
 		
 		if(isset($_POST['secAns'])){
@@ -93,9 +106,7 @@
 				</div>
 		</form>
 		
-		
-		<footer>
-			
-	</footer>
+				<?php include_once "footer.php" ?>
+
 	</body>
 </html>

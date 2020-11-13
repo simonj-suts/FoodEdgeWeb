@@ -58,7 +58,14 @@
 						$_SESSION["fname"]=$userinformation->getCustomerFirstName();
 						$_SESSION["lname"]=$userinformation->getCustomerLastName();
 						$_SESSION["custid"]=$userinformation->getCustomerID();
-						header("Location: bookingform.php");
+						header("Location: index.php");
+						
+						/*if($userinformation->getUserRole()=='1'){
+							header("Location: bookingform.php");
+						}
+						else {
+							header("Location: index.php");
+						}*/
 					}
 				}
 				$database->closeConnection();
