@@ -36,6 +36,7 @@
 			 $user = new userInformation($db);
 			 if(isset($_SESSION['custid'])){
 				 $user->getCurrentUser($_SESSION['custid']);
+				 
 			 }
 			
 			?>

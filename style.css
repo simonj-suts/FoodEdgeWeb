@@ -321,6 +321,7 @@ body[class ="receiptpage"]{
 #menubackground{
 	background-color:#2E2E2E;
 	font-family: Nominee, Arial, sans-serif;
+	margin:0;
 }
 #menu-title{
 	margin: 2% 0 0 5%;
