@@ -61,35 +61,43 @@ $lname = $rowuser['CustomerLName'];
                             <h2 id="formtitle">Personal Information</h2>
                             <label for="fname">Name</label>
                             <input type="text" id="fname" name="name" placeholder="Leon Lai" value="<?php echo $fname ?>">
+                            <div class="erroredit" id="nameerror"></div>
                             <label for="femail">Email</label>
                             <input type="text" id="femail" name="email" placeholder="leon@example.com" value="<?php echo $email ?>">
+                            <div class="erroredit" id="emailerror"></div>
                             <label for="fadd">Address for delivery</label>
                             <input type="text" id="fadd" name="address" placeholder="123, Lorong Donut, 11900 Donut City, Pulau Pinang" value="<?php echo $address ?>">
+                            <div class="erroredit" id="adderror"></div>
                         </div>
 
                         <div class="col-50">
                             <h2 id="formtitle">Credit Card Information</h2>
                             <label for="cname">Name on Card</label>
                             <input type="text" id="cardname" name="cardname" placeholder="Leon">
+                            <div class="erroredit" id="cnameerror"></div>
                             <label for="cnum">Card number</label>
                             <input type="text" id="cardnum" name="cardnumber" placeholder="1111 2222 3333 4444">
+                            <div class="erroredit" id="cnumerror"></div>
                         </div>
+
                     </div>
                     <div class="exp">
                         <div class="expcell">
                             <label class="cmonth">Month</label>
                             <input type="text" id="cardmonth" name="cardmonth" placeholder="08">
+                            <div class="erroredit" id="cmontherror"></div>
                         </div>
                         <div class="expcell">
                             <label class="cyear">Year</label>
                             <input type="text" id="cardyear" name="cardyear" placeholder="2020">
+                            <div class="erroredit" id="cyearerror"></div>
                         </div>
                         <div class="expcell">
                             <label class="cvv">CVV</label>
                             <input type="text" id="cvv" name="cvv" placeholder="352">
+                            <div class="erroredit" id="cvverror"></div>
                         </div>
                     </div>
-
 
                     <div>
                         <input type="submit" value="Continue to checkout" class="button">

@@ -1,4 +1,9 @@
-var errorMessage = "";
+var nameerrorMessage = "";
+var cuisineerrorMessage = "";
+var paxerrorMessage = "";
+var priceerrorMessage = "";
+var descerrorMessage = "";
+
 
 function checkname() {
     var name = document.getElementById("packagename").value;
@@ -6,10 +11,10 @@ function checkname() {
     var nameregexresult = nameregex.test(name);
     var namevalid = true;
     if (name == "") {
-        errorMessage = errorMessage + "Package Name must be filled out.\n";
+        nameerrorMessage = "<i class='fa fa-exclamation-circle'></i>" + "Package Name must be filled out.";
         namevalid = false;
     } else if (nameregexresult == false) {
-        errorMessage = errorMessage + "Please enter a valid package name.\n";
+        nameerrorMessage = "<i class='fa fa-exclamation-circle'></i>" + "Please enter a valid package name.";
         namevalid = false;
     }
     return namevalid;
@@ -21,10 +26,10 @@ function checkcuisine() {
     var cuisineregexresult = cuisineregex.test(cuisine);
     var cuisinevalid = true;
     if (cuisine == "") {
-        errorMessage = errorMessage + "Package cuisine must be filled out.\n";
+        cuisineerrorMessage = "<i class='fa fa-exclamation-circle'></i>" + "Package cuisine must be filled out.";
         cuisinevalid = false;
     } else if (cuisineregexresult == false) {
-        errorMessage = errorMessage + "Please enter a valid package cuisine.\n";
+        cuisineerrorMessage = "<i class='fa fa-exclamation-circle'></i>" + "Please enter a valid package cuisine.";
         cuisinevalid = false;
     }
     return cuisinevalid;
@@ -37,10 +42,10 @@ function checkpax() {
     var paxvalid = true;
 
     if (pax == "") {
-        errorMessage = errorMessage + "Pax must be filled out.\n";
+        paxerrorMessage = "<i class='fa fa-exclamation-circle'></i>" + "Pax must be filled out.";
         paxvalid = false;
     } else if (paxregexresult == false) {
-        errorMessage = errorMessage + "Please enter a valid pax number.\n";
+        paxerrorMessage = "<i class='fa fa-exclamation-circle'></i>" + "Please enter a valid pax number.";
         paxvalid = false;
     }
     return paxvalid;
@@ -53,10 +58,10 @@ function checkprice() {
     var pricevalid = true;
 
     if (price == "") {
-        errorMessage = errorMessage + "Price must be filled out.\n";
+        priceerrorMessage = "<i class='fa fa-exclamation-circle'></i>" + "Price must be filled out.";
         pricevalid = false;
     } else if (priceregexresult == false) {
-        errorMessage = errorMessage + "Please enter a valid price.\n";
+        priceerrorMessage = "<i class='fa fa-exclamation-circle'></i>" + "Please enter a valid price.";
         pricevalid = false;
     }
     return pricevalid;
@@ -66,13 +71,18 @@ function checkdesc() {
     var desc = document.getElementById("packagedesc").value;
     var descvalid = true;
     if (desc == "") {
-        errorMessage = errorMessage + "Package description must be filled out.\n";
+        descerrorMessage = "<i class='fa fa-exclamation-circle'></i>" + "Package description must be filled out.";
         descvalid = false;
     }
     return descvalid;
 }
 
 function validateForm() {
+    displayError("nameerror", "")
+    displayError("cuisineerror", "")
+    displayError("paxerror", "")
+    displayError("priceerror", "")
+    displayError("descerror", "")
     var formvalid = false;
     var nameOk = checkname();
     var cuisineOk = checkcuisine();
@@ -80,13 +90,32 @@ function validateForm() {
     var priceOk = checkprice();
     var descOk = checkdesc();
 
+    if (nameOk == false) {
+        displayError("nameerror", nameerrorMessage);
+    }
+    if (cuisineOk == false) {
+        displayError("cuisineerror", cuisineerrorMessage);
+    }
+    if (paxOk == false) {
+        displayError("paxerror", paxerrorMessage);
+    }
+    if (priceOk == false) {
+        displayError("priceerror", priceerrorMessage);
+    }
+    if (descOk == false) {
+        displayError("descerror", descerrorMessage);
+    }
 
     if (nameOk && cuisineOk && paxOk && priceOk && descOk) {
         formvalid = true;
     } else {
-        alert(errorMessage);
-        errorMessage = "";
         formvalid = false;
     }
+
     return formvalid;
+}
+
+function displayError(id, output) {
+    var test = document.getElementById(id);
+    test.innerHTML = output;
 }

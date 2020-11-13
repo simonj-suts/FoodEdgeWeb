@@ -29,6 +29,8 @@ $package = new package($db);
     <link rel="stylesheet" type="text/css" href="editmenu.css" />
     <link rel="stylesheet" type="text/css" href="styles/nav_style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    <script src="https://kit.fontawesome.com/cebce8210e.js" crossorigin="anonymous"></script>
 </head>
 
 <script>
@@ -171,24 +173,25 @@ $package = new package($db);
         </div>
 
         <div class="hidden">
-            <form name="editmenuform" onsubmit="return validateForm()" method="POST" action="editmenuprocess.php">
+            <form name="editmenuform" method="POST" onsubmit="return validateForm()" action="editmenuprocess.php">
                 <h2 class="title">Package Information</h2>
                 <div class="container">
                     <div class="row">
                         <label for="packagename">Package Name</label>
-                        <input type="text" id="packagename" name="packagename" placeholder="Name" value="">
-
+                        <input type="text" class="input" id="packagename" name="packagename" placeholder="Name" value="">
+                        <div class="erroredit" id="nameerror"></div>
                         <label for="packagecuisine">Package cuisine</label>
-                        <input type="text" id="packagecuisine" name="packagecuisine" placeholder="Cuisine" value="">
-
+                        <input type="text" class="input" id="packagecuisine" name="packagecuisine" placeholder="Cuisine" value="">
+                        <div class="erroredit" id="cuisineerror"></div>
                         <label for="packagepax">Pax</label>
-                        <input type="text" id="packagepax" name="packagepax" placeholder="50" value="">
-
+                        <input type="text" class="input" id="packagepax" name="packagepax" placeholder="50" value="">
+                        <div class="erroredit" id="paxerror"></div>
                         <label for="packageprice">Price</label>
-                        <input type="text" id="packageprice" name="packageprice" placeholder="600.00" value="">
-
+                        <input type="text" class="input" id="packageprice" name="packageprice" placeholder="600.00" value="">
+                        <div class="erroredit" id="priceerror"></div>
                         <label for="packagedesc">Package Description</label>
-                        <textarea rows="5" cols="60" name="packagedesc" id="packagedesc" placeholder="Description" value=""></textarea>
+                        <textarea rows="5" cols="60" class="input" name="packagedesc" id="packagedesc" placeholder="Description" value=""></textarea>
+                        <div class="erroredit" id="descerror"></div>
                     </div>
                 </div>
 
