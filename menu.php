@@ -64,10 +64,10 @@
 		?>
 		
 		
-			<div class="menudivLeft">
+			<div class="menudivLeft" id="pkg1div">
 			
 				
-					<img src="media/reg-background.png" alt="<?php echo $rows[0]['package_name'];?> Package" width="330px" height="310px">
+					<img src="images/Exquisite.jpg" alt="<?php echo $rows[0]['package_name'];?> Package" width="330px" height="310px">
 				
 				
 				
@@ -82,7 +82,7 @@
 				
 			</div>
 			
-			<div class="menudivRight">
+			<div class="menudivRight" id="pkg2div">
 			
 				
 				<div class="pkgInfoRight">
@@ -92,11 +92,11 @@
 						<p> <?php echo $rows[1]['package_desc'];?></p></div>
 						<div class="menuBtnDivRight"><button class="menuBtnRight" id="pkg2btn" onclick="selectPackage(1)"><a href="bookingform.php">BOOK NOW</a><span></span></button></div>
 				</div>
-				<img src="media/reg-background.png" alt="<?php echo $rows[1]['package_name'];?> Package" width="330px" height="310px">
+				<img src="images/Heavenly.jpg" alt="<?php echo $rows[1]['package_name'];?> Package" width="330px" height="310px">
 			</div>
 			
-			<div class="menudivLeft">
-				<img src="media/reg-background.png" alt="<?php echo $rows[2]['package_name'];?> Package" width="330px" height="310px">
+			<div class="menudivLeft" id="pkg3div">
+				<img src="images/Healthy.jpg" alt="<?php echo $rows[2]['package_name'];?> Package" width="330px" height="310px">
 				<div class="pkgInfoLeft">
 					<div class="innerPkgInfoLeft">
 					<h1 class="packagename"><?php echo $rows[2]['package_name'];?>	 <span class="cuis"><i class='fas fa-bread-slice' style='color:#E35F21'></i> <?php echo $rows[2]['package_cuisine']; ?> Cuisine</span></h1>
@@ -109,7 +109,7 @@
 			</div>
 			
 			
-			<div class="menudivRight">
+			<div class="menudivRight" id="pkg4div">
 			
 				
 				<div class="pkgInfoRight">
@@ -119,12 +119,12 @@
 					<p> <?php echo $rows[3]['package_desc'];?></p></div>
 					<div class="menuBtnDivRight"><button class="menuBtnRight" id="pkg4btn" onclick="selectPackage(3)"><a href="bookingform.php">BOOK NOW</a><span></span></button></div>
 				</div>
-				<img src="media/reg-background.png" alt="<?php echo $rows[3]['package_name'];?> Package"width="330px" height="310px">
+				<img src="images/Zealous.jpg" alt="<?php echo $rows[3]['package_name'];?> Package"width="330px" height="310px">
 			</div>
 			
-			<div class="menudivLeft">
+			<div class="menudivLeft" id="pkg5div">
 			
-				<img src="media/reg-background.png" alt="<?php echo $rows[4]['package_name'];?> Package" width="330px" height="310px">
+				<img src="images/Flourishing.jpg" alt="<?php echo $rows[4]['package_name'];?> Package" width="330px" height="310px">
 				
 				<div class="pkgInfoLeft">
 					<div class="innerPkgInfoLeft"><h1 class="packagename"><?php echo $rows[4]['package_name'];?>	 <span class="cuis"> <i class='fas fa-bread-slice' style='color:#E35F21'></i> <?php echo $rows[4]['package_cuisine']; ?> Cuisine</span></h1>
