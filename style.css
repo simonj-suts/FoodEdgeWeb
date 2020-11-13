@@ -318,6 +318,107 @@ hr+a:hover{
 body[class ="receiptpage"]{
     background-color: #353535;
 }
+#menubackground{
+	background-color:#2E2E2E;
+	font-family: Nominee, Arial, sans-serif;
+}
+#menu-title{
+	margin: 2% 0 0 5%;
+	color: #E35F21;
+	position:absolute;
+}
+
+.menudivLeft, .menudivRight{
+	display: flex;
+	width:70%;
+	height:310px;
+	margin:5% auto;
+	background: white;
+}
+
+.pkgInfoRight, .pkgInfoLeft{
+	width:100%;
+	padding-top:3%;
+	padding-left:10%;
+	overflow:auto;
+	
+}
+
+.pkgInfoRight h1, .pkgInfoLeft h1{
+	font-size: 1.5em;
+}
+
+.pkgInfoRight p, .pkgInfoLeft p{
+	font-size: 0.8em;
+	
+}
+
+.menuBtnRight ,.menuBtnLeft{
+	margin-top:20px;
+	border-radius: 4px;
+	background-color: #e35f21;
+	border: none;
+	text-align: center;
+	font-family: Nominee, Arial, sans-serif;
+	font-size: 18px;
+	padding: 13px;
+	width: 135px;
+	text-align:center;
+}
+
+.menuBtnRight a ,.menuBtnLeft a{
+	text-decoration:none;
+	color:white;
+	text-align:center;
+}
+
+.menuBtnRight:hover, .menuBtnLeft:hover {
+	cursor: pointer;
+	background-color:black;
+	transition: 0.5s;
+}
+
+
+#editMenuBtn{
+	
+	border-radius: 4px;
+	background-color:black;
+	border: none;
+	text-align: center;
+	background-color:#e35f21;
+	font-family: Nominee, Arial, sans-serif;
+	font-size: 15px;
+	padding: 13px;
+	width: 100px;
+	text-align:center;
+	position:relative;
+	top:15px;
+	left:90%;
+	display:inline;
+}
+
+#editMenuBtn a{
+	text-decoration:none;
+	color:white;
+}
+
+#editMenuBtn:hover{
+	cursor: pointer;
+	background-color:black;
+	transition: 0.5s;
+}
+.cuis{
+	font-size:0.5em;
+	font-weight:normal;
+	text-align:right;
+}
+
+.innerPkgInfoLeft,.innerPkgInfoRight{
+	padding-right:20%;
+}
+.menuBtnDivLeft, .menuBtnDivRight{
+	margin-left:30%;
+}
 
 
 
