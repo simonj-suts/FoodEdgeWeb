@@ -1,0 +1,29 @@
+
+/* hiding certain contents by default*/
+#profile-order, .pInfo-field-input,
+.pInfo-form-buttons button:not(:first-child),
+.pInfo-popUpBox{
+    display: none;
+}
+
+#profile-nav{
+    width: 30%;
+    float: left;
+}
+
+#profile-nav button{
+    display: block;
+    margin: 22px auto 0px auto;
+}
+
+#profile-content{
+    overflow: hidden;
+    width: 65%;
+    color: white;
+}
+
+
+/* extra adjustments */
+footer{
+    clear: both;
+}
