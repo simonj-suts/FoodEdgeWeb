@@ -1,4 +1,5 @@
 <h2>Account Information</h2>
+<div id="dimScreen"></div>
 <?php
     function formInput($fieldName, $fieldValue){
         $fieldNameStripped = preg_replace('/\s+/', '', $fieldName);
@@ -7,15 +8,16 @@
         $cancelButtonID = "cancel-".$fieldNameStripped;
         $resetButtonID = "reset-".$fieldNameStripped;
         $inputFieldID = "input-".$fieldNameStripped;
+        $fieldValueID = "value-".$fieldNameStripped;
         $popUpBoxID = "popUpBox-".$fieldNameStripped;
 
 
-        echo '<form action="prfoileupdate.php" method="post">';
+        echo '<form action="profileupdate.php" method="post">';
             echo '<table>';
                 echo '<td class="pInfo-field-name">'.$fieldName.'</td> ';
                 echo '<td>';
-                    echo '<span class="pInfo-field-value">'.$fieldValue.'</span>';
-                    echo '<input type="text" class="pInfo-field-input" id="'.$inputFieldID.'">'; //hidden
+                    echo '<span id="'.$fieldValueID.'" class="pInfo-field-value">'.$fieldValue.'</span>';
+                    echo '<input type="text" name="'.$fieldValueID.'" required="required" class="pInfo-field-input" id="'.$inputFieldID.'">'; //hidden
                 echo '</td>';
             echo '</table>';
 
@@ -26,15 +28,15 @@
             echo '</div>';
 
             /* hidden */
-            echo '<div>';
-                echo '<div class="pInfo-popUpBox" id="'.$popUpBoxID.'">';
-                    echo '<h3>Changing '.$fieldName.'</h3>';
-                    echo '<p>Please enter your password to confirm your changes</p>';
-                    echo '<p>Password: <input type="password"></p>';
-                    echo '<button class="confirm-button">Submit</button>';
-                    echo '<button type="reset" class="cancel-button" onclick="resetButton(\''.$fieldNameStripped.'\')">Cancel</button>';
-                echo '</div>';
+            echo '<div class="pInfo-popUpBox" id="'.$popUpBoxID.'">';
+                echo '<h3>Changing '.$fieldName.'</h3>';
+                echo '<p>Please enter your password to confirm your changes</p>';
+                echo '<p>Password: <input type="password" name="pass" required="required"></p>';
+                echo '<button class="confirm-button">Submit</button>';
+                echo '<button type="reset" class="cancel-button" onclick="resetButton(\''.$fieldNameStripped.'\')">Cancel</button>';
             echo '</div>';
+
+            echo '<input type="hidden" name="formName" value="'.$fieldNameStripped.'">';
         echo '</form>';
     }
 

@@ -81,7 +81,7 @@
 		
 		public function setPhoneNo($c_pnumber){
 			$valid = false;
-			if (preg_match("/^(01)[0-9]{7}$/",$c_pnumber)) {
+			if (preg_match("/^[0-9]{9}$/",$c_pnumber)) {
 				$this->c_pnumber = $c_pnumber;
 				$valid = true;
 			}
@@ -150,6 +150,7 @@
 				$result = @mysqli_query($this->conn,$query);
 				if (@mysqli_num_rows($result)==1){
 					$userData = mysqli_fetch_array($result);
+					$this->c_id = $userData['CustomerID'];
 					$this->f_name = $userData['CustomerFName'];
 					$this->l_name = $userData['CustomerLName'];
 					$this->c_email = $userData['Email'];
@@ -161,6 +162,29 @@
 				}
 			} catch (Exception $e){
 				echo "Error: ".$e.getMessage();
+			}
+		}
+
+		// update an existing user
+		public function updateUser(){
+			$query = "UPDATE
+						".$this->tableName."
+					SET
+						CustomerFName='$this->f_name',
+						CustomerLName='$this->l_name',
+						Email='$this->c_email',
+						Password='$this->c_password',
+						PhoneNo='$this->c_pnumber'
+					WHERE
+						CustomerID='$this->c_id'";
+
+			try{
+				if (@mysqli_query($this->conn, $query)){
+					return "Successfully update user information.";
+				}
+				return "Unable to update user information. Please try again.";
+			} catch (Exception $e){
+				return "Error: ".$e.getMessage();
 			}
 		}
 		
