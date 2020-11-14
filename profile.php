@@ -34,7 +34,7 @@ $user->checkAuthority(AUTHORISED_ROLES);
 </head>
 <body>
     <?php include_once 'navigation.php' ?>
-    <article>
+    <article id="profile">
         <div id="profile-nav">
             <button id="profile-info-button" onclick="displayProfile()">MY PROFILE</button>
             <?php

@@ -6,6 +6,10 @@
     display: none;
 }
 
+#profile{
+    background-color: #353535;
+}
+
 #profile-nav{
     width: 30%;
     float: left;
@@ -20,6 +24,27 @@
     overflow: hidden;
     width: 65%;
     color: white;
+}
+
+#profile-content>div{
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #2a2a2a;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#profile-info input{
+    color: white;
+    border: 1px solid #353535;
+    background-color: #353535;
+    padding: 10px 12px;
+    width: 350px;
+    -webkit-transition: 0.2s;
+}
+
+#profile-info input:hover{
+    border-color: #555;
 }
 
 
@@ -40,6 +65,9 @@
 
 .pInfo-popUpBox{
     background-color: black;
+    border: 1.5px solid #555;
+    border-radius: 3px;
+    padding: 0 20px 20px 20px;
 
     /* positioning */
     position: absolute;
@@ -49,6 +77,73 @@
     margin-left: -200px;
 }
 
+.pInfo-popUpBox>h3{
+    color: #E35F21;
+}
+
+.pInfo-field-value{
+    color: #a0a0a0;
+}
+
+.pInfo-form{
+    clear: both;
+}
+
+.pInfo-form-table{
+    height: 50px;
+    float: left;
+}
+
+.pInfo-form-table td:first-child{
+    text-transform: uppercase;
+    width: 200px;
+}
+
+.pInfo-form-buttons button, .pInfo-popUpBox button, form[name="changePassword"] button{
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 12px;
+}
+
+.pInfo-form-buttons{
+    float: right;
+}
+
+.confirm-button{
+    border: none;
+    background: none;
+    background-color: #E35F21;
+    color: white;
+}
+
+.confirm-button:hover{
+    background-color: #c2501b;
+}
+
+.edit-button, .cancel-button{
+    background: none;
+    border: none;
+    color: #E35F21;
+    text-decoration: underline;
+}
+
+.edit-button:hover, .cancel-button:hover{
+    color: #c2501b;
+}
+
+.pInfo-form+h2{
+    padding-top: 40px;
+    clear: both;
+}
+
+form[name="changePassword"] td:first-child{
+    width: 200px;
+    height: 50px;
+}
+
+form[name="changePassword"] button{
+    margin-top: 20px;
+}
 
 /* extra adjustments */
 footer{

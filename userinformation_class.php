@@ -71,8 +71,11 @@
 		}
 		
 		public function setPassword($c_password){
+			if (empty($c_password) || strlen($c_password)<=9){
+				return false;
+			}
 			$this->c_password = $c_password;
-
+			return true;
 		}
 		
 		public function getPassword(){
@@ -177,6 +180,8 @@
 						PhoneNo='$this->c_pnumber'
 					WHERE
 						CustomerID='$this->c_id'";
+
+			echo $this->c_password;
 
 			try{
 				if (@mysqli_query($this->conn, $query)){

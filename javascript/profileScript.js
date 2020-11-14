@@ -5,6 +5,21 @@ window.onload = function(){
     sessionStorage.setItem("defaultpage", "info");
 }
 
+/* Check for mactching password */
+var check = function() {
+    if  (document.getElementById('newPass').value || document.getElementById('confPass').value){
+        if (document.getElementById('newPass').value == document.getElementById('confPass').value) {
+            document.getElementById('matchMsg').style.color = 'green';
+            document.getElementById('matchMsg').innerHTML = '<i class="fa fa-check" aria-hidden="true"></i> matching';
+        } else {
+            document.getElementById('matchMsg').style.color = 'red';
+            document.getElementById('matchMsg').innerHTML = '<i class="fa fa-times" aria-hidden="true"></i> not matching';
+        }
+    } else {
+            document.getElementById('matchMsg').innerHTML = '';
+    }
+}
+
 function displayProfile(){
     var infoButton = document.getElementById("profile-info-button");
     var orderButton = document.getElementById("profile-order-button");
@@ -38,8 +53,8 @@ function editButton(fieldName){
 
     editButton.style.display = "none";
     inputField.style.display = "inline";
-    confirmButton.style.display = "block";
-    cancelButton.style.display = "block";
+    confirmButton.style.display = "inline-block";
+    cancelButton.style.display = "inline-block";
     fieldValue.style.display = "none";
 }
 
@@ -76,4 +91,23 @@ function resetButton(fieldName){
     dimScreen.style.display = "none";
     popUpBox.style.display = "none";
     popUpBox.style.zIndex = "0";
+}
+
+function validatePassword(){
+    var currPass = document.forms['changePassword']['currPass'].value;
+    var newPass = document.forms['changePassword']['newPass'].value;
+    var confPass = document.forms['changePassword']['confPass'].value;
+
+    if (currPass && newPass && confPass){
+        if (newPass==confPass){
+            confirm('Confirm change password?');
+            return true;
+        } else {
+            alert('New password and Confirm password does not match.');
+            return false;
+        }
+    } else{
+        alert('Invalid input. You must fill in all the password fields.');
+        return false;
+    }
 }

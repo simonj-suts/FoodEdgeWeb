@@ -63,8 +63,23 @@ if (isset($_POST['pass'])){
     } else {
         phpAlert('Password Incorrect. Please try again.');
     }
-} else {
-    phpAlert('Password not set. Please try again.');
+} elseif (isset($_POST['currPass']) && isset($_POST['newPass']) && isset($_POST['confPass'])){
+    if ($user->getPassword() == $_POST['currPass']){
+        if ($_POST['newPass'] == $_POST['confPass']){
+
+            $validValue = $user->setPassword($_POST['newPass']);
+
+            $result = $validValue ? $user->updateUser() : "Failed to update. Password did not meet required format.";
+            echo $result;
+            phpAlert($result);
+        } else{
+            phpAlert('New Password does not match Confirm Password');
+        }
+    } else {
+        phpAlert('Password Incorrect. Please try again.');
+    }
+} else{
+    phpAlert('Password not entered. Please try again.');
 }
 
 /* Redirect back to profile page */
