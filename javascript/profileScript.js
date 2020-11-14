@@ -20,14 +20,23 @@ var check = function() {
     }
 }
 
+function setDefaultPage(){
+    if (confirm('Are you sure you want to change your order status?')){
+        sessionStorage.setItem("defaultpage", "order");
+        return true;
+    } else {
+        return false;
+    }
+}
+
 function displayProfile(){
     var infoButton = document.getElementById("profile-info-button");
     var orderButton = document.getElementById("profile-order-button");
     var infoContent = document.getElementById("profile-info");
     var orderContent= document.getElementById("profile-order");
 
-    //infoButton.style.backgroundColor="";
-    //orderButton.style.backgroundColor="";
+    infoButton.style.textDecoration = "underline";
+    orderButton.style.textDecoration = "none";
     infoContent.style.display="block";
     orderContent.style.display="none";
 }
@@ -38,8 +47,8 @@ function displayOrder(){
     var infoContent = document.getElementById("profile-info");
     var orderContent= document.getElementById("profile-order");
 
-    //infoButton.style.backgroundColor="";
-    //orderButton.style.backgroundColor="";
+    infoButton.style.textDecoration = "none";
+    orderButton.style.textDecoration = "underline";
     infoContent.style.display="none";
     orderContent.style.display="block";
 }

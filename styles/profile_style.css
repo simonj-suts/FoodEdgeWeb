@@ -18,6 +18,9 @@
 #profile-nav button{
     display: block;
     margin: 22px auto 0px auto;
+    padding: 10px 24px; 
+    cursor: pointer; 
+    width: 50%;
 }
 
 #profile-content{
@@ -47,6 +50,9 @@
     border-color: #555;
 }
 
+#profile-info-button{
+    text-decoration: underline;
+}
 
 #dimScreen{
     display: none;
@@ -148,4 +154,9 @@ form[name="changePassword"] button{
 /* extra adjustments */
 footer{
     clear: both;
+}
+
+#profile-order #ol_buttonHolder button{
+    cursor: pointer;
+    padding: 10px 12px;
 }

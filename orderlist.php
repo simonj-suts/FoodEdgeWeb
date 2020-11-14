@@ -75,7 +75,7 @@
             </div>
             
             <form action="updateorderlist.php" method="post" <?php echo $pendTable_vis ?> onsubmit="return confirm('Are you sure you want to change that order status?');" id="pending_form">
-                <table id="orderlisttable_pend" >
+                <table class="order-table order-table-pending">
                     <caption><?php echo count($pending_rec) ?> Pending Order(s)</caption>
                     <thead>
                         <tr>
@@ -134,7 +134,7 @@
                 }
             ?>
             
-            <table id="orderlisttable_deliv" <?php echo $delTable_vis ?>>
+            <table class="order-table order-table-delivered" <?php echo $delTable_vis ?>>
                 <caption>Delivered</caption>
                 <tr>
                     <th>Order ID</th>

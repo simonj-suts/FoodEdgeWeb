@@ -63,6 +63,10 @@
     src: url(Nominee-Medium.ttf);
 }
 
+*{
+	font-family: Nominee, Arial, sans-serif;
+}
+
 /* FOR LIST OF RECORDS */
 #orderpage_body{
     background-color: #2E2E2E;
@@ -121,11 +125,12 @@ hr+a:hover{
     color: #E35F21;
 }
 
-#orderlist table .fkoff{
+.order-table .fkoff{
     text-align: center;
 }
 
-#orderlist table{
+.order-table{
+	color: black;
     min-width: 100%;
     margin: 0 auto;
     margin-top: 25px;
@@ -136,33 +141,33 @@ hr+a:hover{
     font-size: 12px;
 }
 
-#orderlist table caption{
+.order-table caption{
     padding-bottom: 10px;
     font-size: larger;
 }
 
-#orderlist table th, #orderlist table caption,#orderlist h1{
+.order-table th, .order-table caption,#orderlist h1{
     color: white;
 }
 
-#orderlist table th, #orderlist table td{
+.order-table th, .order-table td{
     padding: 7px 5px;
 }
-#orderlist table td{
+.order-table td{
     border-left: 1.5px solid  #e6e6e6;
     border-right: 1.5px solid #e6e6e6;
 }
 
-#orderlist table tr{
+.order-table tr{
     background-color: #ffffff;
     padding-bottom: 10px;
 }
 
-#orderlist table tr .noborder{
+.order-table tr .noborder{
     border: none;
 }
 
-#orderlist table tbody tr:nth-child(4n+0), #orderlist table td[rowspan]{
+.order-table tbody tr:nth-child(4n+0), .order-table td[rowspan]{
     border-bottom: 1.5px solid  #e6e6e6;
 }
 
@@ -170,24 +175,28 @@ hr+a:hover{
     margin-bottom: 10%;
 }
 
-#orderlisttable_pend th{
-    background-color: #E35F21;
+.order-table-pending th{
+    background-color: #FAAB05;
     border-right:1px solid #ffffff;
-    border-left: 1px solid #E35F21;
-    border-top: 1px solid #E35F21;
-    border-bottom: 1px solid #E35F21;
+    border-left: 1px solid #FAAB05;
+    border-top: 1px solid #FAAB05;
+    border-bottom: 1px solid #FAAB05;
 }
-
-#orderlisttable_deliv th{
+.order-table-delivered th{
     background-color: #27ae60;
     border-right:1px solid #ffffff;
 }
 
-#orderlisttable_pend td.event{
+.order-table-cancelled th{
+    background-color: #E35F21;
+    border-right:1px solid #ffffff;
+}
+
+.order-table-pending td.event{
     width: 46%;
 }
 
-#orderlisttable_pend>tr:first-child td:last-child{
+.order-table-pending>tr:first-child td:last-child{
     text-align:  center;
 }
 

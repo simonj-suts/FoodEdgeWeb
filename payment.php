@@ -6,7 +6,7 @@ $database = new Database();
 $db = $database->getConnection();
 
 $userid = $_SESSION["custid"];
-$packageid = $_SESSION["packageid"];
+$packageid = $_SESSION["package"];
 $address = $_SESSION["address"];
 
 $resultpackage = mysqli_query($db, "SELECT * FROM package WHERE package_id LIKE '$packageid'");
