@@ -17,7 +17,9 @@ $package->setPackageName($_POST['packagename']);
 $package->setPackageCuisine($_POST['packagecuisine']);
 $package->setPax($_POST['packagepax']);
 $package->setPricePerPax($_POST['packageprice']);
-$package->setPackageDesc($_POST['packagedesc']);
+$packagedescedit = $_POST['packagedesc'];
+$string = str_replace(array("\r\n", "\r", "\n"), " ", $packagedescedit);
+$package->setPackageDesc($string);	
 if($package->updatePackage($_SESSION["packageid"]) == true){
     $success = "Edit Success";
 }else{
