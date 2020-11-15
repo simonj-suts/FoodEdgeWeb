@@ -13,7 +13,7 @@
 </head>
 <body class = "bookingformbody">
 	<?php
-		php session_start();
+		session_start();
 		if(isset($_SESSION["occasion"])){
 			include 'database.php';
 			include 'order_class.php';
