@@ -13,6 +13,7 @@
 </head>
 <body class = "bookingformbody">
 	<?php
+		<?php session_start() ?>
 		if(isset($_SESSION["occasion"])){
 			include 'database.php';
 			include 'order_class.php';
@@ -30,6 +31,7 @@
 			$order->setEventDate($_SESSION["eventdate"]);
 			$order->createOrder();
 			$database->closeConnection();
+			$_SESSION["packageid"] = $packageid;
 		}
 	?>
 	<?php
@@ -52,7 +54,6 @@
 		}
 	?>
 	<article>
-		<?php session_start() ?>
 		<?php
 			 /* arrays of authorised user */
 			 define("AUTHORISED_ROLES",["1","2","3"]);
@@ -60,7 +61,6 @@
 			 /* Connect to FoodEdge database */ 
 			 include 'database.php';
 			 include 'userinformation_class.php';
-			 $database = new Database();
 			 $db = $database->getConnection();
 
 			 /* Get current user's information */
@@ -87,8 +87,7 @@
 			</tr>
 			<tr>
 				<td class="title">Package: </td>
-				<td><?php echo $_SESSION["package"];
-					$_SESSION["packageid"] = packageCheck(); ?></td>
+				<td><?php echo $_SESSION["package"]; ?></td>
 			</tr>
 			<tr>
 				<td class="title">Occasion: </td>
