@@ -56,7 +56,7 @@ $lname = $rowuser['CustomerLName'];
                 <form name="paymentform" onsubmit="return validateForm()" method="POST" action="receipt.php">
                     <div class="row">
                         <div class="col-50">
-                            <h2 class="total">Your total is $<?php echo $totalprice ?></h2>
+                            <h2 class="total">Your total is RM<?php echo $totalprice ?></h2>
                             <h3 class="totaldes">Pay securely with a credit card or debit card.</h3>
                             <h2 id="formtitle">Personal Information</h2>
                             <label for="fname">Name</label>
