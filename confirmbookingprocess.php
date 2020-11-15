@@ -59,7 +59,6 @@
 			 define("AUTHORISED_ROLES",["1","2","3"]);
 
 			 /* Connect to FoodEdge database */ 
-			 include 'database.php';
 			 include 'userinformation_class.php';
 			 $db = $database->getConnection();
 
