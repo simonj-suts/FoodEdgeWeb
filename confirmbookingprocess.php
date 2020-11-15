@@ -29,7 +29,6 @@
 			$order->setEventTime($_SESSION["time"]);
 			$order->setEventDate($_SESSION["eventdate"]);
 			$order->createOrder();
-			$_SESSION['packageid'] = $packageid;
 			$database->closeConnection();
 		}
 	?>
@@ -92,7 +91,8 @@
 			</tr>
 			<tr>
 				<td class="title">Occasion: </td>
-				<td><?php echo $_SESSION["occasion"] ?></td>
+				<td><?php echo $_SESSION["occasion"]
+				    $_SESSION["packageid"] = packageCheck(); ?></td>
 			</tr>
 		</table>
 		<div class="buttongroup1">

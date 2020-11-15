@@ -14,7 +14,7 @@
 		private $c_pnumber;
 		private $s_question;
 		private $s_answer;
-		private $user_role = null;
+		private $user_role;
 		
 		public function __construct($db){
 			$this->conn = $db;
@@ -119,6 +119,7 @@
 		public function getUserRole(){
 			return $this->user_role;
 		}
+		
 		
 		public function read(){
 			$rows = [];
@@ -229,6 +230,7 @@
 				$this->f_name = $row['CustomerFName'];
 				$this->l_name = $row['CustomerLName'];
 				$this->c_id = $row['CustomerID'];
+				$this->user_role = $row['RolesID'];
 				return true;
 			}
 		}
