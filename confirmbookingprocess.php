@@ -75,24 +75,24 @@
 		<table class="confirmtable">
 			<tr>
 				<td class="title">Time: </td>
-				<td><?php echo $_SESSION["time"] ?></td>
+				<td><?php echo $_SESSION["time"]; ?></td>
 			</tr>
 			<tr>
 				<td class="title">Address: </td> 
-				<td><?php echo $_SESSION["address"] ?></td>
+				<td><?php echo $_SESSION["address"]; ?></td>
 			</tr>
 			<tr>
 				<td class="title">Event Date: </td>
-				<td><?php echo $_SESSION["eventdate"] ?></td>
+				<td><?php echo $_SESSION["eventdate"]; ?></td>
 			</tr>
 			<tr>
 				<td class="title">Package: </td>
-				<td><?php echo $_SESSION["package"] ?></td>
+				<td><?php echo $_SESSION["package"];
+					$_SESSION["packageid"] = packageCheck(); ?></td>
 			</tr>
 			<tr>
 				<td class="title">Occasion: </td>
-				<td><?php echo $_SESSION["occasion"]
-				    $_SESSION["packageid"] = packageCheck(); ?></td>
+				<td><?php echo $_SESSION["occasion"]; ?></td>
 			</tr>
 		</table>
 		<div class="buttongroup1">
