@@ -187,21 +187,21 @@ $package = new package($db);
                 <h2 class="title">Package Information</h2>
                 <div class="container">
                     <div class="row">
-                        <label for="packagename">Package Name</label>
-                        <input type="text" id="packagename" name="packagename" placeholder="Name" value="">
-
+                    <label for="packagename">Package Name</label>
+                        <input type="text" class="input" id="packagename" name="packagename" placeholder="Name" value="">
+                        <div class="erroredit" id="nameerror"></div>
                         <label for="packagecuisine">Package cuisine</label>
-                        <input type="text" id="packagecuisine" name="packagecuisine" placeholder="Cuisine" value="">
-
+                        <input type="text" class="input" id="packagecuisine" name="packagecuisine" placeholder="Cuisine" value="">
+                        <div class="erroredit" id="cuisineerror"></div>
                         <label for="packagepax">Pax</label>
-                        <input type="text" id="packagepax" name="packagepax" placeholder="50" value="">
-
+                        <input type="text" class="input" id="packagepax" name="packagepax" placeholder="50" value="">
+                        <div class="erroredit" id="paxerror"></div>
                         <label for="packageprice">Price</label>
-                        <input type="text" id="packageprice" name="packageprice" placeholder="600.00" value="">
-
+                        <input type="text" class="input" id="packageprice" name="packageprice" placeholder="600.00" value="">
+                        <div class="erroredit" id="priceerror"></div>
                         <label for="packagedesc">Package Description</label>
-                        <textarea rows="5" cols="60" name="packagedesc" id="packagedesc" placeholder="Description" value=""></textarea>
-						<input type="hidden" id="packageid" name="packageid">
+                        <textarea rows="5" cols="60" class="input" name="packagedesc" id="packagedesc" placeholder="Description" value=""></textarea>
+                        <div class="erroredit" id="descerror"></div>
                     </div>
                 </div>
 
