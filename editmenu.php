@@ -29,6 +29,8 @@ $package = new package($db);
     <link rel="stylesheet" type="text/css" href="editmenu.css" />
     <link rel="stylesheet" type="text/css" href="styles/nav_style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/cebce8210e.js" crossorigin="anonymous"></script>
 </head>
 
 <script>

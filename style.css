@@ -326,6 +326,7 @@ hr+a:hover{
 
 body[class ="receiptpage"]{
     background-color: #353535;
+    margin: 0;
 }
 #menubackground{
 	background-color:#2E2E2E;
