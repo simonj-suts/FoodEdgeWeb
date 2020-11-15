@@ -55,7 +55,6 @@ if (isset($_POST['pass'])){
             }
 
             $result = $validValue ? $user->updateUser() : "Failed to update. Input did not meet required format.";
-            echo $result;
             phpAlert($result);
         } else {
             phpAlert('Value not set');
@@ -70,7 +69,6 @@ if (isset($_POST['pass'])){
             $validValue = $user->setPassword($_POST['newPass']);
 
             $result = $validValue ? $user->updateUser() : "Failed to update. Password did not meet required format.";
-            echo $result;
             phpAlert($result);
         } else{
             phpAlert('New Password does not match Confirm Password');

@@ -8,12 +8,12 @@
             echo "<li><a href=\"registration.php\">Sign Up</a></li>";
         } else {
             echo "<li><a href=\"profile.php\">My Profile</a></li>";
-            if (strpos($role,"customer") !== false)
-                echo "<li><a href=\"profile.php\" onclick=\"setDefaultPage()\">My Orders</a></li>";
+            if (strpos($role,"1") !== false)
+                echo "<li><a href=\"profile.php\" onclick=\"setDefaultPage('footer')\">My Orders</a></li>";
             else{
-                if (strpos($role,"operation") !== false)
+                if (strpos($role,"2") !== false)
                     echo "<li><a href=\"orderlist.php\">Customers Orders</a></li>";
-                elseif (strpos($role,"management") !== false)
+                elseif (strpos($role,"3") !== false)
                     echo "<li><a href=\"statistics.php\">View Statistics</a></li>";
                 echo "<li><a href=\"feedbacklist.php\">Customers Feedback</a></li>";
             } 

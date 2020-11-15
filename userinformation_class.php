@@ -180,9 +180,7 @@
 						PhoneNo='$this->c_pnumber'
 					WHERE
 						CustomerID='$this->c_id'";
-
-			echo $this->c_password;
-
+						
 			try{
 				if (@mysqli_query($this->conn, $query)){
 					return "Successfully update user information.";

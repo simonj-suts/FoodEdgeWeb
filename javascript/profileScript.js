@@ -20,12 +20,15 @@ var check = function() {
     }
 }
 
-function setDefaultPage(){
-    if (confirm('Are you sure you want to change your order status?')){
-        sessionStorage.setItem("defaultpage", "order");
-        return true;
-    } else {
+function setDefaultPage(from){
+    if (from!="footer"){
+        if (confirm('Are you sure you want to change your order status?')){
+            sessionStorage.setItem("defaultpage", "order");
+            return true;
+        }
         return false;
+    } else {
+        sessionStorage.setItem("defaultpage", "order");
     }
 }
 
