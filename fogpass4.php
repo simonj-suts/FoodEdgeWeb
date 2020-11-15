@@ -16,41 +16,41 @@
 		<meta name="description" content="forget password page"/>
 		<meta name="keywords" content="forget-password,users,catering"/>
 		<link rel="stylesheet" type="text/css" href="form_table.css"/>
-		
+		<link rel="stylesheet" type="text/css" href="styles/nav_style.css"/>
 		
 	</head>
 	
 	<body class="login-body" onload="document.registration-form.first.focus()">
-	
-		<header>
+		<?php		
+			 /* arrays of authorised user */
 			
-		</header>
-		
-		<nav>
-			
-		</nav>
-		
 
-		
-							
+			 /* Connect to FoodEdge database */ 
+			 include 'database.php';
+			 include 'userinformation_class.php';
+			 $database = new Database();
+			 $db = $database->getConnection();
+
+			 /* Get current user's information */
+			 $user = new userInformation($db);
+			 if(isset($_SESSION['custid'])){
+				 $user->getCurrentUser($_SESSION['custid']);
+				 
+			 }
+			
+			?>
+	<?php include_once "navigation.php"?>		
 		
 		<?php 
 		
-		
-		
-		
-		include 'database.php';
-		include 'userinformation_class.php';
+		/*include 'database.php';
+		include 'userinformation_class.php';*/
 		
 		$email=$_SESSION['email'];
 		
-		
-		$database = new Database();
-		$db= $database->getConnection();
+		/*$database = new Database();
+		$db= $database->getConnection();*/
 		$userinformation= new userInformation($db);
-		
-		
-		
 		
 		if((isset($_POST['password']))&&(isset($_POST['c_password']))){	
 			$fogpassNewPass = $_POST['password'];
@@ -67,7 +67,7 @@
 		}
 						
 		
-		$database->closeConnection();
+		//$database->closeConnection();
 		
 	?>	
 		<div id="fogpass4-button">
@@ -75,8 +75,6 @@
 		</div>
 		
 		
-		<footer>
-			
-	</footer>
+		<?php include_once "footer.php" ?>
 	</body>
 </html>

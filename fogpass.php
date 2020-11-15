@@ -14,7 +14,8 @@
 		<meta name="keywords" content="forget-password,users,catering"/>
 		<script src="validateForm.js"></script>
 		<link rel="stylesheet" type="text/css" href="form_table.css"/>
-		
+		<link rel="stylesheet" type="text/css" href="styles/nav_style.css"/>
+
 
 		
 		
@@ -22,13 +23,27 @@
 	
 	<body class="login-body" onload="document.registration-form.first.focus()">
 	
-		<header>
-			
-		</header>
+		<?php session_start()?> 
 		
-		<nav>
+	<?php		
+			 /* arrays of authorised user */
 			
-		</nav>
+
+			 /* Connect to FoodEdge database */ 
+			 include 'database.php';
+			 include 'userinformation_class.php';
+			 $database = new Database();
+			 $db = $database->getConnection();
+
+			 /* Get current user's information */
+			 $user = new userInformation($db);
+			 if(isset($_SESSION['custid'])){
+				 $user->getCurrentUser($_SESSION['custid']);
+				 
+			 }
+			
+			?>
+	<?php include_once "navigation.php"?>
 		
 		
 		
@@ -63,11 +78,9 @@
 				</td>
 			</tr>
 			</table>
-		</form>
-		
-		
-		<footer>
-			
+			  
+
+			</form><?php include_once "footer.php" ?>
 	</footer>
 	</body>
 </html>

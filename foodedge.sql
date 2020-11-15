@@ -81,11 +81,11 @@ CREATE TABLE `package` (
 --
 
 INSERT INTO `package` (`package_id`, `package_name`, `package_cuisine`, `pax`, `price_per_pax`, `package_desc`) VALUES
-(1, 'Exquisite', 'Western', 30, '600.00', NULL),
-(2, 'Heavenly', 'Italian', 40, '900.00', NULL),
-(3, 'Healthy', 'Vegetarian', 20, '400.00', NULL),
-(4, 'Zealous', 'Indian', 35, '500.00', NULL),
-(5, 'Flourishing', 'Japanese', 40, '700.00', NULL);
+(1, 'Exquisite', 'Western', 30, '600.00', 'Main course: Chicken Pot Pie, Roasted Chicken, Fish and Chips, Sweet Potato Fries, Caesar Salad, Crispy Salmon and French Fries, French Toast, Pumpkin Cream Soup, Assorted Fruit Salad Snacks: Tuna, Egg Mayo Sandwich, Hashbrowns, Drinks: Orange Tango, Sky Juice'),
+(2, 'Heavenly', 'Italian', 40, '900.00', 'Main courses: Pizza Margherita, Rice Casserole, Spaghetti Carbonara, Prawn Arancini, Beef Lasagna, Snacks: Chocolate Tiramisu, Drinks: Sky juice, fruit juice'),
+(3, 'Healthy', 'Vegetarian', 20, '400.00', 'Main course: Vegetable Fried Rice, Lentil Soup, Crispy Baked Falafel, Peanut Sauce with Soba Noodles, Vegetable Paella, Black Bean Sweet Potato Enchiladas, Snacks: Lentil chips, Baked Fries, Almonds,Drinks:Water, spinach smoothie '),
+(4, 'Zealous', 'Indian', 35, '500.00','Main course: Tandoori Chicken, Vegetable Samosas, Chicken Curry, Chicken Tikka Massala, Naan, Fragrant Biryani Rice, Palak-Paneer ,Snack: Curry Puff, Maruku, Veggie Squares  , Drinks: Mango Lassi, milk tea, warm water'),
+(5, 'Flourishing', 'Japanese', 40, '700.00', 'Main course: Pan garlic fried rice,  Tempura soba noodles,Yakitori, beef sukiyaki, chicken katsu curry rice, Snacks: Tamago egg, onigiri, Drinks: Warm green tea, warm water, coffee');
 
 -- --------------------------------------------------------
 

@@ -33,7 +33,7 @@ function checkForm(){
 	}else{
 		var ToDate = new Date();
 		if(new Date(eventdate).getTime() <= ToDate.getTime()){
-			displayError(dateerror, dateiconerror, "The date must be bigger or equal to today's date");
+			displayError("dateappear", "<i class='fas fa-exclamation-circle'></i>" + "The date must be bigger or equal to today's date");
 		}
 		else{
 			eventdatecheck = true;

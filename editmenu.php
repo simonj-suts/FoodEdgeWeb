@@ -50,12 +50,14 @@ $package = new package($db);
                 $packagedesc = $rowpackage['package_desc'];
                 $pax = $rowpackage['pax'];
                 $price = $rowpackage['price_per_pax'];
+				$id = $rowpackage['package_id'];
                 ?>
                 $('input[id="packagename"]').val('<?php echo $packagename; ?>');
                 $('input[id="packagecuisine"]').val('<?php echo $packagecuisine; ?>');
                 $('textarea[id="packagedesc"]').val('<?php echo $packagedesc; ?>');
                 $('input[id="packagepax"]').val('<?php echo $pax; ?>');
                 $('input[id="packageprice"]').val('<?php echo $price; ?>');
+                $('input[id="packageid"]').val('<?php echo $id; ?>');
             } else if ($('input[id="checkbox2"]').prop('checked')) {
                 $(".hidden").fadeIn();
                 <?php
@@ -67,12 +69,14 @@ $package = new package($db);
                 $packagedesc = $rowpackage['package_desc'];
                 $pax = $rowpackage['pax'];
                 $price = $rowpackage['price_per_pax'];
+				$id = $rowpackage['package_id'];
                 ?>
                 $('input[id="packagename"]').val('<?php echo $packagename; ?>');
                 $('input[id="packagecuisine"]').val('<?php echo $packagecuisine; ?>');
                 $('textarea[id="packagedesc"]').val('<?php echo $packagedesc; ?>');
                 $('input[id="packagepax"]').val('<?php echo $pax; ?>');
                 $('input[id="packageprice"]').val('<?php echo $price; ?>');
+				$('input[id="packageid"]').val('<?php echo $id; ?>');
             } else if ($('input[id="checkbox3"]').prop('checked')) {
                 $(".hidden").fadeIn();
                 <?php
@@ -84,12 +88,14 @@ $package = new package($db);
                 $packagedesc = $rowpackage['package_desc'];
                 $pax = $rowpackage['pax'];
                 $price = $rowpackage['price_per_pax'];
+				$id = $rowpackage['package_id'];
                 ?>
                 $('input[id="packagename"]').val('<?php echo $packagename; ?>');
                 $('input[id="packagecuisine"]').val('<?php echo $packagecuisine; ?>');
                 $('textarea[id="packagedesc"]').val('<?php echo $packagedesc; ?>');
                 $('input[id="packagepax"]').val('<?php echo $pax; ?>');
                 $('input[id="packageprice"]').val('<?php echo $price; ?>');
+				$('input[id="packageid"]').val('<?php echo $id; ?>');
             } else if ($('input[id="checkbox4"]').prop('checked')) {
                 $(".hidden").fadeIn();
                 <?php
@@ -101,12 +107,14 @@ $package = new package($db);
                 $packagedesc = $rowpackage['package_desc'];
                 $pax = $rowpackage['pax'];
                 $price = $rowpackage['price_per_pax'];
+				$id = $rowpackage['package_id'];
                 ?>
                 $('input[id="packagename"]').val('<?php echo $packagename; ?>');
                 $('input[id="packagecuisine"]').val('<?php echo $packagecuisine; ?>');
                 $('textarea[id="packagedesc"]').val('<?php echo $packagedesc; ?>');
                 $('input[id="packagepax"]').val('<?php echo $pax; ?>');
                 $('input[id="packageprice"]').val('<?php echo $price; ?>');
+				$('input[id="packageid"]').val('<?php echo $id; ?>');
             } else if ($('input[id="checkbox5"]').prop('checked')) {
                 $(".hidden").fadeIn();
                 <?php
@@ -118,12 +126,14 @@ $package = new package($db);
                 $packagedesc = $rowpackage['package_desc'];
                 $pax = $rowpackage['pax'];
                 $price = $rowpackage['price_per_pax'];
+				$id = $rowpackage['package_id'];
                 ?>
                 $('input[id="packagename"]').val('<?php echo $packagename; ?>');
                 $('input[id="packagecuisine"]').val('<?php echo $packagecuisine; ?>');
                 $('textarea[id="packagedesc"]').val('<?php echo $packagedesc; ?>');
                 $('input[id="packagepax"]').val('<?php echo $pax; ?>');
                 $('input[id="packageprice"]').val('<?php echo $price; ?>');
+				$('input[id="packageid"]').val('<?php echo $id; ?>');
             }
         });
     });
@@ -173,25 +183,25 @@ $package = new package($db);
         </div>
 
         <div class="hidden">
-            <form name="editmenuform" method="POST" onsubmit="return validateForm()" action="editmenuprocess.php">
+            <form name="editmenuform" onsubmit="return validateForm()" method="POST" action="editmenuprocess.php">
                 <h2 class="title">Package Information</h2>
                 <div class="container">
                     <div class="row">
                         <label for="packagename">Package Name</label>
-                        <input type="text" class="input" id="packagename" name="packagename" placeholder="Name" value="">
-                        <div class="erroredit" id="nameerror"></div>
+                        <input type="text" id="packagename" name="packagename" placeholder="Name" value="">
+
                         <label for="packagecuisine">Package cuisine</label>
-                        <input type="text" class="input" id="packagecuisine" name="packagecuisine" placeholder="Cuisine" value="">
-                        <div class="erroredit" id="cuisineerror"></div>
+                        <input type="text" id="packagecuisine" name="packagecuisine" placeholder="Cuisine" value="">
+
                         <label for="packagepax">Pax</label>
-                        <input type="text" class="input" id="packagepax" name="packagepax" placeholder="50" value="">
-                        <div class="erroredit" id="paxerror"></div>
+                        <input type="text" id="packagepax" name="packagepax" placeholder="50" value="">
+
                         <label for="packageprice">Price</label>
-                        <input type="text" class="input" id="packageprice" name="packageprice" placeholder="600.00" value="">
-                        <div class="erroredit" id="priceerror"></div>
+                        <input type="text" id="packageprice" name="packageprice" placeholder="600.00" value="">
+
                         <label for="packagedesc">Package Description</label>
-                        <textarea rows="5" cols="60" class="input" name="packagedesc" id="packagedesc" placeholder="Description" value=""></textarea>
-                        <div class="erroredit" id="descerror"></div>
+                        <textarea rows="5" cols="60" name="packagedesc" id="packagedesc" placeholder="Description" value=""></textarea>
+						<input type="hidden" id="packageid" name="packageid">
                     </div>
                 </div>
 

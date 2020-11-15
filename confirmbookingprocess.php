@@ -1,12 +1,11 @@
-<?php
-	session_start();
-?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<title>Booking Successful</title>
 	<link rel="stylesheet" type="text/css" href="form_table.css"/>
+	<link rel="stylesheet" type="text/css" href="styles/nav_style.css"/>
+	<link rel="stylesheet" type="text/css" href="style.css"/>
 	<meta charset="utf-8">
 	<meta name="description" content="Confirmation Process">
 	<meta name="keywords" content="Web, programming">
@@ -14,6 +13,7 @@
 </head>
 <body class = "bookingformbody">
 	<?php
+		session_start();
 		if(isset($_SESSION["occasion"])){
 			include 'database.php';
 			include 'order_class.php';
@@ -30,8 +30,8 @@
 			$order->setEventTime($_SESSION["time"]);
 			$order->setEventDate($_SESSION["eventdate"]);
 			$order->createOrder();
-			$_SESSION['packageid'] = $packageid;
 			$database->closeConnection();
+			$_SESSION["packageid"] = $packageid;
 		}
 	?>
 	<?php
@@ -53,34 +53,52 @@
 			}
 		}
 	?>
+	<article>
+		<?php
+			 /* arrays of authorised user */
+			 define("AUTHORISED_ROLES",["1","2","3"]);
+
+			 /* Connect to FoodEdge database */ 
+			 include 'database.php';
+			 include 'userinformation_class.php';
+			 $db = $database->getConnection();
+
+			 /* Get current user's information */
+			 $user = new userInformation($db);
+			 $user->getCurrentUser($_SESSION['custid']);
+			$user->checkAuthority(AUTHORISED_ROLES);
+		?>
+		<?php include_once "navigation.php"?>
+	</article>
 	<div class="confirmation">
 		<h1 class="confirmationheader">Booking Successful!</h1>
 		<table class="confirmtable">
 			<tr>
 				<td class="title">Time: </td>
-				<td><?php echo $_SESSION["time"] ?></td>
+				<td><?php echo $_SESSION["time"]; ?></td>
 			</tr>
 			<tr>
 				<td class="title">Address: </td> 
-				<td><?php echo $_SESSION["address"] ?></td>
+				<td><?php echo $_SESSION["address"]; ?></td>
 			</tr>
 			<tr>
 				<td class="title">Event Date: </td>
-				<td><?php echo $_SESSION["eventdate"] ?></td>
+				<td><?php echo $_SESSION["eventdate"]; ?></td>
 			</tr>
 			<tr>
 				<td class="title">Package: </td>
-				<td><?php echo $_SESSION["package"] ?></td>
+				<td><?php echo $_SESSION["package"]; ?></td>
 			</tr>
 			<tr>
 				<td class="title">Occasion: </td>
-				<td><?php echo $_SESSION["occasion"] ?></td>
+				<td><?php echo $_SESSION["occasion"]; ?></td>
 			</tr>
 		</table>
-		<div class="buttongroup">
-			<button onclick="window.location='payment.php';" class="button2"><span>Proceed to payment</span></button>
+		<div class="buttongroup1">
+			<button onclick="window.location='payment.php';" class="buttonsubmit"><span>Proceed</span></button>
 		</div>
 	</div>
+	<?php include_once "footer.php" ?>
 </body>
 </html>
 	

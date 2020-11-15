@@ -10,9 +10,10 @@
 	<link rel="stylesheet" type="text/css" href="styles/nav_style.css"/>
 	<link rel="stylesheet" type="text/css" href="style.css"/>
 	<script type="text/javascript" src="validator.js"></script>
+	<script type="text/javascript" src="bookNowButton.js"></script>
 	<script src="https://kit.fontawesome.com/cebce8210e.js" crossorigin="anonymous"></script>
 </head>
-<body class="bookingformbody">
+<body class="bookingformbody" onload="selectRadio()">
 <article>
 		<?php session_start() ?>
 		<?php
@@ -35,8 +36,8 @@
 	</article>
 	
 	<div class="bookingform">
-	<button onclick="window.location='cust_login.php';" class="buttonback"><span>Back</span></button>
-	<form name = "bookingform" action="confirmationpage.php" method="post" onsubmit="return checkForm()">
+	<button onclick="window.location='menu.php';" class="buttonback"><span>Back</span></button>
+	<form name = "bookingform" action="confirmationpage.php" method="post" onsubmit="return checkForm()" onload="">
 		<h1 class="bookingform_header">Booking</h1>
 		<p class = "Names"> Hello <?php echo $_SESSION["fname"]; echo " ". $_SESSION["lname"];?>,</p>
 		<div class="occasion">
@@ -84,6 +85,8 @@
 				<span class="checkmark"></span>
 				</label>
 			</div>
+			
+			
 		<small id="packageappear"></small>
 		</div>
 		<textarea name="address" id="address" maxlength="250" rows="6" placeholder="Address"></textarea>

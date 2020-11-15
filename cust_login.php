@@ -31,6 +31,8 @@
 		if(isset($_SESSION['custid'])){
 			header('Location: bookingform.php');
 		}
+		
+		
 		?>
 
 	
@@ -39,7 +41,6 @@
 		<form id="login-form" method="post" onsubmit="return validateUserAccount()" >
 				
 			<?php 
-				
 				
 				include 'database.php';
 				include 'userinformation_class.php';
@@ -51,14 +52,24 @@
 					$userinformation= new userInformation($db);
 					
 					if($userinformation->ifExist($loginEmail,$loginPass)){
-					
+						
 						echo 'You have successfully logged in';
+						
 						session_start();
 						$_SESSION["login"]=$loginEmail;
 						$_SESSION["fname"]=$userinformation->getCustomerFirstName();
 						$_SESSION["lname"]=$userinformation->getCustomerLastName();
 						$_SESSION["custid"]=$userinformation->getCustomerID();
-						header("Location: bookingform.php");
+						//header("Location: index.php");
+						
+						
+						if($userinformation->getUserRole()=='1'){
+							$redirect='bookingform.php';
+						}
+						else {
+							$redirect='index.php';
+						}
+						header("Location:".$redirect);
 					}
 				}
 				$database->closeConnection();

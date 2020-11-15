@@ -9,6 +9,8 @@
 // Start the session
 		session_start();
 		?>
+		
+		
 	<head>
 		<title>Account Recovery</title>
 		<meta charset="utf-8"/>
@@ -16,19 +18,32 @@
 		<meta name="description" content="account recovery page"/>
 		<meta name="keywords" content="forget-password,users,recovery"/>
 		<link rel="stylesheet" type="text/css" href="form_table.css"/>
-		
+		<link rel="stylesheet" type="text/css" href="styles/nav_style.css"/>
+
 		
 	</head>
 	
 	<body class="login-body" onload="document.registration-form.first.focus()">
 	
-		<header>
+		<?php		
+			 /* arrays of authorised user */
 			
-		</header>
-		
-		<nav>
+
+			 /* Connect to FoodEdge database */ 
+			 include 'database.php';
+			 include 'userinformation_class.php';
+			 $database = new Database();
+			 $db = $database->getConnection();
+
+			 /* Get current user's information */
+			 $user = new userInformation($db);
+			 if(isset($_SESSION['custid'])){
+				 $user->getCurrentUser($_SESSION['custid']);
+				 
+			 }
 			
-		</nav>
+			?>
+	<?php include_once "navigation.php"?>
 		
 
 		
@@ -40,10 +55,10 @@
 			<?php 
 			$fogpassEmail = $_POST['email'];
 			
-			include 'database.php';
+			/*include 'database.php';
 			include 'userinformation_class.php';
 			$database = new Database();
-			$db= $database->getConnection();
+			$db= $database->getConnection();*/
 			$userinformation= new userInformation($db);
 			
 			if(isset($_POST['email'])){	
@@ -68,10 +83,7 @@
 			
 			
 		</form>
-		
-		
-		<footer>
-			
-	</footer>
+		<?php include_once "footer.php" ?>
+
 	</body>
 </html>

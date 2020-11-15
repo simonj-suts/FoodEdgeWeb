@@ -6,6 +6,7 @@
 
 .registration-body, .login-body{
 	background-image: url("media/reg-background.png");
+	margin:0;
 }
 
 #statistics_table{
@@ -85,8 +86,6 @@
 	padding:0.5%;
 	margin-bottom:0.5%;
 	display:block;
-	
-
 }
 
 .registration-unit input:focus,.registration-unit textarea:focus {
@@ -137,7 +136,7 @@
  
 #recovery-submit-button:hover, #loginBtn input[type=submit]:hover, #fogpass2-submit:hover, #fogpass3-submit:hover , #fogpass3-reset:hover{
 
-	background-color: #555555;
+	background-color: black;
 	color: white;
 	transition-duration: 0.4s;
 }
@@ -152,6 +151,8 @@
 .chgPassword{
 	display:none;
 }
+
+
 
 #login-form{
 	width:60%;
@@ -275,32 +276,34 @@
 #returnBtn{
 	
 	text-align:center;
+	margin-bottom:2%;
 }
 
 #returnBtn button {
 	background-color:#d55013;
 	color:blaok;
-	width:20%;
-	margin: 5% auto 0 auto;
+	width:7%;
+	margin: 2% auto 0 auto;
     text-decoration: none;
 
 }
 
 #returnBtn button, #fogpass-table-button button {
-	padding: 2% 2%;
-	font-size:0.8em;
-	transition-duration: 0.4s;
-	
+	padding: 0.5% 0;
+	font-size:20px;
+	transition-duration: 0.5s;
+	border-radius:4px;
 }
 
 #returnBtn button:hover, #fogpass-table-button button:hover, #fogpass4-button button:hover{
 	
-	background-color: #555555;
+	background-color: black;
 	color: white;
 	text-decoration:none;
 }
 
 #returnBtn a, #fogpass-table-button button a{
+	
 	text-decoration:none;
 	color:white;
 }
@@ -389,7 +392,7 @@ h1.changePassword{
 
 #fogpass4-button{
 	text-align:center;
-	
+	margin-bottom:10%;
 }
 #fogpass4-button button{
 	
@@ -410,7 +413,7 @@ h1.changePassword{
 
 .feedbackformbody{
 	font-family: Nominee, Arial, sans-serif;
-	background-image: url("cateringbackground.png");
+	background-image: url("media/reg-background.png");
 	background-position: center; /* Center the image */
  	background-repeat: repeat; /* Do not repeat the image */
   	background-size: cover; /* Resize the background image to cover the entire container */
@@ -435,7 +438,7 @@ h1.changePassword{
 
 .bookingformbody{
 	font-family: Nominee, Arial, sans-serif;
-	background-image: url("cateringbackground.png");
+	background-image: url("media/reg-background.png");
 	background-position: center; /* Center the image */
  	background-repeat: no-repeat; /* Do not repeat the image */
   	background-size: cover; /* Resize the background image to cover the entire container */
@@ -793,6 +796,11 @@ h1.changePassword{
 	text-align: right;
 }
 
+.buttongroup1{
+	padding-top: 25px;
+	text-align: center;
+}
+
 .buttonback span:after {
 	content: '\00AB';
 	font-size: 40px;
@@ -1010,6 +1018,7 @@ h1.changePassword{
 
 [class="paymentpage"]{
 	background-color: #353535; 
+	margin: 0; 
 }
 
 [class="paymentpage"] h3{
@@ -1054,7 +1063,7 @@ h1.changePassword{
 
 .feedbackformbody{
 	font-family: Nominee, Arial, sans-serif;
-	background-image: url("cateringbackground.png");
+	background-image: url("media/reg-background.png");
 	background-position: center; /* Center the image */
  	background-repeat: repeat; /* Do not repeat the image */
   	background-size: cover; /* Resize the background image to cover the entire container */
@@ -1216,7 +1225,7 @@ h1.changePassword{
 }
 
 .confirmationfeedbackbody{
-	background-image: url("cateringbackground.png");
+	background-image: url("media/reg-background.png");
 	background-position: center; /* Center the image */
  	background-repeat: repeat; /* Do not repeat the image */
 	margin: 0;
@@ -1439,3 +1448,4 @@ h1.changePassword{
 .feedbacklist_tablediv{
 	padding:20px;
 }
+

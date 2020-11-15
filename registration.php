@@ -23,10 +23,18 @@
 	<body class="registration-body" >
 	<?php 
 		session_start();
+		include 'database.php';
+		include 'userinformation_class.php';
+		$database = new Database();
+		$db = $database->getConnection();
+
+			 /* Get current user's information */
+		$user = new userInformation($db);
 		if(isset($_SESSION['custid'])){
 			header('Location: bookingform.php');
 		}
 		?>
+		<?php include_once "navigation.php"?>
 		<form id="registration-form" method="post" action="conreg.php"  onsubmit="return ifInputInfoValid()">
 		
 			
@@ -122,6 +130,6 @@
 		
 								
 		</form>
-		
+		<?php include_once "footer.php" ?>
 	</body>
 </html>

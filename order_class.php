@@ -99,7 +99,7 @@ class Order{
 		$valid = false;
 		
 		if (preg_match("/^[a-zA-Z]+$/",$status)) {
-			if ($status=="pending" || $status=="delivered"){
+			if ($status=="pending" || $status=="delivered" || $status=="cancelled"){
 				$this->o_status = $status;
 				$valid = true;
 			}
@@ -199,6 +199,33 @@ class Order{
 		}
 	}
 	
+	public function readByUser(){
+		$rows = [];
+
+		$query = "SELECT * 
+                 FROM userinformation
+                 NATURAL RIGHT JOIN orders
+				NATURAL LEFT JOIN package
+				WHERE CustomerID='$this->c_id'
+				ORDER BY order_date";
+		
+		try{
+			$result = @mysqli_query($this->conn,$query);
+			if (!$result){
+				echo "Error: " . $query. "<br>" . mysqli_error($this->conn); 
+	
+			} else {
+				while($row = mysqli_fetch_assoc($result)){
+					$rows[] = $row;
+				}
+			}
+		} catch(Exception $e){
+			echo "Error: ".$e.getMessage();
+		}
+
+		return $rows;
+	}
+
 	// add new order
 	public function createOrder(){
 		$query = "INSERT INTO 

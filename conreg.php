@@ -13,7 +13,8 @@
 		<meta name="description" content="confirm registration page"/>
 		<meta name="keywords" content="registration,users,success"/>
 		<link rel="stylesheet" type="text/css" href="form_table.css"/>
-		
+		<link rel="stylesheet" type="text/css" href="styles/nav_style.css"/>
+
 		
 		
 		
@@ -21,19 +22,36 @@
 	
 	<body class="registration-body" onload="successRegistration()">
 	
-		<header></header>
+	<?php session_start() ?>
+		<?php		
+			 /* arrays of authorised user */
+			
+
+			 /* Connect to FoodEdge database */ 
+			 include 'database.php';
+			 include 'userinformation_class.php';
+			 $database = new Database();
+			 $db = $database->getConnection();
+
+			 /* Get current user's information */
+			 $user = new userInformation($db);
+			 if(isset($_SESSION['custid'])){
+				 $user->getCurrentUser($_SESSION['custid']);
+				 
+			 }
+			
+			?>
 		
-		<nav></nav>
 		
 		
 		<h1 id="conreg_page_title">Registration Successful</h1>
 		
 		
 		<?php 
-			include 'database.php';
+			/*include 'database.php';
 			include 'userinformation_class.php';
 			$database = new Database();
-			$db= $database->getConnection();
+			$db= $database->getConnection();*/
 			
 			
 			$fname = $_POST['first'];
@@ -77,8 +95,7 @@
 			<button type="button"><a href="cust_login.php">Return</a></button>
 		</div>
 		
-	<footer>
-			
-	</footer>
+		<?php include_once "footer.php" ?>  
+
 	</body>
 </html>
