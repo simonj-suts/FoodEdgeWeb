@@ -148,12 +148,20 @@
 		}
 		
 		public function getCurrentUser($userID){
-			$query = "SELECT * FROM userinformation WHERE CustomerID=".$userID;
-			
+			$userData = null;
+			$query = "SELECT * FROM userinformation WHERE CustomerID=?";
+
 			try{
-				$result = @mysqli_query($this->conn,$query);
-				if (@mysqli_num_rows($result)==1){
-					$userData = mysqli_fetch_array($result);
+				$stmt = $this->conn->prepare($query);
+				$stmt->bind_param("i", $userID);
+
+				if ($stmt->execute()){
+					$res = $stmt->get_result();
+					$result = $res->fetch_all(MYSQLI_ASSOC);
+					$userData = $result[0]; // get only the first row of records
+				}
+				
+				if (!empty($userData)){
 					$this->c_id = $userData['CustomerID'];
 					$this->f_name = $userData['CustomerFName'];
 					$this->l_name = $userData['CustomerLName'];
@@ -164,6 +172,8 @@
 					$this->s_answer = $userData['SecAnswer'];
 					$this->user_role = $userData['RolesID'];
 				}
+				$res->free_result();
+				
 			} catch (Exception $e){
 				echo "Error: ".$e.getMessage();
 			}
@@ -174,19 +184,24 @@
 			$query = "UPDATE
 						".$this->tableName."
 					SET
-						CustomerFName='$this->f_name',
-						CustomerLName='$this->l_name',
-						Email='$this->c_email',
-						Password='$this->c_password',
-						PhoneNo='$this->c_pnumber'
+						CustomerFName=?,
+						CustomerLName=?,
+						Email=?,
+						Password=?,
+						PhoneNo=?
 					WHERE
-						CustomerID='$this->c_id'";
+						CustomerID=?";
 						
 			try{
-				if (@mysqli_query($this->conn, $query)){
-					return "Successfully update user information.";
+				$stmt = $this->conn->prepare($query);
+
+				$stmt->bind_param('sssssi', $this->f_name,$this->l_name,$this->c_email,$this->c_password,$this->c_pnumber,$this->c_id);
+
+				if ($stmt->execute()){
+					return "Succesfully update information";
 				}
-				return "Unable to update user information. Please try again.";
+				return "Failed to update information. Please contact web developer if this happens again.";
+				
 			} catch (Exception $e){
 				return "Error: ".$e.getMessage();
 			}

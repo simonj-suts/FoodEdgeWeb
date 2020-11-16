@@ -1,5 +1,5 @@
 <h2>Account Information</h2>
-<div id="dimScreen"></div>
+
 <?php
     function formInput($fieldName, $fieldValue){
         $fieldNameStripped = preg_replace('/\s+/', '', $fieldName);
@@ -27,14 +27,8 @@
                 echo '<button type="button" class="cancel-button" id="'.$cancelButtonID.'" onclick="cancelButton(\''.$fieldNameStripped.'\')">Cancel</button>';  // hidden
             echo '</div>';
 
-            /* hidden  asdasdasda*/
-            echo '<div class="pInfo-popUpBox" id="'.$popUpBoxID.'">';
-                echo '<h3>Changing '.$fieldName.'</h3>';
-                echo '<p><em>Please enter your password to confirm your changes</em></p>';
-                echo '<p>PASSWORD: <input type="password" name="pass" required="required"></p>';
-                echo '<button class="confirm-button">Submit</button>';
-                echo '<button type="reset" class="cancel-button" onclick="resetButton(\''.$fieldNameStripped.'\')">Cancel</button>';
-            echo '</div>';
+            /* hidden */
+            popUpDisplay($popUpBoxID,$fieldName);
 
             echo '<input type="hidden" name="formName" value="'.$fieldNameStripped.'">';
         echo '</form>';

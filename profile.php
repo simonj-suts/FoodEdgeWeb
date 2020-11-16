@@ -16,6 +16,18 @@ $user = new userInformation($db);
 $user->getCurrentUser($_SESSION['custid']);
 $user->checkAuthority(AUTHORISED_ROLES);
 
+function popUpDisplay($popUpBoxID, $fieldName){
+    $fieldNameStripped = preg_replace('/\s+/', '', $fieldName);
+
+    echo '<div class="pInfo-popUpBox" id="'.$popUpBoxID.'">';
+        echo '<h3>Changing '.$fieldName.'</h3>';
+        echo '<p><em>Please enter your password to confirm your changes</em></p>';
+        echo '<p>PASSWORD: <input type="password" name="pass" required="required"></p>';
+        echo '<button class="confirm-button">Submit</button>';
+        echo '<button type="reset" class="cancel-button" onclick="resetButton(\''.$fieldNameStripped.'\')">Cancel</button>';
+    echo '</div>';
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -36,6 +48,7 @@ $user->checkAuthority(AUTHORISED_ROLES);
 </head>
 <body style="margin:0">
     <?php include_once 'navigation.php' ?>
+    <div id="dimScreen"></div>
     <article id="profile">
         <div id="profile-nav">
             <button class="buttonback" id="profile-info-button" onclick="displayProfile()">MY PROFILE</button>

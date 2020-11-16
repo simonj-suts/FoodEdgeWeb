@@ -82,8 +82,9 @@
             }
         echo '</table>';
         if ($orderStatus=="pending"){
+            popUpDisplay("popUpBox-OrderStatus","Order Status");
             echo '<div id="ol_buttonHolder">';
-                echo '<button class="confirm-button">Submit</button>';
+                echo '<button type="button" class="confirm-button"  onclick="confirmButton(\'OrderStatus\')">Submit</button>'; // hidden
                 echo '<button class="cancel-button" type="reset">Reset</button>';
             echo '</div>';
             $_SESSION['fromProfile'] = true;
