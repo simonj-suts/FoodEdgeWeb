@@ -202,6 +202,7 @@ $package = new package($db);
                         <label for="packagedesc">Package Description</label>
                         <textarea rows="5" cols="60" class="input" name="packagedesc" id="packagedesc" placeholder="Description" value=""></textarea>
                         <div class="erroredit" id="descerror"></div>
+			 <input type="hidden" id="packageid" name="packageid">
                     </div>
                 </div>
 
