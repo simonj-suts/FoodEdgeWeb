@@ -1,15 +1,13 @@
 # FoodEdgeWeb
 
-Website to be run on XAMPP
-	* Make sure "Apache" and "MySQL" has been started.
+Website to be run on XAMPP (localhost)
 
-	MySQl database file - foodedge.sql 
-	* The sql file MUST be import first before proceeding to the website.	
-	* The file is located in the FoodEdgeWeb project folder.
-	* The file is the one to use when importing the sql file in phpmyadmin.
-
-	* Make sure the project file is stored inside the "\XAMPP\htdocs" directory.
-	* type "http://localhost/FoodEdgeWeb/" to access the index immediately.
+Setup:
+1. Place the FoodEdgeWeb folder in "..xampp/htdocs"
+2. Launch XAMPP - start "Apache" and "MySQL"
+3. In a web browser, go to "http://localhost/phpmyadmin/"
+4. Import the "foodedge.sql" file (located in the FoodEdgeWeb folder) into phpMyAdmin as a database
+5. Type "http://localhost/FoodEdgeWeb/" to access the index immediately
 
 
 Once the database has been imported, you can log in accordingly to the following account:
@@ -21,5 +19,3 @@ Once the database has been imported, you can log in accordingly to the following
 The credentials will be stored in a database table called "userinformation" as you can use it as reference.
 
 These are the main actions for the setting up the website for usage. Hope everything is alright, and enjoy using our website. Thank you.
-
-
