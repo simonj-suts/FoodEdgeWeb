@@ -9,9 +9,10 @@ Setup:
 4. Import the "foodedge.sql" file (located in the FoodEdgeWeb folder) into phpMyAdmin as a database
 5. Type "http://localhost/FoodEdgeWeb/" to access the index immediately
 
+**IMPORTANT**
+When filling in the form in Payment page (payment.php), the credit card number must be "4111 1111 1111 1111" in order to submit a valid credit card number.
 
 Once the database has been imported, you can log in accordingly to the following account:
-
 	* Customer
 	* Operation Team
 	* Management Team 
