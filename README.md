@@ -10,7 +10,7 @@ Setup:
 5. Type "http://localhost/FoodEdgeWeb/" to access the index immediately
 
 **IMPORTANT**
-When filling in the form in Payment page (payment.php), the credit card number must be "4111 1111 1111 1111" in order to submit a valid credit card number.
+When filling in the form in Payment page (payment.php), the credit card number must be "4111111111111111" in order to submit a valid credit card number.
 
 Once the database has been imported, you can log in accordingly to the following account:
 	* Customer
